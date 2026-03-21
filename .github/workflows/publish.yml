@@ -25,13 +25,11 @@ jobs:
           r-version: 'release'
 
       - name: Install R Dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: |
-            readr
-            dplyr
-            reactable
-            reactablefmtr
+        run: |
+          install.packages('remotes')
+          install.packages(c('readr', 'dplyr', 'reactable'))
+          remotes::install_github('gkaramanis/reactablefmtr')
+        shell: Rscript {0}
 
       - name: Render Quarto Website
         uses: quarto-dev/quarto-actions/render@v2
