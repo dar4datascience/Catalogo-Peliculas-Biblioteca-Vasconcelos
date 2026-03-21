@@ -19,23 +19,24 @@ library(reactablefmtr)
 # Define the function to create the interactive table
 tbl_movies_found <- function(movies_found) {
   movies_found |>
-    dplyr::select(Title, Year, Plot, Poster, Genre) |>
+    dplyr::select(Poster, Title, Released, Rated, Director, Writer, Country, Plot, Genre) |>
     reactable(
-      theme = fivethirtyeight(centered = TRUE),
-      striped = TRUE,
       pagination = TRUE,
       searchable = TRUE,
       defaultColDef = colDef(align = 'center'),
       columns = list(
         Poster = colDef(
           name = 'Poster',
-          maxWidth = 200,
           cell = embed_img(height = 200, width = 150)
         ),
-        Title = colDef(maxWidth = 150, name = 'Pelicula'),
-        Year = colDef(maxWidth = 70, name = 'Año'),
-        Plot = colDef(minWidth = 150, name = 'Trama'),
-        Genre = colDef(minWidth = 100, name = "Generos")
+        Title = colDef(name = 'Pelicula'),
+        Released = colDef(name = 'Lanzamiento'),
+        Rated = colDef(name = 'Clasificación'),
+        Director = colDef(name = 'Director'),
+        Writer = colDef(name = 'Escritor'),
+        Country = colDef(name = 'País'),
+        Plot = colDef(name = 'Trama'),
+        Genre = colDef(name = "Generos")
       )
     )
 }
