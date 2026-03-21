@@ -10,6 +10,7 @@ execute:
 ```{r}
 #| label: setup
 #| message: false
+#| column: screen
 
 library(readr)
 library(dplyr)
