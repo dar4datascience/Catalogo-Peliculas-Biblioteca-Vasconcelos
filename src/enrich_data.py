@@ -3,7 +3,7 @@ import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from omdb_client import search_movie_id, get_movie_details
 
-INPUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'raw_movie_titles.csv')
+INPUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'failed_cases.csv')
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
 
 def process_title(title, source_pdf):
@@ -21,7 +21,7 @@ def process_title(title, source_pdf):
             details['SourcePDF'] = source_pdf
             return details
     
-    return {'Title': title, 'Error': 'IMDb ID not found', 'SourcePDF': source_pdf}
+    return {'Title': title, 'Error': 'Movie ID not found', 'SourcePDF': source_pdf}
 
 def enrich_data(input_file):
     """
@@ -50,7 +50,7 @@ def enrich_data(input_file):
 
     if successful_data:
         output_df = pd.DataFrame(successful_data)
-        output_path = os.path.join(OUTPUT_DIR, 'movie_data.csv')
+        output_path = os.path.join(OUTPUT_DIR, 'movie_data_retried.csv')
         output_df.to_csv(output_path, index=False)
         print(f"\nSuccessfully processed data saved to {output_path}")
     else:
@@ -58,7 +58,7 @@ def enrich_data(input_file):
 
     if failed_data:
         failed_df = pd.DataFrame(failed_data)
-        failed_path = os.path.join(OUTPUT_DIR, 'failed_cases.csv')
+        failed_path = os.path.join(OUTPUT_DIR, 'failed_cases_final.csv')
         failed_df.to_csv(failed_path, index=False)
         print(f"Failed cases saved to {failed_path}")
     else:
