@@ -22,7 +22,7 @@ def _query_omdb(params):
 
 def search_movie_id(title):
     """ 
-    Searches for a movie's ID using a multi-step process.
+    Searches for a movie's ID using a multi-step exact match process.
     """
     # 1. Direct search
     data = _query_omdb({'t': title, 'apikey': API_KEY})
@@ -44,14 +44,19 @@ def search_movie_id(title):
             data = _query_omdb({'t': swapped_title, 'apikey': API_KEY})
             if data:
                 return data.get('imdbID')
+    return None
 
-    # 4. Last resort: broad search with 's' parameter
+def broad_search_movie(title):
+    """Performs a broad search and returns all potential matches."""
+    cleaned_title = re.sub(r'\s+\d+$', '', title).strip()
+    if ',' in cleaned_title:
+        parts = [part.strip() for part in cleaned_title.split(',')]
+        if len(parts) == 2:
+            cleaned_title = f"{parts[1]} {parts[0]}"
+            
     search_data = _query_omdb({'s': cleaned_title, 'apikey': API_KEY})
     if search_data and 'Search' in search_data:
-        # Return the ID of the first result
-        return search_data['Search'][0].get('imdbID')
-
-    print(f"Could not find Movie ID for '{title}' after all attempts.")
+        return search_data['Search']
     return None
 
 def get_movie_details(imdb_id):
