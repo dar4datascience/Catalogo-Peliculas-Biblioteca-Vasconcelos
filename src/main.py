@@ -3,8 +3,8 @@ import re
 import pandas as pd
 from pdf_extractor import extract_tables_from_pdf
 
-PDF_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
+PDF_DIR = os.path.join(os.path.dirname(__file__), '..', 'data', 'pdfs')
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results')
 
 NON_TITLE_KEYWORDS = [
     r'dir\.', r'prod\.', 'animación', 'aventura', 'comedia', 'drama', 'fantasía', 

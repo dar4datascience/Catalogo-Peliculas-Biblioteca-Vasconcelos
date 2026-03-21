@@ -2,8 +2,8 @@ import pandas as pd
 import os
 import re
 
-INPUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'raw_movie_titles.csv')
-OUTPUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'tidied_movie_titles.csv')
+INPUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results', 'raw_movie_titles.csv')
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results', 'tidied_movie_titles.csv')
 
 TITLE_COUNTS = {
     'RUSAS.pdf': 18,

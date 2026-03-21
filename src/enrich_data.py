@@ -4,8 +4,8 @@ import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from omdb_client import search_movie_id, get_movie_details, broad_search_movie
 
-INPUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'tidied_movie_titles.csv')
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
+INPUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results', 'tidied_movie_titles.csv')
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results')
 
 def process_title(title, source_pdf):
     if not isinstance(title, str) or not title.strip():

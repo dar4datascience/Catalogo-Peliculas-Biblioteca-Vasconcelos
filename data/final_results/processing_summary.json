@@ -1,0 +1,42 @@
+{
+    "BLU- RAY.pdf": {
+        "successful": 72,
+        "potential": 2,
+        "failed": 104
+    },
+    "CINE.pdf": {
+        "successful": 875,
+        "potential": 231,
+        "failed": 1143
+    },
+    "DOCUMENTALES.pdf": {
+        "successful": 157,
+        "potential": 79,
+        "failed": 977
+    },
+    "IDIOMAS.pdf": {
+        "successful": 11,
+        "potential": 0,
+        "failed": 52
+    },
+    "PELICULAS CHINAS.pdf": {
+        "successful": 22,
+        "potential": 11,
+        "failed": 67
+    },
+    "PELICULAS INFANTILES.pdf": {
+        "successful": 68,
+        "potential": 3,
+        "failed": 179
+    },
+    "PISO 7.pdf": {
+        "successful": 89,
+        "potential": 5,
+        "failed": 178
+    },
+    "PRESTAMO EN SALA 2026.pdf": {
+        "successful": 86,
+        "potential": 19,
+        "failed": 161
+    }
+}
