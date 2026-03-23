@@ -26,8 +26,7 @@ jobs:
 
       - name: Install R Dependencies
         run: |
-          install.packages(c('remotes', 'readr', 'dplyr', 'reactable', 'htmltools', 'fontawesome'))
-          remotes::install_github('gkaramanis/reactablefmtr')
+          install.packages('pak')
         shell: Rscript {0}
 
       - name: Render Quarto Website
