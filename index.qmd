@@ -33,8 +33,15 @@ movies_data <- readr::read_csv("data/final_results/all_movies.csv") |>
   )
 
 # Main reactable table
-reactable(
-  movies_data,
+htmltools::browsable(
+  tagList(
+    tags$button(
+      tagList(fontawesome::fa("download"), "Download All as CSV"),
+      onclick = "Reactable.downloadDataCSV('movie-catalog-table', 'movies.csv')"
+    ),
+    reactable(
+      movies_data,
+      elementId = "movie-catalog-table",
   columns = list(
     Poster = colDef(
       name = 'Poster',
@@ -74,5 +81,7 @@ reactable(
   searchable = TRUE,
   pagination = TRUE,
   defaultColDef = colDef(align = 'center')
+    )
+  )
 )
 ```
