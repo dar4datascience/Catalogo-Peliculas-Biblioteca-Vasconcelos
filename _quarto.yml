@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: _site
 
 website:
   title: "Catálogo de Películas"
@@ -12,3 +13,5 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    toc: true
+
