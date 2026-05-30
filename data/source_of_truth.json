@@ -50671,5 +50671,97 @@
     "catalogue": "CINE.pdf",
     "catalogue_id": 1279,
     "page_number": 32
+  },
+  "Abrazos rotos, Los": {
+    "imdb_id": "tt0913425",
+    "matched_title": "Broken Embraces",
+    "match_type": "mcp_confirmed",
+    "catalogue": "CINE.pdf",
+    "full_data": {
+      "Title": "Broken Embraces",
+      "Year": "2009",
+      "Rated": "R",
+      "Released": "15 Jan 2010",
+      "Runtime": "127 min",
+      "Genre": "Drama, Romance, Thriller",
+      "Director": "Pedro Almodóvar",
+      "Writer": "Pedro Almodóvar",
+      "Actors": "Penélope Cruz, Lluís Homar, Blanca Portillo",
+      "Plot": "Passion, obsession, wealth, jealousy, family, guilt, and creativity. In Madrid, Harry Caine is a blind screenwriter, assisted by Judit and her son Diego. The past comes rushing in when Harry learns of the death of Ernesto Martel, a wealthy businessman, and Ernesto's son pays Harry a visit. In a series of flashbacks to the 1990s, we see Harry, who was then Mateo Blanco, a director; he falls in love with Ernesto's mistress, Lena, and casts her in a film, which Ernesto finances. Ernesto is jealous and obsessive, sending his son to film the making of the movie, to follow Lena and Mateo, and to give him the daily footage. Judit doesn't like Lena. It's a collision course.",
+      "Language": "Spanish, English",
+      "Country": "Spain, United Kingdom",
+      "Awards": "Nominated for 1 BAFTA Award9 wins & 46 nominations total",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMzA1ODU3MzI2NF5BMl5BanBnXkFtZTcwMzc3MzA3Mg@@._V1_SX300.jpg",
+      "Ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.2/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "82%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "76/100"
+        }
+      ],
+      "Metascore": "76",
+      "imdbRating": "7.2",
+      "imdbVotes": "43,687",
+      "imdbID": "tt0913425",
+      "Type": "movie",
+      "DVD": "N/A",
+      "BoxOffice": "$5,014,305",
+      "Production": "N/A",
+      "Website": "N/A",
+      "Response": "True"
+    }
+  },
+  "Acorazado Potemkin, El": {
+    "imdb_id": "tt0015648",
+    "matched_title": "Battleship Potemkin",
+    "match_type": "mcp_confirmed",
+    "catalogue": "CINE.pdf",
+    "full_data": {
+      "Title": "Battleship Potemkin",
+      "Year": "1925",
+      "Rated": "Not Rated",
+      "Released": "24 Dec 1925",
+      "Runtime": "66 min",
+      "Genre": "Drama, History, Thriller",
+      "Director": "Sergei Eisenstein",
+      "Writer": "Nina Agadzhanova, Sergei Eisenstein, Grigoriy Aleksandrov",
+      "Actors": "Aleksandr Antonov, Vladimir Barskiy, Grigoriy Aleksandrov",
+      "Plot": "Based on the historical events the movie tells the story of a riot at the battleship Potemkin. What started as a protest strike when the crew was given rotten meat for dinner ended in a riot. The sailors raised the red flag and tried to ignite the revolution in their home port Odessa.",
+      "Language": "None, Russian, English",
+      "Country": "Soviet Union",
+      "Awards": "1 win total",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZmY5ZGQwMTEtM2E0ZC00NzVkLTgyYzktZDYxMjhiMzA5N2MzXkEyXkFqcGc@._V1_SX300.jpg",
+      "Ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.9/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "100%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "97/100"
+        }
+      ],
+      "Metascore": "97",
+      "imdbRating": "7.9",
+      "imdbVotes": "63,373",
+      "imdbID": "tt0015648",
+      "Type": "movie",
+      "DVD": "N/A",
+      "BoxOffice": "$51,198",
+      "Production": "N/A",
+      "Website": "N/A",
+      "Response": "True"
+    }
   }
 }

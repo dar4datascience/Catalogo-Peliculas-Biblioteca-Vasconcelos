@@ -270,28 +270,28 @@ Respond in this JSON format:
     }
     
     # Also attempt direct search to give immediate feedback
-    direct_result = search_movie_bilingual(raw_title)
-    
-    if direct_result.get("enriched"):
-        movie_data = direct_result.get("data", {})
+    direct_result = search_movie_bilingual(raw_title) or {}
+
+    if direct_result.get("imdbID"):
+        details = get_movie_details(direct_result["imdbID"]) or {}
         result["immediate_match"] = {
             "found": True,
-            "imdb_id": movie_data.get("imdbID"),
-            "title": movie_data.get("Title"),
-            "year": movie_data.get("Year"),
-            "director": movie_data.get("Director"),
+            "imdb_id": direct_result.get("imdbID"),
+            "title": details.get("Title") or direct_result.get("matched_title"),
+            "year": details.get("Year"),
+            "director": details.get("Director"),
             "match_type": direct_result.get("match_type"),
-            "confidence": "high" if direct_result.get("match_type") == "exact" else "medium"
+            "confidence": "high" if direct_result.get("match_type") in ("exact_spanish", "no_article", "english_fallback") else "medium"
         }
     else:
-        # Try fuzzy search
-        fuzzy_matches = find_best_fuzzy_match(raw_title, raw_title)
-        if fuzzy_matches:
-            result["fuzzy_candidates"] = fuzzy_matches[:3]
+        from omdb_client import broad_search_movie
+        candidates = broad_search_movie(raw_title) or []
+        fuzzy_best = find_best_fuzzy_match(raw_title, candidates) if candidates else None
+        if fuzzy_best:
             result["immediate_match"] = {
                 "found": False,
-                "suggested_candidates": len(fuzzy_matches),
-                "recommendation": "Review fuzzy matches and select best candidate"
+                "fuzzy_candidate": fuzzy_best,
+                "recommendation": "Review fuzzy candidate and confirm if correct"
             }
         else:
             result["immediate_match"] = {
@@ -526,21 +526,62 @@ async def handle_match_by_director(args: dict) -> list[TextContent]:
 
 async def handle_confirm_match(args: dict) -> list[TextContent]:
     """Confirm a movie match and update the Source of Truth."""
+    import re
+    import csv as csv_mod
+
     raw_title = args.get("raw_title", "")
     imdb_id = args.get("imdb_id", "")
-    
+
     if not raw_title or not imdb_id:
         return [TextContent(type="text", text="Error: raw_title and imdb_id are required")]
-    
+
     # Fetch full data from OMDB to store in SoT
     details = get_movie_details(imdb_id)
     if not details:
         return [TextContent(type="text", text=f"Error: Could not fetch details for IMDb ID {imdb_id}")]
-    
-    success = update_movie(raw_title, details, match_type="mcp_confirmed")
-    
+
+    # Look up catalogue_id from CSV
+    csv_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results', 'cine_hybrid_method.csv')
+    pdf_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'pdfs', 'CINE.pdf')
+    catalogue_id = None
+    page_number = None
+
+    try:
+        with open(csv_path, 'r', encoding='utf-8') as f:
+            for row in csv_mod.DictReader(f):
+                if row.get('title_spanish', '').strip() == raw_title:
+                    catalogue_id = int(row['id'])
+                    break
+    except Exception:
+        pass
+
+    # Look up page from PDF index
+    if catalogue_id:
+        try:
+            from pypdf import PdfReader
+            reader = PdfReader(pdf_path)
+            id_to_page: dict[int, int] = {}
+            for pnum, page in enumerate(reader.pages, 1):
+                text = page.extract_text() or ''
+                for m in re.finditer(r'(?:^|\n)\s*(\d{1,4})(?=\s|[A-ZÁÉÍÓÚÜÑa-záéíóúüñ¿¡])', text):
+                    n = int(m.group(1))
+                    if 1 <= n <= 9999 and n not in id_to_page:
+                        id_to_page[n] = pnum
+            page_number = id_to_page.get(catalogue_id)
+        except Exception:
+            pass
+
+    success = update_movie(
+        raw_title, details,
+        match_type="mcp_confirmed",
+        catalogue="CINE.pdf",
+        catalogue_id=catalogue_id,
+        page_number=page_number,
+    )
+
     if success:
-        return [TextContent(type="text", text=f"Successfully confirmed '{raw_title}' as '{details.get('Title')}' ({imdb_id}) and updated Source of Truth.")]
+        meta = f" | catalogue_id={catalogue_id}, page={page_number}" if catalogue_id else ""
+        return [TextContent(type="text", text=f"Successfully confirmed '{raw_title}' as '{details.get('Title')}' ({imdb_id}) and updated Source of Truth.{meta}")]
     else:
         return [TextContent(type="text", text="Error: Failed to update Source of Truth.")]
 

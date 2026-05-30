@@ -230,11 +230,15 @@ def main():
                     tq = f"{m2.group(2)} {m2.group(1)}".strip()
                 tq = tq.strip().rstrip('.')
 
-                dir_candidates = search_director_filmography(dir_clean, tq, min_score=65)
-                time.sleep(RATE_LIMIT_DELAY)
-                # Also try with English title if available and Spanish failed
-                if not dir_candidates and title_en:
+                # English title first — OMDB search handles it far better than accented Spanish
+                if title_en:
                     dir_candidates = search_director_filmography(dir_clean, title_en, min_score=65)
+                    time.sleep(RATE_LIMIT_DELAY)
+                else:
+                    dir_candidates = []
+                # Fallback to cleaned Spanish title
+                if not dir_candidates:
+                    dir_candidates = search_director_filmography(dir_clean, tq, min_score=65)
                     time.sleep(RATE_LIMIT_DELAY)
 
                 if dir_candidates:
