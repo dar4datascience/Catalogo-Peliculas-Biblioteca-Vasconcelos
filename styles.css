@@ -1,1 +1,255 @@
-/* Custom CSS styles can be added here */
+/* Custom CSS styles for Catálogo de Películas */
+
+/* ===== Stats Cards ===== */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* ===== Filter Inputs ===== */
+.filter-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+/* ===== Movie Grid ===== */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* ===== Movie Card ===== */
+.movie-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.movie-poster-container {
+  position: relative;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-poster {
+  transform: scale(1.05);
+}
+
+.rating-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.8);
+  color: #fbbf24;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* ===== Movie Info ===== */
+.movie-info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.3;
+  color: #1e293b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.original-title {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.movie-year {
+  font-size: 0.875rem;
+  color: #475569;
+  margin-bottom: 0.25rem;
+}
+
+.movie-director {
+  font-size: 0.875rem;
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.movie-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.genre-tag {
+  background: #e2e8f0;
+  color: #475569;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.movie-country {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.movie-plot {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.imdb-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.imdb-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== No Results ===== */
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  font-size: 1.1rem;
+  grid-column: 1 / -1;
+}
+
+/* ===== Download Button ===== */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1a365d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #2c5282;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .movie-title {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Navbar Customization ===== */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ===== Inputs Styling ===== */
+input[type="text"],
+select {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}

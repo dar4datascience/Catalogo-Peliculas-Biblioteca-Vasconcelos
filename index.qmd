@@ -5,83 +5,206 @@ execute:
   warning: false
 ---
 
-## Catálogo Interactivo
+## 🎬 Catálogo Interactivo
 
-```{r}
-#| label: setup
-#| echo: false
-#| message: false
-#| warning: false
-#| column: screen
+Explora el catálogo de películas de la Biblioteca Vasconcelos. Usa los filtros para buscar por categoría, título, director o género.
 
-library(readr)
-library(dplyr)
-library(reactable)
-library(reactablefmtr)
-library(htmltools)
-library(fontawesome)
-library(jsonlite)
+```{ojs}
+//| echo: false
 
-# Load the data and pass to JavaScript
-movies_data <- readr::read_csv("data/final_results/all_movies.csv") |>
-  mutate(
-    Poster = if_else(is.na(Poster) | Poster == "N/A", "https://i.imgur.com/Ngnm5v6.png", Poster)
-  ) |> 
-  dplyr::relocate(
-    Poster, 
-    .before = Title
-  )
+// Load movie data from JSON
+catalog = FileAttachment("data/final_results/catalog.json").json()
 
-# Main reactable table
-htmltools::browsable(
-  tagList(
-    tags$button(
-      tagList(fontawesome::fa("download"), "Download All as CSV"),
-      onclick = "Reactable.downloadDataCSV('movie-catalog-table', 'movies.csv')"
-    ),
-    reactable(
-      movies_data,
-      elementId = "movie-catalog-table",
-  columns = list(
-    Poster = colDef(
-      name = 'Poster',
-      cell = function(value, index) {
-        imdb_url <- paste0("https://www.imdb.com/title/", movies_data$imdbID[index])
-        htmltools::tags$a(href = imdb_url, target = "_blank", 
-          htmltools::tags$img(src = value, height = "200px", width = "150px")
-        )
-      }
-    ),
-    Title = colDef(name = 'Pelicula'),
-    Released = colDef(name = 'Lanzamiento'),
-    Rated = colDef(name = 'Clasificación'),
-    Director = colDef(name = 'Director'),
-    Writer = colDef(name = 'Escritor'),
-    Country = colDef(name = 'País'),
-    Plot = colDef(name = 'Trama'),
-    Genre = colDef(name = "Generos"),
-    # Hide columns not needed for display
-    imdbID = colDef(show = FALSE),
-    Year = colDef(show = FALSE),
-    Ratings = colDef(show = FALSE),
-    Metascore = colDef(show = FALSE),
-    imdbRating = colDef(show = FALSE),
-    imdbVotes = colDef(show = FALSE),
-    Type = colDef(show = FALSE),
-    DVD = colDef(show = FALSE),
-    BoxOffice = colDef(show = FALSE),
-    Production = colDef(show = FALSE),
-    Website = colDef(show = FALSE),
-    Response = colDef(show = FALSE),
-    OriginalTitle = colDef(show = FALSE),
-    Awards = colDef(show = FALSE),
-    totalSeasons = colDef(show = FALSE),
-    SourcePDF = colDef(show = FALSE)
-  ),
-  searchable = TRUE,
-  pagination = TRUE,
-  defaultColDef = colDef(align = 'center')
-    )
-  )
-)
+// Extract movies array
+movies = catalog.movies || []
+
+// Get unique categories for filter
+categories = [...new Set(movies.map(m => m.pdf_category || "Sin categoría"))].sort()
+
+// Get unique genres for filter (flatten and dedupe)
+genres = [...new Set(movies.flatMap(m => m.genre || []))].sort()
+
+// Stats
+enrichedCount = movies.filter(m => m.enriched).length
+totalCount = movies.length
 ```
+
+### 📊 Estadísticas del Catálogo
+
+```{ojs}
+//| echo: false
+// Display stats cards
+html`<div class="stats-container">
+  <div class="stat-card">
+    <div class="stat-value">${totalCount}</div>
+    <div class="stat-label">Total Películas</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">${enrichedCount}</div>
+    <div class="stat-label">Con Datos OMDB</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">${categories.length}</div>
+    <div class="stat-label">Categorías</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">${genres.length}</div>
+    <div class="stat-label">Géneros</div>
+  </div>
+</div>`
+```
+
+### 🔍 Filtros
+
+```{ojs}
+//| echo: false
+
+// Search input
+viewof searchQuery = Inputs.text({
+  label: "Buscar",
+  placeholder: "Título, director, género, país...",
+  value: ""
+})
+
+// Category filter
+viewof selectedCategory = Inputs.select(
+  ["Todas", ...categories],
+  {label: "Categoría", value: "Todas"}
+)
+
+// Genre filter
+viewof selectedGenre = Inputs.select(
+  ["Todos", ...genres],
+  {label: "Género", value: "Todos"}
+)
+
+// Director filter (dynamic based on data)
+directors = [...new Set(movies.map(m => m.director).filter(Boolean))].sort()
+viewof selectedDirector = Inputs.select(
+  ["Todos", ...directors.slice(0, 50)],  // Limit to top 50
+  {label: "Director", value: "Todos"}
+)
+
+// Reset button
+viewof resetFilters = Inputs.button("Restablecer filtros", {value: null})
+
+// Reactive: Reset filters when button clicked
+if (resetFilters) {
+  searchQuery.value = ""
+  selectedCategory.value = "Todas"
+  selectedGenre.value = "Todos"
+  selectedDirector.value = "Todos"
+}
+
+// Filtered movies (reactive)
+filteredMovies = {
+  let result = movies;
+
+  // Category filter
+  if (selectedCategory !== "Todas") {
+    result = result.filter(m => m.pdf_category === selectedCategory);
+  }
+
+  // Genre filter
+  if (selectedGenre !== "Todos") {
+    result = result.filter(m => (m.genre || []).includes(selectedGenre));
+  }
+
+  // Director filter
+  if (selectedDirector !== "Todos") {
+    result = result.filter(m => m.director === selectedDirector);
+  }
+
+  // Search query filter
+  if (searchQuery) {
+    const query = searchQuery.toLowerCase();
+    result = result.filter(m =>
+      (m.search_text || "").includes(query) ||
+      (m.title || "").toLowerCase().includes(query) ||
+      (m.director || "").toLowerCase().includes(query) ||
+      (m.country || "").toLowerCase().includes(query)
+    );
+  }
+
+  return result;
+}
+```
+
+### 🎥 Resultados (${filteredMovies.length} películas)
+
+```{ojs}
+//| echo: false
+
+// Category badge colors
+const categoryColors = {
+  "BLU- RAY": "#3b82f6",
+  "BLU-RAY": "#3b82f6",
+  "CINE": "#f59e0b",
+  "PELICULAS INFANTILES": "#10b981",
+  "PISO 7": "#8b5cf6",
+  "PRESTAMO EN SALA 2026": "#ec4899",
+  "DOCUMENTALES": "#6366f1",
+  "IDIOMAS": "#14b8a6",
+  "ESTUDIO  GHIBLI": "#f97316",
+  "PELICULAS CHINAS": "#ef4444",
+  "RUSAS": "#dc2626"
+};
+
+// Movie grid
+movieGrid = {
+  if (filteredMovies.length === 0) {
+    return html`<div class="no-results">No se encontraron películas con los filtros seleccionados.</div>`;
+  }
+
+  const grid = html`<div class="movie-grid"></div>`;
+
+  for (const movie of filteredMovies) {
+    const poster = movie.poster || "https://i.imgur.com/Ngnm5v6.png";
+    const imdbUrl = movie.imdb_id ? `https://www.imdb.com/title/${movie.imdb_id}` : null;
+    const categoryColor = categoryColors[movie.pdf_category] || "#6b7280";
+
+    const card = html`
+      <div class="movie-card">
+        <div class="movie-poster-container">
+          <img class="movie-poster" src="${poster}" alt="${movie.title}" loading="lazy"
+               onerror="this.src='https://i.imgur.com/Ngnm5v6.png'">
+          ${movie.imdb_rating ? html`<div class="rating-badge">⭐ ${movie.imdb_rating}</div>` : null}
+        </div>
+        <div class="movie-info">
+          <div class="category-badge" style="background: ${categoryColor}20; color: ${categoryColor}; border-color: ${categoryColor}">
+            ${movie.category_display || movie.pdf_category}
+          </div>
+          <h3 class="movie-title" title="${movie.title}">${movie.title}</h3>
+          ${movie.matched_title && movie.matched_title !== movie.title ?
+            html`<div class="original-title">${movie.matched_title}</div>` : null}
+          ${movie.year ? html`<div class="movie-year">📅 ${movie.year}</div>` : null}
+          ${movie.director ? html`<div class="movie-director">🎬 ${movie.director}</div>` : null}
+          ${movie.genre?.length ? html`<div class="movie-genres">${movie.genre.slice(0, 3).map(g =>
+            html`<span class="genre-tag">${g}</span>`
+          )}</div>` : null}
+          ${movie.country ? html`<div class="movie-country">🌍 ${movie.country}</div>` : null}
+          ${movie.plot ? html`<div class="movie-plot">${movie.plot.substring(0, 120)}${movie.plot.length > 120 ? "..." : ""}</div>` : null}
+          ${imdbUrl ? html`<a href="${imdbUrl}" target="_blank" class="imdb-link">Ver en IMDb →</a>` : null}
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  }
+
+  return grid;
+}
+
+movieGrid
+```
+
+### 📥 Descargar Datos
+
+```{ojs}
+//| echo: false
+// Download button
+html`<a href="data/final_results/catalog.json" download class="download-btn">
+  📥 Descargar JSON completo
+</a>`
+```
+
+*Datos extraídos de catálogos PDF y enriquecidos con [OMDB API](https://www.omdbapi.com/)*

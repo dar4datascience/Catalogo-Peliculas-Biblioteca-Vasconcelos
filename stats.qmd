@@ -1,0 +1,255 @@
+---
+title: "Estadísticas"
+execute:
+  echo: false
+  warning: false
+---
+
+## 📊 Estadísticas del Catálogo
+
+Visualizaciones del catálogo de películas de la Biblioteca Vasconcelos.
+
+```{ojs}
+//| echo: false
+
+// Load data
+catalog = FileAttachment("data/final_results/catalog.json").json()
+movies = catalog.movies || []
+
+// Helper: Count occurrences
+function countBy(array, key) {
+  const counts = {};
+  for (const item of array) {
+    const value = item[key];
+    if (value) {
+      counts[value] = (counts[value] || 0) + 1;
+    }
+  }
+  return Object.entries(counts).sort((a, b) => b[1] - a[1]);
+}
+
+// Helper: Count array values (for genres)
+function countArrayValues(array, key) {
+  const counts = {};
+  for (const item of array) {
+    const values = item[key] || [];
+    for (const value of values) {
+      if (value) {
+        counts[value] = (counts[value] || 0) + 1;
+      }
+    }
+  }
+  return Object.entries(counts).sort((a, b) => b[1] - a[1]);
+}
+
+// Stats
+totalCount = movies.length
+enrichedCount = movies.filter(m => m.enriched).length
+withPoster = movies.filter(m => m.poster && m.poster !== "https://i.imgur.com/Ngnm5v6.png").length
+withDirector = movies.filter(m => m.director).length
+withYear = movies.filter(m => m.year).length
+```
+
+### 📈 Resumen General
+
+```{ojs}
+//| echo: false
+html`<div class="stats-container">
+  <div class="stat-card">
+    <div class="stat-value">${totalCount}</div>
+    <div class="stat-label">Total Películas</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">${enrichedCount}</div>
+    <div class="stat-label">Enriquecidas (OMDB)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">${withPoster}</div>
+    <div class="stat-label">Con Poster</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">${withDirector}</div>
+    <div class="stat-label">Con Director</div>
+  </div>
+</div>`
+```
+
+### 📁 Películas por Categoría
+
+```{ojs}
+//| echo: false
+
+categoryCounts = countBy(movies, "category_display")
+
+Plot.plot({
+  marginLeft: 150,
+  height: 300,
+  x: {label: "Número de películas", grid: true},
+  y: {label: null},
+  marks: [
+    Plot.barX(categoryCounts, {
+      y: d => d[0],
+      x: d => d[1],
+      fill: "#667eea",
+      tip: true
+    }),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+### 🎬 Géneros Más Frecuentes
+
+```{ojs}
+//| echo: false
+
+genreCounts = countArrayValues(movies, "genre").slice(0, 15)
+
+Plot.plot({
+  marginLeft: 150,
+  height: 400,
+  x: {label: "Número de películas", grid: true},
+  y: {label: null},
+  marks: [
+    Plot.barX(genreCounts, {
+      y: d => d[0],
+      x: d => d[1],
+      fill: "#10b981",
+      tip: true
+    }),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+### 📅 Distribución por Década
+
+```{ojs}
+//| echo: false
+
+decadeData = movies
+  .filter(m => m.decade)
+  .map(m => ({decade: m.decade}))
+
+decadeCounts = countBy(decadeData, "decade")
+  .sort((a, b) => a[0] - b[0])
+
+Plot.plot({
+  height: 300,
+  x: {label: "Década", tickFormat: d => d + "s"},
+  y: {label: "Número de películas", grid: true},
+  marks: [
+    Plot.barY(decadeCounts, {
+      x: d => d[0],
+      y: d => d[1],
+      fill: "#f59e0b",
+      tip: true
+    }),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+### 🌍 Películas por País (Top 15)
+
+```{ojs}
+//| echo: false
+
+// Parse countries (can be comma-separated)
+countryData = movies.flatMap(m => {
+  const countries = (m.country || "").split(",").map(c => c.trim()).filter(Boolean);
+  return countries.map(c => ({country: c}));
+});
+
+countryCounts = countBy(countryData, "country").slice(0, 15)
+
+Plot.plot({
+  marginLeft: 150,
+  height: 400,
+  x: {label: "Número de películas", grid: true},
+  y: {label: null},
+  marks: [
+    Plot.barX(countryCounts, {
+      y: d => d[0],
+      x: d => d[1],
+      fill: "#ec4899",
+      tip: true
+    }),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+### 🎬 Directores Más Frecuentes (Top 15)
+
+```{ojs}
+//| echo: false
+
+// Parse directors (can be comma-separated)
+directorData = movies.flatMap(m => {
+  const directors = (m.director || "").split(",").map(d => d.trim()).filter(Boolean);
+  return directors.map(d => ({director: d}));
+});
+
+directorCounts = countBy(directorData, "director").slice(0, 15)
+
+Plot.plot({
+  marginLeft: 200,
+  height: 400,
+  x: {label: "Número de películas", grid: true},
+  y: {label: null},
+  marks: [
+    Plot.barX(directorCounts, {
+      y: d => d[0],
+      x: d => d[1],
+      fill: "#8b5cf6",
+      tip: true
+    }),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+### ⭐ Distribución de Ratings IMDb
+
+```{ojs}
+//| echo: false
+
+ratingData = movies
+  .filter(m => m.imdb_rating && m.imdb_rating !== "N/A")
+  .map(m => ({
+    rating: parseFloat(m.imdb_rating),
+    title: m.title
+  }))
+  .filter(m => !isNaN(m.rating))
+
+// Bin ratings
+ratingBins = {};
+for (const {rating} of ratingData) {
+  const bin = Math.floor(rating);
+  ratingBins[bin] = (ratingBins[bin] || 0) + 1;
+}
+
+ratingBinData = Object.entries(ratingBins)
+  .map(([rating, count]) => ({rating: parseInt(rating), count}))
+  .sort((a, b) => a.rating - b.rating)
+
+Plot.plot({
+  height: 300,
+  x: {label: "Rating IMDb", tickFormat: d => d + "-" + (d+1)},
+  y: {label: "Número de películas", grid: true},
+  marks: [
+    Plot.barY(ratingBinData, {
+      x: d => d.rating,
+      y: d => d.count,
+      fill: "#fbbf24",
+      tip: true
+    }),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+---
+
+*Generado el ${new Date().toLocaleDateString('es-MX')} desde datos de OMDB API*

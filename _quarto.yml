@@ -1,17 +1,30 @@
 project:
   type: website
+  title: "Catálogo de Películas - Biblioteca Vasconcelos"
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "!README.md"
 
 website:
   title: "Catálogo de Películas"
+  description: "Sistema de consulta del catálogo de películas de la Biblioteca Vasconcelos"
+  site-url: https://dar4datascience.github.io/Catalogo-Peliculas-Biblioteca-Vasconcelos/
+  repo-url: https://github.com/dar4datascience/Catalogo-Peliculas-Biblioteca-Vasconcelos
+
   navbar:
+    background: "#1a365d"
+    title: "🎬 Catálogo de Películas"
     left:
-      - href: index.qmd
-        text: Home
+      - text: "Catálogo"
+        href: index.qmd
+      - text: "Estadísticas"
+        href: stats.qmd
 
 format:
   html:
     theme: cosmo
     css: styles.css
-    toc: true
+    toc: false
+    page-layout: full
 
