@@ -17,6 +17,7 @@ from models import Movie
 from tmdb_client import enrich_movie_with_tmdb, search_person, get_person_movie_credits
 from tmdb_pipeline import get_unique_directors_from_csv, load_director_cache, fetch_director_filmography
 from reconciliation import compare_matches, tag_conflict_resolution, get_all_conflicts, load_catalog_data
+from tmdb_duckdb import TMDBDuckDB
 
 
 app = Server("movie-catalog-mcp")
@@ -267,6 +268,64 @@ The LLM should reason: 'Which of these films directed by <director> best matches
                 "type": "object",
                 "properties": {}
             }
+        ),
+        Tool(
+            name="match_with_duckdb",
+            description="Use DuckDB with Jaro-Winkler similarity for efficient movie matching. Faster than TMDB API calls for batch operations, uses pre-loaded director filmographies.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "raw_title": {
+                        "type": "string",
+                        "description": "Movie title from the catalog"
+                    },
+                    "director": {
+                        "type": "string",
+                        "description": "Director name"
+                    },
+                    "min_similarity": {
+                        "type": "number",
+                        "description": "Minimum Jaro-Winkler similarity (0-1, default 0.6)",
+                        "default": 0.6
+                    }
+                },
+                "required": ["raw_title", "director"]
+            }
+        ),
+        Tool(
+            name="get_duckdb_stats",
+            description="Get DuckDB database statistics: director count, movies, and similarity score distribution for all cached matches.",
+            inputSchema={
+                "type": "object",
+                "properties": {}
+            }
+        ),
+        Tool(
+            name="batch_match_duckdb",
+            description="Batch match multiple movies using DuckDB. Provide a list of title/director pairs for efficient bulk matching.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "movies": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {"type": "string"},
+                                "director": {"type": "string"}
+                            },
+                            "required": ["title", "director"]
+                        },
+                        "description": "List of movies to match"
+                    },
+                    "min_similarity": {
+                        "type": "number",
+                        "description": "Minimum Jaro-Winkler similarity",
+                        "default": 0.6
+                    }
+                },
+                "required": ["movies"]
+            }
         )
     ]
 
@@ -299,6 +358,12 @@ async def call_tool(name: str, arguments: Any) -> list[TextContent]:
         return await handle_get_tmdb_match_report(arguments)
     elif name == "get_conflicts_for_review":
         return await handle_get_conflicts_for_review(arguments)
+    elif name == "match_with_duckdb":
+        return await handle_match_with_duckdb(arguments)
+    elif name == "get_duckdb_stats":
+        return await handle_get_duckdb_stats(arguments)
+    elif name == "batch_match_duckdb":
+        return await handle_batch_match_duckdb(arguments)
     else:
         return [TextContent(type="text", text=f"Unknown tool: {name}")]
 
@@ -857,6 +922,87 @@ async def handle_get_conflicts_for_review(args: dict) -> list[TextContent]:
         }
         
         return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+    except Exception as e:
+        return [TextContent(type="text", text=f"Error: {str(e)}")]
+
+
+async def handle_match_with_duckdb(args: dict) -> list[TextContent]:
+    """Match a movie using DuckDB's Jaro-Winkler similarity."""
+    raw_title = args.get("raw_title", "").strip()
+    director = args.get("director", "").strip()
+    min_similarity = args.get("min_similarity", 0.6)
+    
+    if not raw_title or not director:
+        return [TextContent(type="text", text="Error: raw_title and director are required")]
+    
+    try:
+        with TMDBDuckDB() as db:
+            match = db.find_best_match(raw_title, director, min_similarity)
+            
+            if match:
+                # Calculate confidence
+                confidence_data = db._calculate_confidence(raw_title, match)
+                result = {
+                    "catalog_title": raw_title,
+                    "director": director,
+                    "matched": True,
+                    "match": match,
+                    "confidence": confidence_data
+                }
+            else:
+                result = {
+                    "catalog_title": raw_title,
+                    "director": director,
+                    "matched": False,
+                    "note": f"No match found with similarity >= {min_similarity}"
+                }
+            
+            return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+    except Exception as e:
+        return [TextContent(type="text", text=f"Error: {str(e)}")]
+
+
+async def handle_get_duckdb_stats(args: dict) -> list[TextContent]:
+    """Get DuckDB database statistics."""
+    try:
+        with TMDBDuckDB() as db:
+            stats = db.get_stats()
+            
+            result = {
+                "database_file": str(db.db_path),
+                "statistics": stats
+            }
+            
+            return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+    except Exception as e:
+        return [TextContent(type="text", text=f"Error: {str(e)}")]
+
+
+async def handle_batch_match_duckdb(args: dict) -> list[TextContent]:
+    """Batch match multiple movies using DuckDB."""
+    movies = args.get("movies", [])
+    min_similarity = args.get("min_similarity", 0.6)
+    
+    if not movies:
+        return [TextContent(type="text", text="Error: movies list is required")]
+    
+    try:
+        with TMDBDuckDB() as db:
+            results = db.batch_find_matches(movies, min_similarity)
+            
+            # Calculate summary
+            matched = sum(1 for r in results if r.get("matched"))
+            high_confidence = sum(1 for r in results if r.get("confidence", 0) >= 90)
+            
+            summary = {
+                "total": len(results),
+                "matched": matched,
+                "unmatched": len(results) - matched,
+                "high_confidence": high_confidence,
+                "results": results[:20]  # First 20 for brevity
+            }
+            
+            return [TextContent(type="text", text=json.dumps(summary, indent=2, ensure_ascii=False))]
     except Exception as e:
         return [TextContent(type="text", text=f"Error: {str(e)}")]
 
