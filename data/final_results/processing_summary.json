@@ -1,0 +1,145 @@
+{
+  "total_movies": 4370,
+  "enriched_movies": 1521,
+  "enrichment_rate": 0.3480549199084668,
+  "categories": [
+    "DOCUMENTALES",
+    "PELICULAS CHINAS",
+    "PELICULAS INFANTILES",
+    "PISO 7",
+    "PRESTAMO EN SALA 2026",
+    "BLU- RAY",
+    "CINE",
+    "IDIOMAS"
+  ],
+  "pdf_sources": [
+    {
+      "file_name": "ESTUDIO  GHIBLI.pdf",
+      "category": "ESTUDIO  GHIBLI",
+      "page_count": 1,
+      "has_index": false,
+      "index_entries": []
+    },
+    {
+      "file_name": "PELICULAS CHINAS.pdf",
+      "category": "PELICULAS CHINAS",
+      "page_count": 4,
+      "has_index": false,
+      "index_entries": []
+    },
+    {
+      "file_name": "CINE.pdf",
+      "category": "CINE",
+      "page_count": 55,
+      "has_index": false,
+      "index_entries": []
+    },
+    {
+      "file_name": "PRESTAMO EN SALA 2026.pdf",
+      "category": "PRESTAMO EN SALA 2026",
+      "page_count": 18,
+      "has_index": false,
+      "index_entries": []
+    },
+    {
+      "file_name": "DOCUMENTALES.pdf",
+      "category": "DOCUMENTALES",
+      "page_count": 60,
+      "has_index": false,
+      "index_entries": []
+    },
+    {
+      "file_name": "BLU- RAY.pdf",
+      "category": "BLU- RAY",
+      "page_count": 7,
+      "has_index": false,
+      "index_entries": []
+    },
+    {
+      "file_name": "RUSAS.pdf",
+      "category": "RUSAS",
+      "page_count": 1,
+      "has_index": false,
+      "index_entries": []
+    },
+    {
+      "file_name": "PELICULAS INFANTILES.pdf",
+      "category": "PELICULAS INFANTILES",
+      "page_count": 10,
+      "has_index": false,
+      "index_entries": []
+    },
+    {
+      "file_name": "PISO 7.pdf",
+      "category": "PISO 7",
+      "page_count": 14,
+      "has_index": false,
+      "index_entries": []
+    },
+    {
+      "file_name": "IDIOMAS.pdf",
+      "category": "IDIOMAS",
+      "page_count": 24,
+      "has_index": false,
+      "index_entries": []
+    }
+  ],
+  "pdf_stats": [
+    {
+      "pdf_file": "DOCUMENTALES.pdf",
+      "total_movies": 1147,
+      "enriched_movies": 169,
+      "success_rate": 0.14734088927637315,
+      "failed_movies": 978
+    },
+    {
+      "pdf_file": "IDIOMAS.pdf",
+      "total_movies": 63,
+      "enriched_movies": 11,
+      "success_rate": 0.1746031746031746,
+      "failed_movies": 52
+    },
+    {
+      "pdf_file": "PELICULAS CHINAS.pdf",
+      "total_movies": 93,
+      "enriched_movies": 25,
+      "success_rate": 0.26881720430107525,
+      "failed_movies": 68
+    },
+    {
+      "pdf_file": "PELICULAS INFANTILES.pdf",
+      "total_movies": 258,
+      "enriched_movies": 80,
+      "success_rate": 0.31007751937984496,
+      "failed_movies": 178
+    },
+    {
+      "pdf_file": "PRESTAMO EN SALA 2026.pdf",
+      "total_movies": 254,
+      "enriched_movies": 93,
+      "success_rate": 0.3661417322834646,
+      "failed_movies": 161
+    },
+    {
+      "pdf_file": "PISO 7.pdf",
+      "total_movies": 309,
+      "enriched_movies": 119,
+      "success_rate": 0.3851132686084142,
+      "failed_movies": 190
+    },
+    {
+      "pdf_file": "BLU- RAY.pdf",
+      "total_movies": 182,
+      "enriched_movies": 78,
+      "success_rate": 0.42857142857142855,
+      "failed_movies": 104
+    },
+    {
+      "pdf_file": "CINE.pdf",
+      "total_movies": 2064,
+      "enriched_movies": 946,
+      "success_rate": 0.4583333333333333,
+      "failed_movies": 1118
+    }
+  ]
+}

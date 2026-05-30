@@ -1,9 +1,30 @@
 import re
 from pathlib import Path
+from typing import Optional
 
 import camelot
 import pandas as pd
 from PyPDF2 import PdfReader
+
+
+# Director pattern variations for regex extraction
+DIR_PATTERNS = [
+    r'Director:',  # Director: (capital D)
+    r'Dir\.\s*y\s*prod\.',
+    r'Dir\.',  # Dir.
+    r'dir\.',  # dir.
+    r'Dir:',  # Dir: (colon, no period)
+    r'dir:',  # dir:
+    r'Dir,',  # Dir, (comma)
+    r'Dir\.{2,}',  # Dir.. (double period)
+    r'Escrita\s+y\s*Dir\.',  # Escrita y Dir.
+    r'Escrita\s+y\s*dir\.',  # Escrita y dir.
+    r'Escrita\s+y\s*Dir',  # Escrita y Dir (no period)
+    r'prod\.\s*y\s*guion',
+    r'escrito\s+por',
+    r'Dir\s+',  # Dir (just space, no punctuation)
+]
+DIR_PATTERN_COMBINED = '|'.join(DIR_PATTERNS)
 
 
 def extract_tables_from_pdf(pdf_path):
@@ -178,3 +199,299 @@ def get_context_around_title(pdf_path, title, context_pages=1):
     except Exception as e:
         print(f"Error searching for '{title}' in {pdf_path}: {e}")
         return {'found': False, 'pdf_file': Path(pdf_path).name, 'error': str(e)}
+
+
+# ============================================================================
+# METHOD 1: Regex-Based Text Extraction for CINE.pdf
+# ============================================================================
+
+def extract_cine_regex(pdf_path: str) -> pd.DataFrame:
+    """
+    Method 1: Extract movie entries from CINE.pdf using regex-based parsing.
+
+    Handles mixed formatting:
+    - ID sometimes attached to title: "817Gánster americano"
+    - Bilingual titles: "Spanish = English" or "Spanish - English"
+    - Director variations: "Dir.", "Escrita y Dir.", "Dir. y prod."
+
+    Args:
+        pdf_path: Path to CINE.pdf
+
+    Returns:
+        DataFrame with columns: id, title_spanish, title_english, director, raw_line
+    """
+    entries = []
+    reader = PdfReader(pdf_path)
+
+    for page in reader.pages:
+        text = page.extract_text() or ""
+        lines = text.split('\n')
+
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+
+            # Try to extract entry
+            entry = _parse_cine_line(line)
+            if entry:
+                entries.append(entry)
+
+    return pd.DataFrame(entries)
+
+
+def _parse_cine_line(line: str) -> Optional[dict]:
+    """
+    Parse a single line from CINE.pdf into structured data.
+
+    Pattern: ID Title[ = or - English] Director_Pattern Director_Name[; extra]
+    """
+    # Normalize non-breaking spaces to regular spaces
+    line = line.replace('\xa0', ' ')
+
+    # Skip lines without numeric ID at start
+    if not re.match(r'^\d+', line):
+        return None
+
+    # Extract ID (first digits)
+    id_match = re.match(r'^(\d+)\s*', line)
+    if not id_match:
+        return None
+
+    movie_id = int(id_match.group(1))
+    remaining = line[id_match.end():]
+
+    # Special case: If remaining starts with "Dir." immediately, the title IS the ID
+    # e.g., "1984Dir. Michael Radford" -> ID=1984, Title="1984"
+    if re.match(r'^Dir\.', remaining, re.IGNORECASE):
+        title_part = str(movie_id)  # Title is the year/movie name
+        dir_match = re.search(f'({DIR_PATTERN_COMBINED})', remaining, re.IGNORECASE)
+        if dir_match:
+            dir_part = remaining[dir_match.start():]
+        else:
+            dir_part = remaining
+        dir_name = _extract_director_name(dir_part)
+        return {
+            'id': movie_id,
+            'title_spanish': title_part,
+            'title_english': None,
+            'director': dir_name,
+            'raw_line': line
+        }
+
+    # Find director pattern to split title from director
+    dir_regex = re.compile(f'({DIR_PATTERN_COMBINED})', re.IGNORECASE)
+    dir_match = dir_regex.search(remaining)
+
+    if not dir_match:
+        # No director found - might be a malformed entry
+        return {
+            'id': movie_id,
+            'title_spanish': remaining.strip(),
+            'title_english': None,
+            'director': None,
+            'raw_line': line
+        }
+
+    # Split title and director parts
+    title_part = remaining[:dir_match.start()].strip()
+    dir_part = remaining[dir_match.start():].strip()
+
+    # Parse bilingual title
+    title_spanish, title_english = _parse_bilingual_title(title_part)
+
+    # Extract director name (everything after director pattern, up to ; or end)
+    dir_name = _extract_director_name(dir_part)
+
+    return {
+        'id': movie_id,
+        'title_spanish': title_spanish,
+        'title_english': title_english,
+        'director': dir_name,
+        'raw_line': line
+    }
+
+
+def _parse_bilingual_title(title_part: str) -> tuple:
+    """
+    Parse title into Spanish and English parts.
+    Handles: "Spanish = English" or "Spanish - English"
+    Also handles incomplete English titles (truncated)
+    """
+    # Pattern: equals sign separator (most common)
+    equals_match = re.match(r'^(.*?)\s*=\s*(.+)$', title_part)
+    if equals_match:
+        spanish = equals_match.group(1).strip()
+        english = equals_match.group(2).strip()
+        # Clean up incomplete English titles
+        if english.lower() in ['where do', 'he', 'the', 'that into you', 'heaven']:
+            # Truncated - don't split
+            return (title_part, None)
+        return (spanish, english)
+
+    # Pattern: dash separator (e.g., "Un beso más - The last kiss")
+    # Only match if English part starts with capital letter (article or proper noun)
+    dash_match = re.match(r'^(.+?)\s+-\s+([A-Z][a-zA-Z\s]+)$', title_part)
+    if dash_match:
+        spanish = dash_match.group(1).strip()
+        english = dash_match.group(2).strip()
+        # Validate English part looks like a title (at least 2 words or proper noun)
+        if len(english.split()) >= 2 or english.lower() not in ['el', 'la', 'los', 'las', 'un', 'una']:
+            return (spanish, english)
+
+    # Single title (Spanish only)
+    return (title_part, None)
+
+
+def _extract_director_name(dir_part: str) -> Optional[str]:
+    """
+    Extract director name from director field.
+    Removes the director pattern prefix and trailing metadata.
+    Handles non-breaking spaces (\xa0) and various punctuation.
+    """
+    # Normalize non-breaking spaces to regular spaces
+    dir_part = dir_part.replace('\xa0', ' ')
+
+    # Remove director pattern prefix
+    dir_regex = re.compile(f'^({DIR_PATTERN_COMBINED})\\s*', re.IGNORECASE)
+    name = dir_regex.sub('', dir_part).strip()
+
+    # Strip trailing metadata (after ; or . at end)
+    name = re.split(r'\s*[;.]', name)[0].strip()
+
+    return name if name else None
+
+
+# ============================================================================
+# METHOD 2: Hybrid Text+Regex Extraction (PyPDF2 + Smart Line Reconstruction)
+# ============================================================================
+
+def extract_cine_hybrid(pdf_path: str) -> pd.DataFrame:
+    """
+    Method 2: Extract movie entries using PyPDF2 with multi-line entry reconstruction.
+
+    This method handles entries that span multiple lines by:
+    1. Detecting continuation lines (don't start with numeric ID)
+    2. Reconstructing complete entries before parsing
+    3. Using the same parsing logic as Method 1
+
+    Args:
+        pdf_path: Path to CINE.pdf
+
+    Returns:
+        DataFrame with columns: id, title_spanish, title_english, director, raw_line
+    """
+    entries = []
+    reader = PdfReader(pdf_path)
+
+    current_entry_lines = []
+
+    for page in reader.pages:
+        text = page.extract_text() or ""
+        lines = text.split('\n')
+
+        for line in lines:
+            # Only strip leading space, preserve trailing space for word reconstruction
+            line = line.lstrip()
+            if not line:
+                continue
+
+            # Check if this is a new entry (starts with numeric ID)
+            # ID must be followed by: space, end of string, OR any character (including ¿, letters, etc.)
+            # Avoid false positives like "2 : El Gran Houdini" being parsed as ID 2
+            if re.match(r'^\d+(?:\s|$|.)', line) and not re.match(r'^\d+\s*:\s', line):
+                # Process previous entry if exists
+                if current_entry_lines:
+                    entry = _parse_reconstructed_entry(current_entry_lines)
+                    if entry:
+                        entries.append(entry)
+                    current_entry_lines = []
+
+                # Start new entry
+                current_entry_lines = [line]
+            else:
+                # Continuation of previous entry
+                if current_entry_lines:
+                    current_entry_lines.append(line)
+
+        # Process last entry on page
+        if current_entry_lines:
+            entry = _parse_reconstructed_entry(current_entry_lines)
+            if entry:
+                entries.append(entry)
+            current_entry_lines = []
+
+    return pd.DataFrame(entries)
+
+
+def _parse_reconstructed_entry(lines: list) -> Optional[dict]:
+    """
+    Parse a multi-line entry that has been reconstructed.
+    Joins lines with space, handling word boundaries intelligently.
+    PDF splits words across lines (e.g., 'Wh' + 'ere' -> 'Where')
+    """
+    if not lines:
+        return None
+
+    raw_line = lines[0]
+    for i in range(1, len(lines)):
+        next_line = lines[i]
+
+        # Check last char of current and first char of next
+        prev_last = raw_line[-1] if raw_line else ' '
+        next_first = next_line[0] if next_line else ' '
+
+        # Case 1: Word split across lines (e.g., "Wh" + "ere")
+        # Join without space if prev ends with lowercase and next starts with lowercase
+        word_continuation = prev_last.islower() and next_first.islower()
+
+        # Case 2: Already have space or next starts with space/punctuation
+        has_separator = prev_last.isspace() or next_first.isspace() or next_first in '.,;:!?'
+
+        # Case 3: Separator characters (= or - at end of line)
+        is_separator = prev_last in '=-'
+
+        if word_continuation or has_separator or is_separator:
+            raw_line += next_line
+        else:
+            raw_line += ' ' + next_line
+
+    return _parse_cine_line(raw_line)
+
+
+# ============================================================================
+# Comparison and Testing Utilities
+# ============================================================================
+
+def compare_extraction_methods(pdf_path: str, sample_size: int = 50) -> dict:
+    """
+    Run both extraction methods and compare results.
+
+    Returns:
+        dict with metrics for both methods
+    """
+    print("Running Method 1: Regex-based extraction...")
+    df_regex = extract_cine_regex(pdf_path)
+    print(f"  Extracted {len(df_regex)} entries")
+
+    print("Running Method 2: Hybrid (multi-line reconstruction)...")
+    df_hybrid = extract_cine_hybrid(pdf_path)
+    print(f"  Extracted {len(df_hybrid)} entries")
+
+    # Calculate metrics
+    metrics = {
+        'regex': {
+            'total_entries': len(df_regex),
+            'with_director': df_regex['director'].notna().sum(),
+            'with_english_title': df_regex['title_english'].notna().sum(),
+            'sample': df_regex.head(sample_size).to_dict('records')
+        },
+        'hybrid': {
+            'total_entries': len(df_hybrid),
+            'with_director': df_hybrid['director'].notna().sum(),
+            'with_english_title': df_hybrid['title_english'].notna().sum(),
+            'sample': df_hybrid.head(sample_size).to_dict('records')
+        }
+    }
+
+    return metrics
