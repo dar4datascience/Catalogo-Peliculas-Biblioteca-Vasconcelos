@@ -430,10 +430,11 @@ async def handle_confirm_match(args: dict) -> list[TextContent]:
 
 async def main():
     """Run MCP server."""
-    async with stdio_server(server=app) as streams:
+    from mcp.server.models import InitializationOptions
+    async with stdio_server() as (read_stream, write_stream):
         await app.run(
-            streams[0],
-            streams[1],
+            read_stream,
+            write_stream,
             app.create_initialization_options()
         )
 
