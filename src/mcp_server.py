@@ -278,14 +278,16 @@ async def handle_batch_analyze(args: dict) -> list[TextContent]:
             continue
             
         # Quick direct search
-        search_result = search_movie_bilingual(raw_title)
+        search_result = search_movie_bilingual(raw_title) or {}
+        found = bool(search_result.get("imdbID"))
         
         results.append({
             "raw_title": raw_title,
             "source_pdf": item.get("source_pdf", ""),
-            "status": "enriched" if search_result.get("enriched") else "failed",
-            "match": search_result.get("matched_title") if search_result.get("enriched") else None,
-            "imdb_id": search_result.get("data", {}).get("imdbID") if search_result.get("enriched") else None
+            "status": "enriched" if found else "failed",
+            "match": search_result.get("matched_title"),
+            "imdb_id": search_result.get("imdbID"),
+            "match_type": search_result.get("match_type")
         })
     
     # Summary
