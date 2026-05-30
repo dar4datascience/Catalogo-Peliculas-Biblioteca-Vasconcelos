@@ -11,7 +11,7 @@ from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import TextContent, Tool
 
-from omdb_client import search_movie_bilingual, get_movie_details, find_best_fuzzy_match, enrich_movie_with_omdb
+from omdb_client import search_movie_bilingual, get_movie_details, find_best_fuzzy_match, enrich_movie_with_omdb, search_director_filmography
 from source_of_truth import lookup_movie, update_movie
 from models import Movie
 
@@ -118,6 +118,42 @@ with multiple strategies (direct, fuzzy, bilingual).""",
             }
         ),
         Tool(
+            name="match_by_director_filmography",
+            description="""Search a director's filmography on OMDB and find the best title match.
+
+Use this as a fallback when:
+- Direct title search failed or returned false positives
+- The title is ambiguous or partially extracted
+- You have a reliable director name but an uncertain title
+
+The tool:
+1. Searches OMDB using the title query + director last name as hints
+2. Fetches details for candidates and verifies the director field
+3. Scores each candidate by title similarity (+ bonus if director matches)
+4. Returns ranked candidates so the LLM can pick the best one
+
+The LLM should reason: 'Which of these films directed by <director> best matches <raw_title>?'""",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "raw_title": {
+                        "type": "string",
+                        "description": "The raw or cleaned movie title to match"
+                    },
+                    "director": {
+                        "type": "string",
+                        "description": "Director name (from CSV/PDF context)"
+                    },
+                    "min_score": {
+                        "type": "integer",
+                        "description": "Minimum fuzzy title similarity score 0-100 (default 60)",
+                        "default": 60
+                    }
+                },
+                "required": ["raw_title", "director"]
+            }
+        ),
+        Tool(
             name="confirm_match",
             description="Confirm a correct movie match and save it to the Source of Truth catalog.",
             inputSchema={
@@ -150,6 +186,8 @@ async def call_tool(name: str, arguments: Any) -> list[TextContent]:
         return await handle_failed_report(arguments)
     elif name == "detect_title_patterns":
         return await handle_detect_patterns(arguments)
+    elif name == "match_by_director_filmography":
+        return await handle_match_by_director(arguments)
     elif name == "confirm_match":
         return await handle_confirm_match(arguments)
     else:
@@ -406,6 +444,83 @@ async def handle_detect_patterns(args: dict) -> list[TextContent]:
         "recommendation": "Apply suggested fixes or use LLM to clean the title further."
     }
     
+    return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+
+
+async def handle_match_by_director(args: dict) -> list[TextContent]:
+    """
+    Use director filmography to find the best title match.
+    Implements the strategy:
+      'Which movies has this director made whose title resembles what we have?'
+    """
+    import re
+
+    raw_title = args.get("raw_title", "").strip()
+    director = args.get("director", "").strip()
+    min_score = int(args.get("min_score", 60))
+
+    if not raw_title or not director:
+        return [TextContent(type="text", text="Error: raw_title and director are required")]
+
+    # Clean director field — strip common PDF artifacts like "Dir.", trailing commas, birth years
+    director_clean = re.sub(r'^(Dir\.|dir\.|Escrita y Dir\.|Guión y Dir\.|prod\. y)\s*', '', director, flags=re.IGNORECASE)
+    director_clean = re.sub(r',\s*\d{4}-?$', '', director_clean).strip().rstrip('.')
+
+    # Also clean the title query — strip article suffixes like "Zona Muerta.La"
+    title_clean = re.sub(r'([a-záéíóúüñA-ZÁÉÍÓÚÜÑ])\.([A-ZÁÉÍÓÚÜÑ])', r'\1 \2', raw_title)
+    match = re.search(r'^(.*),\s*(El|La|Los|Las|The|Un|Una)\.?$', title_clean, re.IGNORECASE)
+    if match:
+        title_clean = f"{match.group(2)} {match.group(1)}".strip()
+    title_clean = title_clean.strip().rstrip('.')
+
+    candidates = search_director_filmography(director_clean, title_clean, min_score=min_score)
+
+    if not candidates:
+        result = {
+            "status": "no_candidates",
+            "raw_title": raw_title,
+            "director": director_clean,
+            "cleaned_title": title_clean,
+            "message": (
+                f"No OMDB candidates found for '{title_clean}' with director '{director_clean}'. "
+                "Suggestions: try a broader title fragment, check director spelling, "
+                "or use confirm_match with a known IMDb ID."
+            )
+        }
+        return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+
+    # Build LLM reasoning guidance
+    top = candidates[:5]
+    reasoning_context = (
+        f"We are looking for a movie titled '{raw_title}' directed by '{director_clean}'.\n"
+        f"The cleaned search title is '{title_clean}'.\n\n"
+        "OMDB returned these candidates (sorted by title similarity + director match bonus):\n"
+    )
+    for i, c in enumerate(top, 1):
+        director_tag = " ✓ director confirmed" if c['director_matched'] else " ✗ director not confirmed"
+        reasoning_context += (
+            f"  {i}. [{c['score']}] {c['title']} ({c['year']}) — "
+            f"IMDb: {c['imdbID']} — Director: {c['director']}{director_tag}\n"
+        )
+    reasoning_context += (
+        "\nLLM task: Pick the candidate that best matches the raw title semantically. "
+        "Prefer candidates where the director is confirmed. "
+        "If confident, call confirm_match with the chosen imdb_id."
+    )
+
+    result = {
+        "status": "candidates_found",
+        "raw_title": raw_title,
+        "director": director_clean,
+        "cleaned_title": title_clean,
+        "top_candidate": top[0] if top else None,
+        "all_candidates": top,
+        "reasoning_guidance": reasoning_context,
+        "auto_confirm_eligible": (
+            top[0]['score'] >= 90 and top[0]['director_matched']
+        ) if top else False
+    }
+
     return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
 
 

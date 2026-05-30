@@ -234,6 +234,107 @@ def get_movie_details(imdb_id: str, include_full_plot: bool = True) -> Optional[
         return None
 
 
+def search_director_filmography(director: str, title_query: str, min_score: int = 60) -> list[dict]:
+    """
+    Search OMDB for all movies by a director, then rank them by fuzzy
+    similarity to title_query.
+
+    Returns a list of dicts sorted by score descending:
+        [{'imdbID', 'title', 'year', 'score'}, ...]
+    """
+    if not director or not title_query:
+        return []
+
+    # OMDB &s= search with director name as the query term is unreliable;
+    # instead search for the title_query words combined with director as a
+    # secondary hint, then verify via get_movie_details.
+    # Strategy: search OMDB for the title_query, get up to 30 candidates
+    # across multiple search terms derived from director's last name, then
+    # filter/rank by director match + title similarity.
+
+    candidates = []
+    seen_ids: set[str] = set()
+
+    # Build search terms: director last name + first word of query title
+    director_parts = director.strip().split()
+    director_last = director_parts[-1] if director_parts else director
+    title_words = title_query.strip().split()
+    first_title_word = title_words[0] if title_words else title_query
+
+    search_terms = [
+        title_query,
+        f"{first_title_word} {director_last}" if len(first_title_word) > 3 else title_query,
+        ' '.join(title_words[:3]) if len(title_words) >= 3 else title_query,
+    ]
+    # Dedupe
+    seen_terms: set[str] = set()
+    unique_terms = []
+    for t in search_terms:
+        t = t.strip()
+        if t.lower() not in seen_terms and len(t) > 2:
+            seen_terms.add(t.lower())
+            unique_terms.append(t)
+
+    for term in unique_terms:
+        params = {'s': term, 'type': 'movie', 'apikey': API_KEY}
+        data = _query_omdb(params)
+        if data and 'Search' in data:
+            for item in data['Search']:
+                iid = item.get('imdbID', '')
+                if iid and iid not in seen_ids:
+                    seen_ids.add(iid)
+                    candidates.append(item)
+
+    if not candidates:
+        return []
+
+    # Fetch details for top candidates to get Director field, then score
+    query_lower = title_query.lower().strip()
+    director_lower = director.lower().strip()
+    ranked = []
+
+    for item in candidates:
+        iid = item.get('imdbID', '')
+        candidate_title = item.get('Title', '')
+
+        # Title similarity
+        title_score = max(
+            fuzz.ratio(query_lower, candidate_title.lower()),
+            fuzz.token_sort_ratio(query_lower, candidate_title.lower())
+        )
+        if title_score < min_score:
+            continue
+
+        # Fetch full details to check director
+        details = get_movie_details(iid, include_full_plot=False)
+        if not details:
+            continue
+
+        omdb_director = details.get('Director', '').lower()
+        # Check if any part of the director name appears in OMDB director field
+        director_match = any(
+            part.lower() in omdb_director
+            for part in director_parts
+            if len(part) > 2
+        )
+
+        # Boost score if director matched
+        final_score = title_score + (20 if director_match else 0)
+
+        ranked.append({
+            'imdbID': iid,
+            'title': details.get('Title', candidate_title),
+            'year': details.get('Year', item.get('Year', '')),
+            'director': details.get('Director', ''),
+            'director_matched': director_match,
+            'title_score': title_score,
+            'score': min(final_score, 100),
+        })
+
+    ranked.sort(key=lambda x: x['score'], reverse=True)
+    return ranked
+
+
 def enrich_movie_with_omdb(title: str, source_pdf: str = '', year: Optional[str] = None) -> dict:
     """
     Full enrichment pipeline for a single movie title.
