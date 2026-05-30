@@ -7665,7 +7665,7 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 13.3603,
-        "vote_average": 5.954,
+        "vote_average": 6.0,
         "vote_count": 8967
       },
       {
@@ -7728,8 +7728,8 @@
         "title": "That Burning Question",
         "original_title": "That Burning Question",
         "release_date": "1991-07-24",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.2724,
         "vote_average": 0.0,
         "vote_count": 0
@@ -23673,8 +23673,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 1.7555,
-        "vote_average": 7.4,
-        "vote_count": 956
+        "vote_average": 7.358,
+        "vote_count": 957
       },
       {
         "id": 247686,
@@ -29308,8 +29308,8 @@
         "title": "Ruthless",
         "original_title": "Ruthless",
         "release_date": "2023-12-14",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 2.8436,
         "vote_average": 6.453,
         "vote_count": 138
@@ -29388,8 +29388,8 @@
         "job": "Stunt Coordinator",
         "department": "Crew",
         "popularity": 2.3695,
-        "vote_average": 6.606,
-        "vote_count": 189
+        "vote_average": 6.624,
+        "vote_count": 190
       },
       {
         "id": 577011,
@@ -29539,8 +29539,8 @@
         "title": "Final Payback",
         "original_title": "Final Payback",
         "release_date": "2001-04-24",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.4819,
         "vote_average": 4.6,
         "vote_count": 5
@@ -29605,8 +29605,8 @@
         "title": "Recoil",
         "original_title": "Recoil",
         "release_date": "1998-05-12",
-        "job": "Story",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.7031,
         "vote_average": 4.8,
         "vote_count": 13
@@ -29950,7 +29950,7 @@
         "department": "Crew",
         "popularity": 5.5876,
         "vote_average": 6.544,
-        "vote_count": 2842
+        "vote_count": 2843
       },
       {
         "id": 1655498,
@@ -32580,7 +32580,7 @@
         "job": "Producer",
         "department": "Production",
         "popularity": 1.1399,
-        "vote_average": 7.664,
+        "vote_average": 7.7,
         "vote_count": 354
       },
       {
@@ -58834,7 +58834,7 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 5.2826,
-        "vote_average": 6.6,
+        "vote_average": 6.589,
         "vote_count": 1004
       },
       {
@@ -58846,7 +58846,7 @@
         "department": "Production",
         "popularity": 10.1433,
         "vote_average": 6.705,
-        "vote_count": 3653
+        "vote_count": 3654
       },
       {
         "id": 1158915,
@@ -58945,7 +58945,7 @@
         "department": "Production",
         "popularity": 6.1355,
         "vote_average": 7.473,
-        "vote_count": 5542
+        "vote_count": 5543
       },
       {
         "id": 527435,
@@ -59032,8 +59032,8 @@
         "job": "Executive Producer",
         "department": "Production",
         "popularity": 8.7826,
-        "vote_average": 7.0,
-        "vote_count": 7635
+        "vote_average": 7.001,
+        "vote_count": 7637
       },
       {
         "id": 336660,
@@ -59054,8 +59054,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 10.7757,
-        "vote_average": 5.778,
-        "vote_count": 8039
+        "vote_average": 5.779,
+        "vote_count": 8040
       },
       {
         "id": 181533,
@@ -59109,8 +59109,8 @@
         "job": "Producer",
         "department": "Production",
         "popularity": 11.9925,
-        "vote_average": 8.201,
-        "vote_count": 9036
+        "vote_average": 8.202,
+        "vote_count": 9038
       },
       {
         "id": 426620,
@@ -59131,8 +59131,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 10.0264,
-        "vote_average": 6.214,
-        "vote_count": 7817
+        "vote_average": 6.213,
+        "vote_count": 7818
       },
       {
         "id": 23128,
@@ -59304,8 +59304,8 @@
         "title": "Nine Months",
         "original_title": "Nine Months",
         "release_date": "1995-07-12",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Producer",
+        "department": "Production",
         "popularity": 2.196,
         "vote_average": 5.727,
         "vote_count": 708
@@ -59330,7 +59330,7 @@
         "department": "Directing",
         "popularity": 12.562,
         "vote_average": 6.786,
-        "vote_count": 10613
+        "vote_count": 10612
       },
       {
         "id": 2611,
@@ -59352,7 +59352,7 @@
         "department": "Directing",
         "popularity": 0.9302,
         "vote_average": 7.465,
-        "vote_count": 12499
+        "vote_count": 12498
       },
       {
         "id": 928,
@@ -59418,7 +59418,7 @@
         "department": "Writing",
         "popularity": 9.8863,
         "vote_average": 7.515,
-        "vote_count": 6225
+        "vote_count": 6226
       },
       {
         "id": 927,
@@ -61026,8 +61026,8 @@
         "title": "Everything Will Be Fine",
         "original_title": "Alting bliver godt igen",
         "release_date": "2010-01-28",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3926,
         "vote_average": 6.3,
         "vote_count": 17
@@ -67605,7 +67605,7 @@
         "job": "Short Story",
         "department": "Writing",
         "popularity": 3.4164,
-        "vote_average": 6.676,
+        "vote_average": 6.7,
         "vote_count": 1802
       },
       {
@@ -67624,8 +67624,8 @@
         "title": "Nightbreed",
         "original_title": "Nightbreed",
         "release_date": "1990-02-16",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 2.3061,
         "vote_average": 6.356,
         "vote_count": 530
@@ -67638,8 +67638,8 @@
         "job": "Executive Producer",
         "department": "Production",
         "popularity": 2.5323,
-        "vote_average": 6.411,
-        "vote_count": 1240
+        "vote_average": 6.409,
+        "vote_count": 1241
       },
       {
         "id": 1102821,
@@ -67657,11 +67657,11 @@
         "title": "Hellraiser",
         "original_title": "Hellraiser",
         "release_date": "1987-09-11",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 5.0875,
         "vote_average": 6.875,
-        "vote_count": 2856
+        "vote_count": 2857
       },
       {
         "id": 13511,
@@ -81499,8 +81499,8 @@
         "title": "The Razor's Edge",
         "original_title": "The Razor's Edge",
         "release_date": "",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.311,
         "vote_average": 0.0,
         "vote_count": 0
@@ -92403,8 +92403,8 @@
         "title": "Don't Look Down",
         "original_title": "No mires para abajo",
         "release_date": "2008-10-18",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 1.5489,
         "vote_average": 5.736,
         "vote_count": 70
@@ -92414,8 +92414,8 @@
         "title": "The Effect of Love",
         "original_title": "El resultado del amor",
         "release_date": "2007-08-16",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.2465,
         "vote_average": 4.7,
         "vote_count": 13
@@ -92447,8 +92447,8 @@
         "title": "The Dark Side of the Heart 2",
         "original_title": "El lado oscuro del corazón 2",
         "release_date": "2001-07-05",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.4787,
         "vote_average": 5.545,
         "vote_count": 11
@@ -92494,8 +92494,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 1.3333,
-        "vote_average": 7.3,
-        "vote_count": 110
+        "vote_average": 7.284,
+        "vote_count": 111
       },
       {
         "id": 107393,
@@ -92579,8 +92579,8 @@
         "title": "A Long Silence",
         "original_title": "Un largo silencio",
         "release_date": "1963-07-29",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.0507,
         "vote_average": 0.0,
         "vote_count": 0
@@ -95865,8 +95865,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 3.1812,
-        "vote_average": 6.872,
-        "vote_count": 552
+        "vote_average": 6.873,
+        "vote_count": 553
       },
       {
         "id": 17585,
@@ -95898,8 +95898,8 @@
         "job": "Director of Photography",
         "department": "Camera",
         "popularity": 4.5714,
-        "vote_average": 7.553,
-        "vote_count": 1905
+        "vote_average": 7.552,
+        "vote_count": 1906
       },
       {
         "id": 41675,
@@ -95917,8 +95917,8 @@
         "title": "Juice",
         "original_title": "Juice",
         "release_date": "1992-01-17",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Screenplay",
+        "department": "Writing",
         "popularity": 2.4026,
         "vote_average": 7.206,
         "vote_count": 458
@@ -96019,8 +96019,8 @@
         "job": "Director of Photography",
         "department": "Camera",
         "popularity": 3.0631,
-        "vote_average": 7.763,
-        "vote_count": 1990
+        "vote_average": 7.762,
+        "vote_count": 1991
       },
       {
         "id": 81221,
@@ -102656,8 +102656,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 0.1815,
-        "vote_average": 7.0,
-        "vote_count": 10
+        "vote_average": 6.955,
+        "vote_count": 11
       },
       {
         "id": 321751,
@@ -137753,8 +137753,8 @@
         "title": "Dol: The Valley of Tambourines",
         "original_title": "Dol",
         "release_date": "2007-01-24",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.1912,
         "vote_average": 8.0,
         "vote_count": 1
@@ -147681,7 +147681,7 @@
         "department": "Crew",
         "popularity": 7.752,
         "vote_average": 7.485,
-        "vote_count": 8586
+        "vote_count": 8588
       },
       {
         "id": 35138,
@@ -147956,7 +147956,7 @@
         "department": "Crew",
         "popularity": 12.7571,
         "vote_average": 7.071,
-        "vote_count": 5646
+        "vote_count": 5647
       },
       {
         "id": 46122,
@@ -148373,8 +148373,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 3.1359,
-        "vote_average": 7.0,
-        "vote_count": 244
+        "vote_average": 7.012,
+        "vote_count": 245
       },
       {
         "id": 46124,
@@ -148516,8 +148516,8 @@
         "job": "Stunts",
         "department": "Crew",
         "popularity": 5.2129,
-        "vote_average": 7.4,
-        "vote_count": 2082
+        "vote_average": 7.423,
+        "vote_count": 2083
       },
       {
         "id": 34800,
@@ -160729,8 +160729,8 @@
         "title": "The Girl from Nowhere",
         "original_title": "La Fille de nulle part",
         "release_date": "2013-02-06",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3438,
         "vote_average": 5.6,
         "vote_count": 52
@@ -160762,8 +160762,8 @@
         "title": "Secret Things",
         "original_title": "Choses secrètes",
         "release_date": "2002-10-16",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 2.6039,
         "vote_average": 5.788,
         "vote_count": 111
@@ -160784,8 +160784,8 @@
         "title": "The Black Angel",
         "original_title": "L'Ange noir",
         "release_date": "1994-11-11",
-        "job": "Producer",
-        "department": "Production",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.4598,
         "vote_average": 5.385,
         "vote_count": 26
@@ -160795,8 +160795,8 @@
         "title": "Céline",
         "original_title": "Céline",
         "release_date": "1992-04-01",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.4181,
         "vote_average": 6.6,
         "vote_count": 32
@@ -160817,8 +160817,8 @@
         "title": "White Wedding",
         "original_title": "Noce blanche",
         "release_date": "1989-11-08",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.6788,
         "vote_average": 6.533,
         "vote_count": 120
@@ -160938,8 +160938,8 @@
         "title": "The Afternoon of a Bored Young Man",
         "original_title": "L'Après-midi d'un jeune homme qui s'ennuie",
         "release_date": "1968-01-01",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.123,
         "vote_average": 4.0,
         "vote_count": 5
@@ -167812,8 +167812,8 @@
         "title": "11th Hour",
         "original_title": "11th Hour",
         "release_date": "2017-12-31",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3692,
         "vote_average": 6.4,
         "vote_count": 6
@@ -167859,7 +167859,7 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 6.0068,
-        "vote_average": 7.312,
+        "vote_average": 7.3,
         "vote_count": 3928
       },
       {
@@ -167867,10 +167867,10 @@
         "title": "Get Rich or Die Tryin'",
         "original_title": "Get Rich or Die Tryin'",
         "release_date": "2005-11-09",
-        "job": "Producer",
-        "department": "Production",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 3.0634,
-        "vote_average": 6.799,
+        "vote_average": 6.8,
         "vote_count": 1036
       },
       {
@@ -167878,8 +167878,8 @@
         "title": "In America",
         "original_title": "In America",
         "release_date": "2003-09-22",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Producer",
+        "department": "Production",
         "popularity": 1.7008,
         "vote_average": 7.155,
         "vote_count": 388
@@ -167955,8 +167955,8 @@
         "title": "In the Name of the Father",
         "original_title": "In the Name of the Father",
         "release_date": "1993-12-27",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Producer",
+        "department": "Production",
         "popularity": 2.9956,
         "vote_average": 7.892,
         "vote_count": 1969
@@ -168644,7 +168644,7 @@
         "department": "Directing",
         "popularity": 4.9463,
         "vote_average": 7.428,
-        "vote_count": 1838
+        "vote_count": 1839
       },
       {
         "id": 528411,
@@ -168673,8 +168673,8 @@
         "title": "Louder Than Bombs",
         "original_title": "Louder Than Bombs",
         "release_date": "2015-10-01",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.5847,
         "vote_average": 6.5,
         "vote_count": 377
@@ -168739,8 +168739,8 @@
         "title": "Still",
         "original_title": "Still",
         "release_date": "2001-01-01",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.2393,
         "vote_average": 6.5,
         "vote_count": 1
@@ -179214,8 +179214,8 @@
         "title": "Medieval England: The Peasants' Revolt",
         "original_title": "Medieval England: The Peasants' Revolt",
         "release_date": "1969-01-01",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.5326,
         "vote_average": 0.0,
         "vote_count": 0
@@ -190657,8 +190657,8 @@
         "title": "Das Weihnachts-Ekel",
         "original_title": "Das Weihnachts-Ekel",
         "release_date": "2006-12-15",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Director of Photography",
+        "department": "Camera",
         "popularity": 0.2054,
         "vote_average": 1.7,
         "vote_count": 3
@@ -190679,8 +190679,8 @@
         "title": "Rock Crystal",
         "original_title": "Bergkristall",
         "release_date": "2004-11-18",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Director of Photography",
+        "department": "Camera",
         "popularity": 0.5544,
         "vote_average": 6.818,
         "vote_count": 11
@@ -190712,8 +190712,8 @@
         "title": "Marlene",
         "original_title": "Marlene",
         "release_date": "2000-03-09",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Director of Photography",
+        "department": "Camera",
         "popularity": 0.6507,
         "vote_average": 5.684,
         "vote_count": 19
@@ -190789,8 +190789,8 @@
         "title": "Stalingrad",
         "original_title": "Stalingrad",
         "release_date": "1993-01-20",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Executive Producer",
+        "department": "Production",
         "popularity": 3.355,
         "vote_average": 7.331,
         "vote_count": 627
@@ -198875,8 +198875,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 1.9528,
-        "vote_average": 7.575,
-        "vote_count": 1279
+        "vote_average": 7.573,
+        "vote_count": 1280
       },
       {
         "id": 5001,
@@ -211321,8 +211321,8 @@
         "title": "Deadly Illusion",
         "original_title": "Deadly Illusion",
         "release_date": "1987-10-16",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.91,
         "vote_average": 5.5,
         "vote_count": 9
@@ -211354,8 +211354,8 @@
         "title": "It's Alive III: Island of the Alive",
         "original_title": "It's Alive III: Island of the Alive",
         "release_date": "1987-05-27",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.8167,
         "vote_average": 5.423,
         "vote_count": 78
@@ -211387,8 +211387,8 @@
         "title": "Perfect Strangers",
         "original_title": "Perfect Strangers",
         "release_date": "1984-07-13",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.5623,
         "vote_average": 4.95,
         "vote_count": 20
@@ -211420,8 +211420,8 @@
         "title": "Q: The Winged Serpent",
         "original_title": "Q: The Winged Serpent",
         "release_date": "1982-09-08",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 2.2847,
         "vote_average": 5.709,
         "vote_count": 495
@@ -211453,8 +211453,8 @@
         "title": "See China and Die",
         "original_title": "See China and Die",
         "release_date": "1981-01-09",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.3111,
         "vote_average": 8.0,
         "vote_count": 2
@@ -211475,8 +211475,8 @@
         "title": "It Lives Again",
         "original_title": "It Lives Again",
         "release_date": "1978-05-10",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Producer",
+        "department": "Production",
         "popularity": 0.6684,
         "vote_average": 5.5,
         "vote_count": 82
@@ -211552,8 +211552,8 @@
         "title": "It's Alive",
         "original_title": "It's Alive",
         "release_date": "1974-04-26",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.8849,
         "vote_average": 6.016,
         "vote_count": 219
@@ -211640,7 +211640,7 @@
         "title": "Daddy's Gone A-Hunting",
         "original_title": "Daddy's Gone A-Hunting",
         "release_date": "1969-05-13",
-        "job": "Screenplay",
+        "job": "Story",
         "department": "Writing",
         "popularity": 0.3688,
         "vote_average": 5.714,
@@ -211651,7 +211651,7 @@
         "title": "Scream Baby Scream",
         "original_title": "Scream Baby Scream",
         "release_date": "1969-01-01",
-        "job": "Story",
+        "job": "Screenplay",
         "department": "Writing",
         "popularity": 0.1649,
         "vote_average": 4.2,
@@ -229345,8 +229345,1261 @@
     "tmdb_person_id": 105866,
     "tmdb_name": "Marco Bellocchio",
     "popularity": 0.8221,
-    "filmography": [],
-    "movie_count": 0
+    "filmography": [
+      {
+        "id": 1130948,
+        "title": "Rosebush Pruning",
+        "original_title": "Rosebush Pruning",
+        "release_date": "2026-04-23",
+        "job": "Original Film Writer",
+        "department": "Writing",
+        "popularity": 2.21,
+        "vote_average": 7.4,
+        "vote_count": 5
+      },
+      {
+        "id": 1103750,
+        "title": "The Time It Takes",
+        "original_title": "Il tempo che ci vuole",
+        "release_date": "2024-09-26",
+        "job": "Producer",
+        "department": "Production",
+        "popularity": 0.2901,
+        "vote_average": 6.931,
+        "vote_count": 87
+      },
+      {
+        "id": 1174246,
+        "title": "Battlefield",
+        "original_title": "Campo di battaglia",
+        "release_date": "2024-09-05",
+        "job": "Producer",
+        "department": "Production",
+        "popularity": 0.3247,
+        "vote_average": 6.443,
+        "vote_count": 105
+      },
+      {
+        "id": 1320300,
+        "title": "If I May - Chapter II",
+        "original_title": "Se Posso Permettermi - Capitolo II",
+        "release_date": "2024-09-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.4747,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 1131684,
+        "title": "The Life Apart",
+        "original_title": "La vita accanto",
+        "release_date": "2024-08-22",
+        "job": "Screenplay",
+        "department": "Writing",
+        "popularity": 0.3707,
+        "vote_average": 5.7,
+        "vote_count": 42
+      },
+      {
+        "id": 801112,
+        "title": "Kidnapped",
+        "original_title": "Rapito",
+        "release_date": "2023-05-25",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.2084,
+        "vote_average": 7.276,
+        "vote_count": 375
+      },
+      {
+        "id": 977566,
+        "title": "Esterno Notte (part II)",
+        "original_title": "Esterno Notte (parte II)",
+        "release_date": "2022-06-09",
+        "job": "Screenplay",
+        "department": "Writing",
+        "popularity": 0.4127,
+        "vote_average": 7.9,
+        "vote_count": 95
+      },
+      {
+        "id": 977487,
+        "title": "Esterno Notte (part I)",
+        "original_title": "Esterno Notte (parte I)",
+        "release_date": "2022-05-18",
+        "job": "Story",
+        "department": "Writing",
+        "popularity": 0.2822,
+        "vote_average": 7.798,
+        "vote_count": 136
+      },
+      {
+        "id": 846858,
+        "title": "If I May",
+        "original_title": "Se Posso Permettermi",
+        "release_date": "2021-08-12",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.2732,
+        "vote_average": 7.0,
+        "vote_count": 2
+      },
+      {
+        "id": 777726,
+        "title": "Marx Can Wait",
+        "original_title": "Marx può aspettare",
+        "release_date": "2021-07-15",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.5217,
+        "vote_average": 7.3,
+        "vote_count": 40
+      },
+      {
+        "id": 575452,
+        "title": "The Traitor",
+        "original_title": "Il traditore",
+        "release_date": "2019-05-23",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.6262,
+        "vote_average": 7.648,
+        "vote_count": 1428
+      },
+      {
+        "id": 519133,
+        "title": "The Fight",
+        "original_title": "La lotta",
+        "release_date": "2018-05-17",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1396,
+        "vote_average": 5.633,
+        "vote_count": 15
+      },
+      {
+        "id": 469193,
+        "title": "All for a Rose",
+        "original_title": "Per una rosa",
+        "release_date": "2017-08-04",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.1729,
+        "vote_average": 6.222,
+        "vote_count": 18
+      },
+      {
+        "id": 394260,
+        "title": "Sweet Dreams",
+        "original_title": "Fai bei sogni",
+        "release_date": "2016-11-10",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.5839,
+        "vote_average": 6.541,
+        "vote_count": 222
+      },
+      {
+        "id": 415176,
+        "title": "Clowns",
+        "original_title": "Pagliacci",
+        "release_date": "2016-09-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.169,
+        "vote_average": 6.038,
+        "vote_count": 13
+      },
+      {
+        "id": 314400,
+        "title": "Blood of My Blood",
+        "original_title": "Sangue del mio sangue",
+        "release_date": "2015-09-09",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.933,
+        "vote_average": 5.678,
+        "vote_count": 73
+      },
+      {
+        "id": 285820,
+        "title": "Fragments",
+        "original_title": "Frammenti",
+        "release_date": "2012-11-13",
+        "job": "Thanks",
+        "department": "Crew",
+        "popularity": 0.2522,
+        "vote_average": 6.0,
+        "vote_count": 8
+      },
+      {
+        "id": 121998,
+        "title": "It Was the Son",
+        "original_title": "È stato il figlio",
+        "release_date": "2012-09-01",
+        "job": "Thanks",
+        "department": "Crew",
+        "popularity": 0.6776,
+        "vote_average": 6.881,
+        "vote_count": 80
+      },
+      {
+        "id": 110447,
+        "title": "Dormant Beauty",
+        "original_title": "Bella addormentata",
+        "release_date": "2012-09-01",
+        "job": "Screenplay",
+        "department": "Writing",
+        "popularity": 0.4322,
+        "vote_average": 6.3,
+        "vote_count": 71
+      },
+      {
+        "id": 72057,
+        "title": "Sorelle Mai",
+        "original_title": "Sorelle Mai",
+        "release_date": "2011-03-16",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.3582,
+        "vote_average": 6.0,
+        "vote_count": 14
+      },
+      {
+        "id": 30239,
+        "title": "Vincere",
+        "original_title": "Vincere",
+        "release_date": "2009-05-20",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.5554,
+        "vote_average": 6.707,
+        "vote_count": 164
+      },
+      {
+        "id": 462772,
+        "title": "Sorelle",
+        "original_title": "Sorelle",
+        "release_date": "2007-01-10",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.0661,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 24185,
+        "title": "The Wedding Director",
+        "original_title": "Il regista di matrimoni",
+        "release_date": "2006-04-21",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.6137,
+        "vote_average": 6.0,
+        "vote_count": 45
+      },
+      {
+        "id": 1127672,
+        "title": "Materia e visione",
+        "original_title": "Materia e visione",
+        "release_date": "2006-01-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.0214,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 817002,
+        "title": "Behind Love and Anger",
+        "original_title": "Behind Love and Anger",
+        "release_date": "2005-01-01",
+        "job": "Thanks",
+        "department": "Crew",
+        "popularity": 0.1902,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 62100,
+        "title": "Radio West",
+        "original_title": "Radio West",
+        "release_date": "2004-04-30",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.4451,
+        "vote_average": 5.5,
+        "vote_count": 6
+      },
+      {
+        "id": 24164,
+        "title": "Good Morning, Night",
+        "original_title": "Buongiorno, notte",
+        "release_date": "2003-09-05",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.3963,
+        "vote_average": 7.042,
+        "vote_count": 215
+      },
+      {
+        "id": 1125490,
+        "title": "The Spring of 2002 - Italy Protests, Italy Stops",
+        "original_title": "La primavera del 2002 - L'Italia protesta, l'Italia si ferma",
+        "release_date": "2002-05-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.3603,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 65045,
+        "title": "My Mother's Smile",
+        "original_title": "L’ora di religione - Il sorriso di mia madre",
+        "release_date": "2002-04-19",
+        "job": "Producer",
+        "department": "Production",
+        "popularity": 0.717,
+        "vote_average": 7.141,
+        "vote_count": 78
+      },
+      {
+        "id": 491957,
+        "title": "Farewell to the Past",
+        "original_title": "Addio del passato",
+        "release_date": "2002-01-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.1564,
+        "vote_average": 7.833,
+        "vote_count": 3
+      },
+      {
+        "id": 520015,
+        "title": "Notes for a Movie About Uncle Vania",
+        "original_title": "Appunti per un film su Zio Vania",
+        "release_date": "2002-01-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.0486,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 519999,
+        "title": "Today is a Beautiful Day",
+        "original_title": "Oggi è una bella giornata",
+        "release_date": "2002-01-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1454,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 519959,
+        "title": "Nina",
+        "original_title": "Nina",
+        "release_date": "2000-08-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.2473,
+        "vote_average": 5.5,
+        "vote_count": 1
+      },
+      {
+        "id": 519993,
+        "title": "A Thread of Passion",
+        "original_title": "Un filo di passione",
+        "release_date": "2000-08-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.112,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 519992,
+        "title": "Fresco",
+        "original_title": "L'affresco",
+        "release_date": "2000-01-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.0786,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 519996,
+        "title": "The Choir Master",
+        "original_title": "Il maestro di coro",
+        "release_date": "2000-01-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.0404,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 188117,
+        "title": "The Nanny",
+        "original_title": "La balia",
+        "release_date": "1999-05-21",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.7929,
+        "vote_average": 6.6,
+        "vote_count": 11
+      },
+      {
+        "id": 125355,
+        "title": "The Prince of Homburg",
+        "original_title": "Il principe di Homburg",
+        "release_date": "1997-05-08",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.3874,
+        "vote_average": 6.45,
+        "vote_count": 20
+      },
+      {
+        "id": 519957,
+        "title": "Elena",
+        "original_title": "Elena",
+        "release_date": "1997-01-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1723,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 1035675,
+        "title": "Celebrate Cinema 101",
+        "original_title": "Celebrate Cinema 101",
+        "release_date": "1996-01-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.295,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 1125464,
+        "title": "Rome, November 12, 1994",
+        "original_title": "Roma dodici novembre 1994",
+        "release_date": "1995-11-10",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.5303,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 514211,
+        "title": "Broken Dreams: Reasoning and Delirium",
+        "original_title": "Sogni infranti - Ragionamenti e deliri",
+        "release_date": "1995-03-26",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.0898,
+        "vote_average": 9.0,
+        "vote_count": 1
+      },
+      {
+        "id": 389641,
+        "title": "The Butterfly's Dream",
+        "original_title": "Il sogno della farfalla",
+        "release_date": "1994-03-24",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.3424,
+        "vote_average": 6.333,
+        "vote_count": 6
+      },
+      {
+        "id": 519955,
+        "title": "The Man with the Flower in His Mouth",
+        "original_title": "L'uomo dal fiore in bocca",
+        "release_date": "1993-08-23",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1944,
+        "vote_average": 6.8,
+        "vote_count": 3
+      },
+      {
+        "id": 175956,
+        "title": "The Conviction",
+        "original_title": "La condanna",
+        "release_date": "1991-02-28",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.3441,
+        "vote_average": 5.472,
+        "vote_count": 18
+      },
+      {
+        "id": 196897,
+        "title": "The Witches' Sabbath",
+        "original_title": "La visione del sabba",
+        "release_date": "1988-05-26",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.3407,
+        "vote_average": 5.804,
+        "vote_count": 23
+      },
+      {
+        "id": 35705,
+        "title": "Devil in the Flesh",
+        "original_title": "Diavolo in corpo",
+        "release_date": "1986-04-22",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.0503,
+        "vote_average": 5.6,
+        "vote_count": 79
+      },
+      {
+        "id": 42835,
+        "title": "Henry IV",
+        "original_title": "Enrico IV",
+        "release_date": "1984-05-24",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.2725,
+        "vote_average": 6.458,
+        "vote_count": 24
+      },
+      {
+        "id": 186551,
+        "title": "The Eyes, the Mouth",
+        "original_title": "Gli occhi, la bocca",
+        "release_date": "1982-09-10",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.327,
+        "vote_average": 5.543,
+        "vote_count": 23
+      },
+      {
+        "id": 504989,
+        "title": "Vacation in Val Trebbia",
+        "original_title": "Vacanze in Val Trebbia",
+        "release_date": "1980-08-30",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1793,
+        "vote_average": 7.0,
+        "vote_count": 3
+      },
+      {
+        "id": 519673,
+        "title": "Mouth Harmonica",
+        "original_title": "Armonica a bocca",
+        "release_date": "1980-04-23",
+        "job": "Screenplay",
+        "department": "Writing",
+        "popularity": 0.476,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 51882,
+        "title": "A Leap in the Dark",
+        "original_title": "Salto nel vuoto",
+        "release_date": "1980-02-14",
+        "job": "Story",
+        "department": "Writing",
+        "popularity": 0.4073,
+        "vote_average": 6.313,
+        "vote_count": 32
+      },
+      {
+        "id": 520013,
+        "title": "The Cinema Machine",
+        "original_title": "La macchina cinema",
+        "release_date": "1979-10-31",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1696,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 269756,
+        "title": "The Seagull",
+        "original_title": "Il gabbiano",
+        "release_date": "1977-07-02",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.4288,
+        "vote_average": 5.85,
+        "vote_count": 10
+      },
+      {
+        "id": 42866,
+        "title": "Victory March",
+        "original_title": "Marcia trionfale",
+        "release_date": "1976-03-12",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.4483,
+        "vote_average": 5.656,
+        "vote_count": 16
+      },
+      {
+        "id": 230030,
+        "title": "Fit to Be Untied",
+        "original_title": "Matti da slegare",
+        "release_date": "1975-01-13",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.37,
+        "vote_average": 8.125,
+        "vote_count": 8
+      },
+      {
+        "id": 68053,
+        "title": "Slap the Monster on Page One",
+        "original_title": "Sbatti il mostro in prima pagina",
+        "release_date": "1972-10-19",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.0054,
+        "vote_average": 7.633,
+        "vote_count": 188
+      },
+      {
+        "id": 357668,
+        "title": "Planet Venus",
+        "original_title": "Pianeta Venere",
+        "release_date": "1972-08-27",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.2429,
+        "vote_average": 7.0,
+        "vote_count": 1
+      },
+      {
+        "id": 47840,
+        "title": "In the Name of the Father",
+        "original_title": "Nel nome del padre",
+        "release_date": "1971-10-12",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.7767,
+        "vote_average": 6.395,
+        "vote_count": 43
+      },
+      {
+        "id": 49456,
+        "title": "Love and Anger",
+        "original_title": "Amore e rabbia",
+        "release_date": "1969-05-29",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.7486,
+        "vote_average": 5.259,
+        "vote_count": 29
+      },
+      {
+        "id": 520012,
+        "title": "Long Live the 1st Red and Proletarian May",
+        "original_title": "Viva il 1° maggio rosso e proletario",
+        "release_date": "1969-05-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.0915,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 520010,
+        "title": "The Calabrian People Raised Their Heads",
+        "original_title": "Il popolo calabrese ha rialzato la testa",
+        "release_date": "1969-01-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1195,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 49783,
+        "title": "China Is Near",
+        "original_title": "La Cina è vicina",
+        "release_date": "1967-09-22",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.3195,
+        "vote_average": 5.963,
+        "vote_count": 27
+      },
+      {
+        "id": 46591,
+        "title": "Fists in the Pocket",
+        "original_title": "I pugni in tasca",
+        "release_date": "1965-10-26",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.512,
+        "vote_average": 7.8,
+        "vote_count": 221
+      },
+      {
+        "id": 369954,
+        "title": "Ginepro Became a Man",
+        "original_title": "Ginepro fatto uomo",
+        "release_date": "1962-11-09",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.1141,
+        "vote_average": 7.0,
+        "vote_count": 1
+      },
+      {
+        "id": 308862,
+        "title": "Down With Uncle",
+        "original_title": "Abbasso Il Zio",
+        "release_date": "1962-01-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.2142,
+        "vote_average": 7.5,
+        "vote_count": 2
+      },
+      {
+        "id": 466365,
+        "title": "Culpability and Punishment",
+        "original_title": "La colpa e la pena",
+        "release_date": "1961-01-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.2519,
+        "vote_average": 9.0,
+        "vote_count": 1
+      },
+      {
+        "id": 1392636,
+        "title": "If I May - Chapter III",
+        "original_title": "Se Posso Permettermi - Capitolo III",
+        "release_date": "",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.1354,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 1541900,
+        "title": "Falcon",
+        "original_title": "Falcon",
+        "release_date": "",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1748,
+        "vote_average": 0.0,
+        "vote_count": 0
+      }
+    ],
+    "movie_count": 69
+  },
+  "Marco Ferreri": {
+    "name": "Marco Ferreri",
+    "tmdb_person_id": 34264,
+    "tmdb_name": "Marco Ferreri",
+    "popularity": 0.4205,
+    "filmography": [
+      {
+        "id": 65475,
+        "title": "Nitrate Base",
+        "original_title": "Nitrato d'argento",
+        "release_date": "1997-01-29",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.1551,
+        "vote_average": 5.8,
+        "vote_count": 10
+      },
+      {
+        "id": 1125464,
+        "title": "Rome, November 12, 1994",
+        "original_title": "Roma dodici novembre 1994",
+        "release_date": "1995-11-10",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.5303,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 737447,
+        "title": "Do What Thou Wilt",
+        "original_title": "Faictz ce que Vouldras",
+        "release_date": "1995-01-01",
+        "job": "Screenplay",
+        "department": "Writing",
+        "popularity": 0.0743,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 196979,
+        "title": "Diary of a Maniac",
+        "original_title": "Diario di un vizio",
+        "release_date": "1993-02-18",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.3437,
+        "vote_average": 5.478,
+        "vote_count": 23
+      },
+      {
+        "id": 72808,
+        "title": "The Flesh",
+        "original_title": "La carne",
+        "release_date": "1991-05-09",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 2.7251,
+        "vote_average": 5.598,
+        "vote_count": 66
+      },
+      {
+        "id": 148757,
+        "title": "The House of Smiles",
+        "original_title": "La casa del sorriso",
+        "release_date": "1991-03-01",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1939,
+        "vote_average": 5.406,
+        "vote_count": 16
+      },
+      {
+        "id": 138797,
+        "title": "Plato's Banquet",
+        "original_title": "Il banchetto di Platone",
+        "release_date": "1989-07-27",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.1937,
+        "vote_average": 4.944,
+        "vote_count": 9
+      },
+      {
+        "id": 138656,
+        "title": "How Good the Whites Are",
+        "original_title": "Ya bon les blancs",
+        "release_date": "1988-01-20",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.2709,
+        "vote_average": 6.643,
+        "vote_count": 7
+      },
+      {
+        "id": 198466,
+        "title": "I Love You",
+        "original_title": "I Love You",
+        "release_date": "1986-05-14",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.4312,
+        "vote_average": 6.2,
+        "vote_count": 20
+      },
+      {
+        "id": 81787,
+        "title": "The Future Is Woman",
+        "original_title": "Il futuro è donna",
+        "release_date": "1984-09-05",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.5818,
+        "vote_average": 5.571,
+        "vote_count": 21
+      },
+      {
+        "id": 59037,
+        "title": "Toxic Love",
+        "original_title": "Amore tossico",
+        "release_date": "1983-09-01",
+        "job": "Presenter",
+        "department": "Crew",
+        "popularity": 0.5348,
+        "vote_average": 7.278,
+        "vote_count": 248
+      },
+      {
+        "id": 53914,
+        "title": "The Story of Piera",
+        "original_title": "Storia di Piera",
+        "release_date": "1983-02-02",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.2727,
+        "vote_average": 5.692,
+        "vote_count": 26
+      },
+      {
+        "id": 69014,
+        "title": "Tales of Ordinary Madness",
+        "original_title": "Storie di ordinaria follia",
+        "release_date": "1981-09-11",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 1.2298,
+        "vote_average": 5.961,
+        "vote_count": 77
+      },
+      {
+        "id": 53648,
+        "title": "Seeking Asylum",
+        "original_title": "Chiedo asilo",
+        "release_date": "1979-10-24",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.3166,
+        "vote_average": 6.0,
+        "vote_count": 29
+      },
+      {
+        "id": 42200,
+        "title": "Bye Bye Monkey",
+        "original_title": "Ciao maschio",
+        "release_date": "1978-02-24",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.6633,
+        "vote_average": 6.178,
+        "vote_count": 45
+      },
+      {
+        "id": 504564,
+        "title": "Yerma",
+        "original_title": "Yerma",
+        "release_date": "1978-02-11",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.2551,
+        "vote_average": 8.0,
+        "vote_count": 1
+      },
+      {
+        "id": 3935,
+        "title": "The Last Woman",
+        "original_title": "La Dernière Femme",
+        "release_date": "1976-04-20",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.6532,
+        "vote_average": 6.09,
+        "vote_count": 50
+      },
+      {
+        "id": 83343,
+        "title": "Don't Touch the White Woman!",
+        "original_title": "Touche pas à la femme blanche",
+        "release_date": "1974-01-23",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.4544,
+        "vote_average": 5.533,
+        "vote_count": 45
+      },
+      {
+        "id": 10102,
+        "title": "La Grande Bouffe",
+        "original_title": "La Grande Bouffe",
+        "release_date": "1973-05-16",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.4641,
+        "vote_average": 7.082,
+        "vote_count": 547
+      },
+      {
+        "id": 63176,
+        "title": "Liza",
+        "original_title": "La cagna",
+        "release_date": "1972-08-11",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 1.1818,
+        "vote_average": 6.069,
+        "vote_count": 51
+      },
+      {
+        "id": 81775,
+        "title": "The Audience",
+        "original_title": "L'udienza",
+        "release_date": "1972-03-31",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.3272,
+        "vote_average": 6.5,
+        "vote_count": 38
+      },
+      {
+        "id": 186908,
+        "title": "The Lion Has Seven Heads",
+        "original_title": "Der Leone Have Sept Cabeças",
+        "release_date": "1971-08-03",
+        "job": "Production Manager",
+        "department": "Production",
+        "popularity": 0.723,
+        "vote_average": 6.017,
+        "vote_count": 29
+      },
+      {
+        "id": 487617,
+        "title": "Perché pagare per essere felici!!",
+        "original_title": "Perché pagare per essere felici!!",
+        "release_date": "1970-11-18",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.0409,
+        "vote_average": 7.0,
+        "vote_count": 2
+      },
+      {
+        "id": 113629,
+        "title": "Wind from the East",
+        "original_title": "Le Vent d'est",
+        "release_date": "1970-08-19",
+        "job": "Executive Producer",
+        "department": "Production",
+        "popularity": 0.5693,
+        "vote_average": 6.8,
+        "vote_count": 27
+      },
+      {
+        "id": 108179,
+        "title": "The Seed of Man",
+        "original_title": "Il seme dell'uomo",
+        "release_date": "1969-09-27",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.4043,
+        "vote_average": 6.446,
+        "vote_count": 28
+      },
+      {
+        "id": 56693,
+        "title": "Dillinger Is Dead",
+        "original_title": "Dillinger è morto",
+        "release_date": "1969-01-24",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.4356,
+        "vote_average": 7.1,
+        "vote_count": 142
+      },
+      {
+        "id": 107065,
+        "title": "The Harem",
+        "original_title": "L'Harem",
+        "release_date": "1967-10-06",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.5698,
+        "vote_average": 5.5,
+        "vote_count": 13
+      },
+      {
+        "id": 248592,
+        "title": "The Man with the Balloons",
+        "original_title": "L'uomo dei cinque palloni",
+        "release_date": "1967-08-08",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.5256,
+        "vote_average": 6.952,
+        "vote_count": 21
+      },
+      {
+        "id": 150605,
+        "title": "The Wedding March",
+        "original_title": "Marcia nuziale",
+        "release_date": "1966-02-17",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.6432,
+        "vote_average": 6.5,
+        "vote_count": 17
+      },
+      {
+        "id": 700592,
+        "title": "Corrida!",
+        "original_title": "Corrida!",
+        "release_date": "1966-01-09",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.0352,
+        "vote_average": 8.0,
+        "vote_count": 1
+      },
+      {
+        "id": 99095,
+        "title": "Kiss the Other Sheik",
+        "original_title": "Oggi, domani, dopodomani",
+        "release_date": "1965-12-28",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.5098,
+        "vote_average": 6.414,
+        "vote_count": 29
+      },
+      {
+        "id": 54141,
+        "title": "Controsesso",
+        "original_title": "Controsesso",
+        "release_date": "1964-11-30",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.7773,
+        "vote_average": 6.455,
+        "vote_count": 11
+      },
+      {
+        "id": 61823,
+        "title": "The Ape Woman",
+        "original_title": "La donna scimmia",
+        "release_date": "1964-01-31",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 3.6727,
+        "vote_average": 7.3,
+        "vote_count": 59
+      },
+      {
+        "id": 67378,
+        "title": "The Conjugal Bed",
+        "original_title": "Una storia moderna - L'ape regina",
+        "release_date": "1963-04-07",
+        "job": "Screenplay",
+        "department": "Writing",
+        "popularity": 0.8205,
+        "vote_average": 6.526,
+        "vote_count": 38
+      },
+      {
+        "id": 34866,
+        "title": "Mafioso",
+        "original_title": "Mafioso",
+        "release_date": "1962-10-24",
+        "job": "Screenplay",
+        "department": "Writing",
+        "popularity": 0.857,
+        "vote_average": 7.516,
+        "vote_count": 62
+      },
+      {
+        "id": 287868,
+        "title": "Latin Lovers",
+        "original_title": "Le italiane e l'amore",
+        "release_date": "1961-12-22",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.426,
+        "vote_average": 7.0,
+        "vote_count": 2
+      },
+      {
+        "id": 99883,
+        "title": "The Wheelchair",
+        "original_title": "El cochecito",
+        "release_date": "1960-11-03",
+        "job": "Screenplay",
+        "department": "Writing",
+        "popularity": 0.6548,
+        "vote_average": 6.83,
+        "vote_count": 56
+      },
+      {
+        "id": 110924,
+        "title": "The Little Apartment",
+        "original_title": "El pisito",
+        "release_date": "1959-06-15",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.6434,
+        "vote_average": 6.691,
+        "vote_count": 34
+      },
+      {
+        "id": 93907,
+        "title": "Los chicos",
+        "original_title": "Los chicos",
+        "release_date": "1959-01-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.3754,
+        "vote_average": 6.583,
+        "vote_count": 12
+      },
+      {
+        "id": 736472,
+        "title": "Women and Soldiers",
+        "original_title": "Donne e soldati",
+        "release_date": "1955-11-25",
+        "job": "Writer",
+        "department": "Writing",
+        "popularity": 0.1172,
+        "vote_average": 7.0,
+        "vote_count": 1
+      },
+      {
+        "id": 31293,
+        "title": "Love in the City",
+        "original_title": "L'amore in città",
+        "release_date": "1953-11-27",
+        "job": "Producer",
+        "department": "Production",
+        "popularity": 0.6253,
+        "vote_average": 6.563,
+        "vote_count": 63
+      },
+      {
+        "id": 297757,
+        "title": "Notes on a True Story",
+        "original_title": "Appunti su un fatto di cronaca",
+        "release_date": "1951-01-01",
+        "job": "Producer",
+        "department": "Production",
+        "popularity": 0.2768,
+        "vote_average": 5.857,
+        "vote_count": 21
+      },
+      {
+        "id": 806348,
+        "title": "Documento mensile",
+        "original_title": "Documento mensile",
+        "release_date": "1951-01-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.0881,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 306909,
+        "title": "The Funicular of Mount Faloria",
+        "original_title": "La funivia del Faloria",
+        "release_date": "1950-04-01",
+        "job": "Producer",
+        "department": "Production",
+        "popularity": 0.1311,
+        "vote_average": 7.333,
+        "vote_count": 3
+      }
+    ],
+    "movie_count": 44
   },
   "Marco Tul": {
     "name": "Marco Tul",
@@ -240040,8 +241293,8 @@
         "title": "DNA",
         "original_title": "ADN",
         "release_date": "2020-12-10",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 1.3295,
         "vote_average": 5.9,
         "vote_count": 164
@@ -240062,8 +241315,8 @@
         "title": "My King",
         "original_title": "Mon roi",
         "release_date": "2015-10-21",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Screenplay",
+        "department": "Writing",
         "popularity": 1.103,
         "vote_average": 7.143,
         "vote_count": 808
@@ -240084,8 +241337,8 @@
         "title": "All About Actresses",
         "original_title": "Le Bal des actrices",
         "release_date": "2009-01-28",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.9185,
         "vote_average": 5.9,
         "vote_count": 109
@@ -240106,8 +241359,8 @@
         "title": "I'm an actrice",
         "original_title": "I'm an actrice",
         "release_date": "2004-02-01",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3065,
         "vote_average": 9.0,
         "vote_count": 1
@@ -246886,7 +248139,7 @@
         "department": "Production",
         "popularity": 11.1184,
         "vote_average": 8.007,
-        "vote_count": 8968
+        "vote_count": 8969
       },
       {
         "id": 201088,
@@ -246929,7 +248182,7 @@
         "job": "Producer",
         "department": "Production",
         "popularity": 6.3594,
-        "vote_average": 6.355,
+        "vote_average": 6.4,
         "vote_count": 10250
       },
       {
@@ -247006,8 +248259,8 @@
         "job": "Producer",
         "department": "Production",
         "popularity": 3.6328,
-        "vote_average": 7.463,
-        "vote_count": 2068
+        "vote_average": 7.462,
+        "vote_count": 2069
       },
       {
         "id": 949,
@@ -247018,7 +248271,7 @@
         "department": "Directing",
         "popularity": 18.6895,
         "vote_average": 7.935,
-        "vote_count": 8334
+        "vote_count": 8337
       },
       {
         "id": 9361,
@@ -247083,8 +248336,8 @@
         "job": "Screenplay",
         "department": "Writing",
         "popularity": 0.2313,
-        "vote_average": 7.0,
-        "vote_count": 1518
+        "vote_average": 7.006,
+        "vote_count": 1519
       },
       {
         "id": 33762,
@@ -247127,8 +248380,8 @@
         "job": "Executive Producer",
         "department": "Production",
         "popularity": 3.9453,
-        "vote_average": 7.215,
-        "vote_count": 837
+        "vote_average": 7.216,
+        "vote_count": 838
       },
       {
         "id": 57537,
@@ -259195,7 +260448,7 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 2.0884,
-        "vote_average": 7.326,
+        "vote_average": 7.3,
         "vote_count": 1133
       },
       {
@@ -259240,7 +260493,7 @@
         "department": "Directing",
         "popularity": 3.3237,
         "vote_average": 7.385,
-        "vote_count": 2012
+        "vote_count": 2013
       },
       {
         "id": 8656,
@@ -259250,8 +260503,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 6.027,
-        "vote_average": 6.235,
-        "vote_count": 3307
+        "vote_average": 6.236,
+        "vote_count": 3308
       },
       {
         "id": 6623,
@@ -262107,8 +263360,8 @@
         "title": "The Actors",
         "original_title": "The Actors",
         "release_date": "2003-03-16",
-        "job": "Producer",
-        "department": "Production",
+        "job": "Story",
+        "department": "Writing",
         "popularity": 1.0567,
         "vote_average": 5.603,
         "vote_count": 39
@@ -262151,8 +263404,8 @@
         "title": "The End of the Affair",
         "original_title": "The End of the Affair",
         "release_date": "1999-12-03",
-        "job": "Producer",
-        "department": "Production",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.8502,
         "vote_average": 6.596,
         "vote_count": 272
@@ -262187,8 +263440,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 2.4104,
-        "vote_average": 6.879,
-        "vote_count": 518
+        "vote_average": 6.88,
+        "vote_count": 519
       },
       {
         "id": 628,
@@ -266812,8 +268065,8 @@
         "title": "St Trinian's",
         "original_title": "St Trinian's",
         "release_date": "2007-12-21",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Executive Producer",
+        "department": "Production",
         "popularity": 3.4516,
         "vote_average": 5.922,
         "vote_count": 495
@@ -270842,7 +272095,7 @@
         "department": "Art",
         "popularity": 4.3217,
         "vote_average": 7.73,
-        "vote_count": 4241
+        "vote_count": 4242
       },
       {
         "id": 32620,
@@ -284137,7 +285390,7 @@
         "department": "Directing",
         "popularity": 5.2368,
         "vote_average": 6.801,
-        "vote_count": 3876
+        "vote_count": 3877
       },
       {
         "id": 1280308,
@@ -284169,8 +285422,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 5.3144,
-        "vote_average": 6.641,
-        "vote_count": 1676
+        "vote_average": 6.642,
+        "vote_count": 1677
       },
       {
         "id": 867,
@@ -284254,8 +285507,8 @@
         "title": "Heatwave",
         "original_title": "Heatwave",
         "release_date": "1982-03-08",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Screenplay",
+        "department": "Writing",
         "popularity": 0.4019,
         "vote_average": 5.208,
         "vote_count": 12
@@ -284276,8 +285529,8 @@
         "title": "Tapak Dewata - Path of the Gods: Java and Bali",
         "original_title": "Tapak Dewata - Path of the Gods: Java and Bali",
         "release_date": "1978-01-01",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.269,
         "vote_average": 0.0,
         "vote_count": 0
@@ -284364,8 +285617,8 @@
         "title": "Finks Make Movies",
         "original_title": "Finks Make Movies",
         "release_date": "1973-01-01",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Director of Photography",
+        "department": "Camera",
         "popularity": 0.0673,
         "vote_average": 0.0,
         "vote_count": 0
@@ -284404,17 +285657,6 @@
         "vote_count": 1
       },
       {
-        "id": 711491,
-        "title": "Memories",
-        "original_title": "Memories",
-        "release_date": "1971-01-01",
-        "job": "Director",
-        "department": "Directing",
-        "popularity": 0.0784,
-        "vote_average": 0.0,
-        "vote_count": 0
-      },
-      {
         "id": 711493,
         "title": "Intersection",
         "original_title": "Intersection",
@@ -284422,6 +285664,17 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 0.1062,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      {
+        "id": 711491,
+        "title": "Memories",
+        "original_title": "Memories",
+        "release_date": "1971-01-01",
+        "job": "Director",
+        "department": "Directing",
+        "popularity": 0.0784,
         "vote_average": 0.0,
         "vote_count": 0
       },
@@ -287162,8 +288415,8 @@
         "title": "A Golden Boy",
         "original_title": "Un ragazzo d'oro",
         "release_date": "2014-09-18",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.4282,
         "vote_average": 5.296,
         "vote_count": 49
@@ -287217,8 +288470,8 @@
         "title": "Il figlio più piccolo",
         "original_title": "Il figlio più piccolo",
         "release_date": "2010-02-19",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.7029,
         "vote_average": 5.6,
         "vote_count": 77
@@ -287228,8 +288481,8 @@
         "title": "The Friends At The Margherita Café",
         "original_title": "Gli amici del Bar Margherita",
         "release_date": "2009-04-03",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.2618,
         "vote_average": 5.604,
         "vote_count": 101
@@ -287316,8 +288569,8 @@
         "title": "Knights Of The Quest",
         "original_title": "I Cavalieri Che Fecero L'Impresa",
         "release_date": "2001-04-06",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.4542,
         "vote_average": 4.865,
         "vote_count": 26
@@ -287426,8 +288679,8 @@
         "title": "Brothers and Sisters",
         "original_title": "Fratelli e sorelle",
         "release_date": "1992-09-11",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.4763,
         "vote_average": 4.4,
         "vote_count": 5
@@ -287591,8 +288844,8 @@
         "title": "Cinema!!!",
         "original_title": "Cinema!!!",
         "release_date": "1979-11-13",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3629,
         "vote_average": 7.75,
         "vote_count": 2
@@ -287635,8 +288888,8 @@
         "title": "The House with Laughing Windows",
         "original_title": "La casa dalle finestre che ridono",
         "release_date": "1976-08-20",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.5504,
         "vote_average": 7.244,
         "vote_count": 391
@@ -287679,8 +288932,8 @@
         "title": "The Baron's Mazurka",
         "original_title": "La mazurka del barone, della santa e del fico fiorone",
         "release_date": "1975-01-22",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.6476,
         "vote_average": 6.792,
         "vote_count": 24
@@ -296080,8 +297333,8 @@
         "job": "Director",
         "department": "Directing",
         "popularity": 23.9567,
-        "vote_average": 5.718,
-        "vote_count": 177
+        "vote_average": 5.719,
+        "vote_count": 178
       },
       {
         "id": 1630746,
@@ -296220,8 +297473,8 @@
         "title": "5 Days of War",
         "original_title": "5 Days of War",
         "release_date": "2011-06-06",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Producer",
+        "department": "Production",
         "popularity": 1.4465,
         "vote_average": 5.7,
         "vote_count": 212
@@ -296352,8 +297605,8 @@
         "title": "Cutthroat Island",
         "original_title": "Cutthroat Island",
         "release_date": "1995-12-22",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Producer",
+        "department": "Production",
         "popularity": 3.3882,
         "vote_average": 5.8,
         "vote_count": 619
@@ -296389,7 +297642,7 @@
         "department": "Directing",
         "popularity": 6.3655,
         "vote_average": 6.514,
-        "vote_count": 2628
+        "vote_count": 2629
       },
       {
         "id": 32221,
@@ -296473,8 +297726,8 @@
         "title": "Custody",
         "original_title": "Huostaanotto",
         "release_date": "1980-01-01",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.0457,
         "vote_average": 10.0,
         "vote_count": 2
@@ -300432,8 +301685,8 @@
         "title": "Shadowlands",
         "original_title": "Shadowlands",
         "release_date": "1993-12-25",
-        "job": "Producer",
-        "department": "Production",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.9505,
         "vote_average": 6.891,
         "vote_count": 308
@@ -300454,8 +301707,8 @@
         "title": "Cry Freedom",
         "original_title": "Cry Freedom",
         "release_date": "1987-11-06",
-        "job": "Producer",
-        "department": "Production",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.8937,
         "vote_average": 7.021,
         "vote_count": 234
@@ -300476,8 +301729,8 @@
         "title": "Gandhi",
         "original_title": "Gandhi",
         "release_date": "1982-12-01",
-        "job": "Producer",
-        "department": "Production",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 3.442,
         "vote_average": 7.563,
         "vote_count": 2504
@@ -316371,8 +317624,8 @@
         "title": "The Messiah",
         "original_title": "Il Messia",
         "release_date": "1975-10-24",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.0636,
         "vote_average": 6.6,
         "vote_count": 20
@@ -316470,8 +317723,8 @@
         "title": "Idea di un'isola",
         "original_title": "Idea di un'isola",
         "release_date": "1967-01-01",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.0624,
         "vote_average": 7.5,
         "vote_count": 2
@@ -316668,8 +317921,8 @@
         "title": "Journey to Italy",
         "original_title": "Viaggio in Italia",
         "release_date": "1954-09-08",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.8561,
         "vote_average": 7.262,
         "vote_count": 328
@@ -316822,11 +318075,11 @@
         "title": "Stromboli",
         "original_title": "Stromboli (Terra di Dio)",
         "release_date": "1950-02-15",
-        "job": "Producer",
-        "department": "Production",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.4692,
-        "vote_average": 7.09,
-        "vote_count": 227
+        "vote_average": 7.094,
+        "vote_count": 228
       },
       {
         "id": 43444,
@@ -316855,8 +318108,8 @@
         "title": "Paisan",
         "original_title": "Paisà",
         "release_date": "1946-12-10",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.2697,
         "vote_average": 7.5,
         "vote_count": 356
@@ -316910,8 +318163,8 @@
         "title": "The White Ship",
         "original_title": "La nave bianca",
         "release_date": "1941-10-03",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.419,
         "vote_average": 5.5,
         "vote_count": 14
@@ -325415,8 +326668,8 @@
         "title": "Doublecrossed",
         "original_title": "Doublecrossed",
         "release_date": "1991-07-20",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.5591,
         "vote_average": 4.417,
         "vote_count": 6
@@ -337054,8 +338307,8 @@
         "job": "Producer",
         "department": "Production",
         "popularity": 12.0603,
-        "vote_average": 6.372,
-        "vote_count": 1725
+        "vote_average": 6.371,
+        "vote_count": 1726
       },
       {
         "id": 715123,
@@ -347199,8 +348452,8 @@
         "job": "Producer",
         "department": "Production",
         "popularity": 2.2769,
-        "vote_average": 5.761,
-        "vote_count": 374
+        "vote_average": 5.753,
+        "vote_count": 375
       },
       {
         "id": 842096,
@@ -347277,7 +348530,7 @@
         "department": "Directing",
         "popularity": 22.6157,
         "vote_average": 6.8,
-        "vote_count": 1912
+        "vote_count": 1913
       },
       {
         "id": 65662,
@@ -366933,7 +368186,7 @@
         "department": "Production",
         "popularity": 9.1755,
         "vote_average": 7.192,
-        "vote_count": 3390
+        "vote_count": 3391
       },
       {
         "id": 1148274,
@@ -366951,8 +368204,8 @@
         "title": "Alfons och hemlige Mållgan",
         "original_title": "Alfons och hemlige Mållgan",
         "release_date": "2022-03-18",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Producer",
+        "department": "Production",
         "popularity": 0.2068,
         "vote_average": 6.4,
         "vote_count": 5
@@ -366962,8 +368215,8 @@
         "title": "Bara knyt, Alfons!",
         "original_title": "Bara knyt, Alfons!",
         "release_date": "2022-02-18",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Producer",
+        "department": "Production",
         "popularity": 0.0845,
         "vote_average": 5.6,
         "vote_count": 5
@@ -366984,8 +368237,8 @@
         "title": "Aja baja, Alfons Åberg",
         "original_title": "Aja baja, Alfons Åberg",
         "release_date": "2022-01-21",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Editor",
+        "department": "Editing",
         "popularity": 0.0802,
         "vote_average": 6.8,
         "vote_count": 4
@@ -367017,8 +368270,8 @@
         "title": "Bergman's Reliquarium",
         "original_title": "Bergmans reliquarium",
         "release_date": "2018-01-27",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Screenplay",
+        "department": "Writing",
         "popularity": 0.1559,
         "vote_average": 6.5,
         "vote_count": 2
@@ -367076,7 +368329,7 @@
         "department": "Directing",
         "popularity": 3.3723,
         "vote_average": 7.544,
-        "vote_count": 3254
+        "vote_count": 3255
       },
       {
         "id": 36717,
@@ -367116,8 +368369,8 @@
         "title": "Four Shades of Brown",
         "original_title": "Fyra nyanser av brunt",
         "release_date": "2004-01-25",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.3684,
         "vote_average": 6.543,
         "vote_count": 35
@@ -367149,8 +368402,8 @@
         "title": "Screwed in Tallinn: A Small Film About Loneliness",
         "original_title": "Torsk på Tallinn - En liten film om ensamhet",
         "release_date": "1999-04-22",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Editor",
+        "department": "Editing",
         "popularity": 0.4355,
         "vote_average": 6.881,
         "vote_count": 63
@@ -368898,8 +370151,8 @@
         "job": "Producer",
         "department": "Production",
         "popularity": 10.2552,
-        "vote_average": 7.8,
-        "vote_count": 7029
+        "vote_average": 7.802,
+        "vote_count": 7030
       },
       {
         "id": 1453063,
@@ -370962,8 +372215,8 @@
         "title": "Diamond Sutra",
         "original_title": "金剛經",
         "release_date": "2012-09-07",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3674,
         "vote_average": 0.0,
         "vote_count": 0
@@ -370973,8 +372226,8 @@
         "title": "Sleepwalk",
         "original_title": "梦游",
         "release_date": "2012-08-27",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.3066,
         "vote_average": 0.0,
         "vote_count": 0
@@ -371017,8 +372270,8 @@
         "title": "Visage",
         "original_title": "Visage",
         "release_date": "2009-10-02",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.0273,
         "vote_average": 5.4,
         "vote_count": 25
@@ -371083,8 +372336,8 @@
         "title": "I Don't Want to Sleep Alone",
         "original_title": "黑眼圈",
         "release_date": "2006-12-02",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Director of Photography",
+        "department": "Camera",
         "popularity": 0.8856,
         "vote_average": 6.5,
         "vote_count": 46
@@ -371094,8 +372347,8 @@
         "title": "The Wayward Cloud",
         "original_title": "天邊一朵雲",
         "release_date": "2005-05-19",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 1.5299,
         "vote_average": 5.9,
         "vote_count": 122
@@ -371292,8 +372545,8 @@
         "title": "All the Corners of the World",
         "original_title": "海角天涯",
         "release_date": "1989-01-01",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3787,
         "vote_average": 5.5,
         "vote_count": 6
@@ -371653,8 +372906,8 @@
         "title": "Diamond Sutra",
         "original_title": "金剛經",
         "release_date": "2012-09-07",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3674,
         "vote_average": 0.0,
         "vote_count": 0
@@ -371664,8 +372917,8 @@
         "title": "Sleepwalk",
         "original_title": "梦游",
         "release_date": "2012-08-27",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.3066,
         "vote_average": 0.0,
         "vote_count": 0
@@ -371708,8 +372961,8 @@
         "title": "Visage",
         "original_title": "Visage",
         "release_date": "2009-10-02",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.0273,
         "vote_average": 5.4,
         "vote_count": 25
@@ -371774,8 +373027,8 @@
         "title": "I Don't Want to Sleep Alone",
         "original_title": "黑眼圈",
         "release_date": "2006-12-02",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Director of Photography",
+        "department": "Camera",
         "popularity": 0.8856,
         "vote_average": 6.5,
         "vote_count": 46
@@ -371785,8 +373038,8 @@
         "title": "The Wayward Cloud",
         "original_title": "天邊一朵雲",
         "release_date": "2005-05-19",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 1.5299,
         "vote_average": 5.9,
         "vote_count": 122
@@ -371983,8 +373236,8 @@
         "title": "All the Corners of the World",
         "original_title": "海角天涯",
         "release_date": "1989-01-01",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3787,
         "vote_average": 5.5,
         "vote_count": 6
@@ -372344,8 +373597,8 @@
         "title": "Diamond Sutra",
         "original_title": "金剛經",
         "release_date": "2012-09-07",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3674,
         "vote_average": 0.0,
         "vote_count": 0
@@ -372355,8 +373608,8 @@
         "title": "Sleepwalk",
         "original_title": "梦游",
         "release_date": "2012-08-27",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.3066,
         "vote_average": 0.0,
         "vote_count": 0
@@ -372399,8 +373652,8 @@
         "title": "Visage",
         "original_title": "Visage",
         "release_date": "2009-10-02",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.0273,
         "vote_average": 5.4,
         "vote_count": 25
@@ -372465,8 +373718,8 @@
         "title": "I Don't Want to Sleep Alone",
         "original_title": "黑眼圈",
         "release_date": "2006-12-02",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Director of Photography",
+        "department": "Camera",
         "popularity": 0.8856,
         "vote_average": 6.5,
         "vote_count": 46
@@ -372476,8 +373729,8 @@
         "title": "The Wayward Cloud",
         "original_title": "天邊一朵雲",
         "release_date": "2005-05-19",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 1.5299,
         "vote_average": 5.9,
         "vote_count": 122
@@ -372674,8 +373927,8 @@
         "title": "All the Corners of the World",
         "original_title": "海角天涯",
         "release_date": "1989-01-01",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.3787,
         "vote_average": 5.5,
         "vote_count": 6
@@ -387411,8 +388664,8 @@
         "title": "SHOOTING PAMELYN CHEE",
         "original_title": "SHOOTING PAMELYN CHEE",
         "release_date": "2010-03-03",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Editor",
+        "department": "Editing",
         "popularity": 0.3528,
         "vote_average": 0.0,
         "vote_count": 0
@@ -387437,7 +388690,7 @@
         "department": "Directing",
         "popularity": 4.2693,
         "vote_average": 7.761,
-        "vote_count": 4102
+        "vote_count": 4103
       },
       {
         "id": 35854,
@@ -387510,8 +388763,8 @@
         "title": "Dry Wood, Fierce Fire",
         "original_title": "乾柴烈火",
         "release_date": "2002-04-19",
-        "job": "Writer",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.8978,
         "vote_average": 7.182,
         "vote_count": 11
@@ -392742,7 +393995,7 @@
         "department": "Crew",
         "popularity": 4.467,
         "vote_average": 6.625,
-        "vote_count": 981
+        "vote_count": 983
       },
       {
         "id": 414419,
@@ -392752,8 +394005,8 @@
         "job": "Fight Choreographer",
         "department": "Crew",
         "popularity": 16.9176,
-        "vote_average": 8.073,
-        "vote_count": 1258
+        "vote_average": 8.075,
+        "vote_count": 1261
       },
       {
         "id": 148284,
@@ -392782,8 +394035,8 @@
         "title": "The Forbidden Kingdom",
         "original_title": "The Forbidden Kingdom",
         "release_date": "2008-04-17",
-        "job": "Martial Arts Choreographer",
-        "department": "Crew",
+        "job": "Executive Producer",
+        "department": "Production",
         "popularity": 7.0818,
         "vote_average": 6.644,
         "vote_count": 1908
@@ -392830,7 +394083,7 @@
         "department": "Crew",
         "popularity": 4.6994,
         "vote_average": 6.941,
-        "vote_count": 2178
+        "vote_count": 2179
       },
       {
         "id": 393,
@@ -392841,7 +394094,7 @@
         "department": "Crew",
         "popularity": 9.129,
         "vote_average": 7.878,
-        "vote_count": 15055
+        "vote_count": 15056
       },
       {
         "id": 9470,
@@ -392852,7 +394105,7 @@
         "department": "Crew",
         "popularity": 14.5875,
         "vote_average": 7.497,
-        "vote_count": 3180
+        "vote_count": 3181
       },
       {
         "id": 605,
@@ -392874,7 +394127,7 @@
         "department": "Crew",
         "popularity": 12.8161,
         "vote_average": 7.973,
-        "vote_count": 18924
+        "vote_count": 18927
       },
       {
         "id": 151974,
@@ -392939,8 +394192,8 @@
         "job": "Action Director",
         "department": "Directing",
         "popularity": 7.9594,
-        "vote_average": 7.437,
-        "vote_count": 3569
+        "vote_average": 7.436,
+        "vote_count": 3570
       },
       {
         "id": 603,
@@ -392951,15 +394204,15 @@
         "department": "Crew",
         "popularity": 196.786,
         "vote_average": 8.246,
-        "vote_count": 27892
+        "vote_count": 27897
       },
       {
         "id": 9460,
         "title": "Black Mask",
         "original_title": "黑俠",
         "release_date": "1996-11-07",
-        "job": "Action Director",
-        "department": "Directing",
+        "job": "Martial Arts Choreographer",
+        "department": "Crew",
         "popularity": 3.1324,
         "vote_average": 6.2,
         "vote_count": 293
@@ -392980,8 +394233,8 @@
         "title": "Tai Chi II",
         "original_title": "太極拳",
         "release_date": "1996-03-14",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Martial Arts Choreographer",
+        "department": "Crew",
         "popularity": 1.212,
         "vote_average": 6.9,
         "vote_count": 15
@@ -393145,8 +394398,8 @@
         "title": "In the Line of Duty 4",
         "original_title": "皇家師姐IV直擊證人",
         "release_date": "1989-07-21",
-        "job": "Martial Arts Choreographer",
-        "department": "Crew",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 1.8961,
         "vote_average": 6.951,
         "vote_count": 61
@@ -393365,8 +394618,8 @@
         "title": "Snake in the Eagle's Shadow",
         "original_title": "蛇形刁手",
         "release_date": "1978-03-01",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 3.6043,
         "vote_average": 7.306,
         "vote_count": 360
@@ -393736,7 +394989,7 @@
         "department": "Camera",
         "popularity": 14.8629,
         "vote_average": 8.09,
-        "vote_count": 10817
+        "vote_count": 10818
       },
       {
         "id": 464052,
@@ -393776,8 +395029,8 @@
         "title": "Snow Steam Iron",
         "original_title": "Snow Steam Iron",
         "release_date": "2017-09-19",
-        "job": "Screenplay",
-        "department": "Writing",
+        "job": "Director",
+        "department": "Directing",
         "popularity": 0.5123,
         "vote_average": 7.6,
         "vote_count": 67
@@ -393802,7 +395055,7 @@
         "department": "Production",
         "popularity": 9.5627,
         "vote_average": 5.917,
-        "vote_count": 22090
+        "vote_count": 22091
       },
       {
         "id": 209112,
@@ -393857,7 +395110,7 @@
         "department": "Writing",
         "popularity": 5.3004,
         "vote_average": 6.199,
-        "vote_count": 5075
+        "vote_count": 5076
       },
       {
         "id": 41216,
@@ -393901,7 +395154,7 @@
         "department": "Directing",
         "popularity": 9.9197,
         "vote_average": 7.354,
-        "vote_count": 9982
+        "vote_count": 9983
       },
       {
         "id": 1271,
@@ -393974,8 +395227,8 @@
         "title": "For a Moment Alive",
         "original_title": "For a Moment Alive",
         "release_date": "1990-01-01",
-        "job": "Director",
-        "department": "Directing",
+        "job": "Writer",
+        "department": "Writing",
         "popularity": 0.2413,
         "vote_average": 6.5,
         "vote_count": 1

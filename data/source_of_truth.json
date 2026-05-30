@@ -50763,5 +50763,53 @@
       "Website": "N/A",
       "Response": "True"
     }
+  },
+  "Miles to Graceland": {
+    "imdb_id": "tt0233142",
+    "matched_title": "3000 Miles to Graceland",
+    "match_type": "exact_spanish",
+    "catalogue": "CINE.pdf",
+    "full_data": {
+      "Title": "3000 Miles to Graceland",
+      "Year": "2001",
+      "Rated": "R",
+      "Released": "23 Feb 2001",
+      "Runtime": "125 min",
+      "Genre": "Action, Comedy, Crime",
+      "Director": "Demian Lichtenstein",
+      "Writer": "Richard Recco, Demian Lichtenstein, Kevin Bernhardt",
+      "Actors": "Kurt Russell, Kevin Costner, Courteney Cox",
+      "Plot": "It was an ingenious enough plan: rob the Riviera Casino's count room during an Elvis impersonator convention. But Thomas Murphy decided to keep all the money for himself and shot all his partners, including recently-freed ex-con Michael Zane. With $3.2 million at stake, the Marshals Service closing in, and single mom Cybil Waingrow and her son Jesse constantly confounding things, Michael must track down Murphy.",
+      "Language": "English",
+      "Country": "United States, Canada",
+      "Awards": "13 nominations total",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTExMDA0NDAyOTReQTJeQWpwZ15BbWU2MDM4ODg3OQ@@._V1_SX300.jpg",
+      "Ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "6.0/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "15%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "21/100"
+        }
+      ],
+      "Metascore": "21",
+      "imdbRating": "6.0",
+      "imdbVotes": "50,878",
+      "imdbID": "tt0233142",
+      "Type": "movie",
+      "DVD": "N/A",
+      "BoxOffice": "$15,749,959",
+      "Production": "N/A",
+      "Website": "N/A",
+      "Response": "True"
+    },
+    "catalogue_id": 3000,
+    "page_number": 50
   }
 }

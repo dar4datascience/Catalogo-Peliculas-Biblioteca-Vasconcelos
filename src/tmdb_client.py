@@ -442,8 +442,8 @@ def enrich_movie_with_tmdb(title: str, director: str = "", year: Optional[str] =
         result["match_type"] = "no_filmography"
         return result
     
-    # Step 3: Find best match
-    best_match = find_best_match_in_filmography(title, filmography, director)
+    # Step 3: Find best match (use_hybrid=True activates DuckDB Jaro+BM25+cosine scorer)
+    best_match = find_best_match_in_filmography(title, filmography, director, use_hybrid=True)
     if not best_match:
         result["match_type"] = "no_title_match"
         result["confidence_breakdown"] = {"director_confirmed": 30}

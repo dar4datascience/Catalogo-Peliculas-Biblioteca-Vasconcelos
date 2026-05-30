@@ -1,10 +1,10 @@
 {
   "summary": {
-    "confirmed": 1085,
+    "confirmed": 1,
     "fuzzy_review": 22,
-    "failed": 1121,
-    "skipped_already_in_sot": 14,
-    "total_processed": 2242
+    "failed": 981,
+    "skipped_already_in_sot": 1239,
+    "total_processed": 2243
   },
   "fuzzy_candidates": [
     {
@@ -315,30 +315,6 @@
       "raw_line": "7 A media escalera = Halbe treppe Dir. Andreas Dressen"
     },
     {
-      "id": "20",
-      "title_spanish": "Abrazos rotos, Los",
-      "title_english": "",
-      "director": "Pedro Almodóvar",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "20 Abrazos rotos, Los Dir. Pedro Almodóvar "
-    },
-    {
-      "id": "25",
-      "title_spanish": "Acorazado Potemkin, El",
-      "title_english": "Bronenosets Potyomkin",
-      "director": "Serguei Eisenstein",
-      "patterns": [
-        "article_swapped",
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "25Acorazado Potemkin, El = Bronenosets PotyomkinDir. Serguei Eisenstein"
-    },
-    {
       "id": "27",
       "title_spanish": "Actas de Marusia",
       "title_english": "",
@@ -417,40 +393,6 @@
       "raw_line": "49 Aire de Clara, El Dir. Sarah Minter."
     },
     {
-      "id": "51",
-      "title_spanish": "Al diablo con el amor",
-      "title_english": "I hate valentines´s day",
-      "director": "Nia Vardalos",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "51Al diablo con el amor = I hate valentines´s dayDir. Nia Vardalos"
-    },
-    {
-      "id": "57",
-      "title_spanish": "Alas del deseo, Las",
-      "title_english": "Der Himmel über Berlin",
-      "director": "Wim Wenders",
-      "patterns": [
-        "article_swapped",
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "57Alas del deseo, Las = Der Himmel über BerlinDirector: Wim Wenders"
-    },
-    {
-      "id": "64",
-      "title_spanish": "Alexander versión del director",
-      "title_english": "Alexander director’s cut",
-      "director": "Oliver Stone",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "64Alexander versión del director = Alexander director’s cut Dir. Oliver Stone "
-    },
-    {
       "id": "67",
       "title_spanish": "Alicia en las ciudades",
       "title_english": "Alice in den Städten",
@@ -472,18 +414,6 @@
       ],
       "reason": "no_match",
       "raw_line": "74Alucinacioines del pasado Jacob´s ladderDir. Adrian Lyne."
-    },
-    {
-      "id": "77",
-      "title_spanish": "Amanecer de los muertos, El",
-      "title_english": "",
-      "director": "Zack Snyder",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "77 Amanecer de los muertos, El Dir. Zack Snyder "
     },
     {
       "id": "78",
@@ -591,18 +521,6 @@
       "raw_line": "96 Amos de la Dogtown.Los Dir. Catherine Hardwicke"
     },
     {
-      "id": "97",
-      "title_spanish": "Amor en tiempos de odio, El",
-      "title_english": "",
-      "director": "Jan Hrebejk",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "97 Amor en tiempos de odio, El Dir. Jan Hrebejk "
-    },
-    {
       "id": "98",
       "title_spanish": "Amor idiota",
       "title_english": "",
@@ -647,17 +565,6 @@
       ],
       "reason": "no_match",
       "raw_line": "112 Angel borracho, El Dir. Akira Kurosawa"
-    },
-    {
-      "id": "113",
-      "title_spanish": "Angel de la oscuridad",
-      "title_english": "",
-      "director": "Dimitri Logothetis",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "113 Angel de la oscuridad Dir. Dimitri Logothetis.."
     },
     {
       "id": "116",
@@ -793,17 +700,6 @@
       ],
       "reason": "no_match",
       "raw_line": "137 Año nuevo New year’s eve Dir. Garry Marshall "
-    },
-    {
-      "id": "139",
-      "title_spanish": "Apocalypse Now : redux",
-      "title_english": "",
-      "director": ", prod",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "139Apocalypse Now : redux Dir., prod., escritor Francis Ford Coppola "
     },
     {
       "id": "142",
@@ -989,18 +885,6 @@
       "raw_line": "169 Atrapado sin salida Dir. Milos Forman "
     },
     {
-      "id": "175",
-      "title_spanish": "Avalancha(alerta en la montaña)",
-      "title_english": "",
-      "director": "Mark Roper",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "175 Avalancha(alerta en la montaña) Dir.Mark Roper.."
-    },
-    {
       "id": "176",
       "title_spanish": "Avalon Gate to Avalon",
       "title_english": "",
@@ -1023,17 +907,6 @@
       "raw_line": "177 Avaricia criminal Dir.Ron Wolotzky"
     },
     {
-      "id": "180",
-      "title_spanish": "Aventuras de Juan Quin Quin",
-      "title_english": "",
-      "director": "Julio García Espinosa",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "180 Aventuras de Juan Quin Quin Dir. Julio García Espinosa"
-    },
-    {
       "id": "184",
       "title_spanish": "Azúcar amarga Bitter sugar",
       "title_english": "",
@@ -1054,28 +927,6 @@
       ],
       "reason": "no_match",
       "raw_line": "185 B. Monkey sin salida Dir. Michael Radford"
-    },
-    {
-      "id": "188",
-      "title_spanish": "Bailando con el corazón",
-      "title_english": "",
-      "director": "Nick Hurran",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "188 Bailando con el corazón Dir. Nick Hurran"
-    },
-    {
-      "id": "191",
-      "title_spanish": "Bajo el mismo  techo Life as we know it",
-      "title_english": "",
-      "director": "por Greg Berlanti",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "191Bajo el mismo  techo Life as we know itDir. por Greg Berlanti"
     },
     {
       "id": "196",
@@ -1134,29 +985,6 @@
       ],
       "reason": "no_match",
       "raw_line": "207 Batalla de Riddick, La Dir. y esc. David Twohy "
-    },
-    {
-      "id": "209",
-      "title_spanish": "Batalla en el infierno",
-      "title_english": "",
-      "director": "Hal Masonberg",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "209 Batalla en el infierno Dir. Hal Masonberg"
-    },
-    {
-      "id": "210",
-      "title_spanish": "battle planet(La conquista del planeta)",
-      "title_english": "",
-      "director": "Greg Aronowitz",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "210battle planet(La conquista del planeta)Dir: Greg Aronowitz"
     },
     {
       "id": "211",
@@ -1351,19 +1179,6 @@
       "raw_line": "245 Bordadoras, Las Dir. Eléonore Faucher "
     },
     {
-      "id": "247",
-      "title_spanish": "Born to be blue = La historia de Chet BakerRobert Budreau",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "bilingual_equals",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "247Born to be blue = La historia de Chet BakerRobert Budreau"
-    },
-    {
       "id": "250",
       "title_spanish": "Boxer: golpe a la vida",
       "title_english": "",
@@ -1477,18 +1292,6 @@
       "raw_line": "263 Búfalo Americano Dir.  Michael Corrente "
     },
     {
-      "id": "267",
-      "title_spanish": "Cabaña The Schack, La",
-      "title_english": "",
-      "director": "Stuart Hazeldine",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "267 Cabaña The Schack, La  dir. Stuart Hazeldine "
-    },
-    {
       "id": "270",
       "title_spanish": "Cacería voraz II",
       "title_english": "",
@@ -1509,17 +1312,6 @@
       ],
       "reason": "no_match",
       "raw_line": "273 Cada loco con su tema Dir. Juan Bustillo Oro"
-    },
-    {
-      "id": "274",
-      "title_spanish": "Cada quien su cine",
-      "title_english": "",
-      "director": "Varios",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "274 Cada quien su cine Dir. Varios"
     },
     {
       "id": "276",
@@ -1544,17 +1336,6 @@
       "raw_line": "277 Caída del Halcón negro Dir. Ridley Scott "
     },
     {
-      "id": "279",
-      "title_spanish": "Caída, La : Los últimos días de Hitler",
-      "title_english": "",
-      "director": "Oliver Hirschbiegel",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "279 Caída, La : Los últimos días de Hitler  Dir. Oliver Hirschbiegel "
-    },
-    {
       "id": "282",
       "title_spanish": "Callas para siempre",
       "title_english": "",
@@ -1564,18 +1345,6 @@
       ],
       "reason": "no_match",
       "raw_line": "282 Callas para siempre Dir. Franco Zeffirelli "
-    },
-    {
-      "id": "284",
-      "title_spanish": "Callejón de los milagros, El",
-      "title_english": "",
-      "director": "Jorge Fons",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "284 Callejón de los milagros, El  Dir. Jorge Fons"
     },
     {
       "id": "286",
@@ -1601,29 +1370,6 @@
       "raw_line": "287 Cambiamos pareja? Dir. Bruno Dega"
     },
     {
-      "id": "289",
-      "title_spanish": "Cambio, El ; Crates.",
-      "title_english": "",
-      "director": "Alfredo Joskowicz",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "289 Cambio, El ; Crates. Dir. Alfredo Joskowicz."
-    },
-    {
-      "id": "290",
-      "title_spanish": "Camino al infierno, El : Ruta 666",
-      "title_english": "",
-      "director": "William Wesley",
-      "patterns": [
-        "spanish_only",
-        "ocr_artifact"
-      ],
-      "reason": "no_match",
-      "raw_line": "290 Camino al infierno, El : Ruta 666 Dir. William Wesley "
-    },
-    {
       "id": "292",
       "title_spanish": "Camino del dragón. El",
       "title_english": "",
@@ -1635,31 +1381,6 @@
       "raw_line": "292 Camino del dragón. El Dir. Bruce Lee"
     },
     {
-      "id": "295",
-      "title_spanish": "Camino hacia el terror 3( Abandonado para morir)",
-      "title_english": "",
-      "director": "Declan O'Brien",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "295Camino hacia el terror 3( Abandonado para morir)Dir.Declan O'Brien"
-    },
-    {
-      "id": "296",
-      "title_spanish": "Camino hacia el terror 4 (inicio sangriento)Declan O'Brien",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "296Camino hacia el terror 4 (inicio sangriento)Declan O'Brien"
-    },
-    {
       "id": "297",
       "title_spanish": "Campos de  Esperanza",
       "title_english": "",
@@ -1669,19 +1390,6 @@
       ],
       "reason": "no_match",
       "raw_line": "297 Campos de  Esperanza Dir.Lajos Koltai"
-    },
-    {
-      "id": "298",
-      "title_spanish": "Campos de la muerte, Los",
-      "title_english": "",
-      "director": "David I",
-      "patterns": [
-        "article_swapped",
-        "spanish_only",
-        "truncated_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "298 Campos de la muerte, Los Dir. David I. Cunningham."
     },
     {
       "id": "300",
@@ -1704,17 +1412,6 @@
       ],
       "reason": "no_match",
       "raw_line": "304Capitán América y el soldado del inviernoDir. Anthony Russo"
-    },
-    {
-      "id": "305",
-      "title_spanish": "capitán de mar y guerra/La costa más lejana del mundo",
-      "title_english": "",
-      "director": "Peter Weir",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "305capitán de mar y guerra/La costa más lejana del mundoDir. Peter Weir"
     },
     {
       "id": "311",
@@ -1763,18 +1460,6 @@
       "raw_line": "320 Casa de arena y niebla, La Dir. Vadim Perlman."
     },
     {
-      "id": "322",
-      "title_spanish": "Casa de los espíritus, La   Guión y",
-      "title_english": "",
-      "director": "Bille August",
-      "patterns": [
-        "spanish_only",
-        "ocr_artifact"
-      ],
-      "reason": "no_match",
-      "raw_line": "322 Casa de los espíritus, La   Guión y Dir. Bille August "
-    },
-    {
       "id": "326",
       "title_spanish": "Casa silenciosa",
       "title_english": "",
@@ -1796,18 +1481,6 @@
       ],
       "reason": "no_match",
       "raw_line": "327 Casarse... está en griego  Dir. Joel Zwick."
-    },
-    {
-      "id": "331",
-      "title_spanish": "Castillo de la pureza, El",
-      "title_english": "",
-      "director": "Arturo Ripstein",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "331 Castillo de la pureza, El Dir. Arturo Ripstein "
     },
     {
       "id": "335",
@@ -1892,18 +1565,6 @@
       "raw_line": "346 Cenizas de Ángela, Las Dir. Alan Parker"
     },
     {
-      "id": "347",
-      "title_spanish": "Cenizas de la luz, La",
-      "title_english": "",
-      "director": "MAJID MAJIDI",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "347 Cenizas de la luz, La Dir. MAJID MAJIDI"
-    },
-    {
       "id": "351",
       "title_spanish": "Chica danesa, La The danish girl",
       "title_english": "",
@@ -1913,42 +1574,6 @@
       ],
       "reason": "no_match",
       "raw_line": "351 Chica danesa, La The danish girl Dir. Tom Hooper"
-    },
-    {
-      "id": "352",
-      "title_spanish": "Chica de la capa roja, La",
-      "title_english": "",
-      "director": "Catherine Hardwicke",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "352 Chica de la capa roja, La Dir. Catherine Hardwicke"
-    },
-    {
-      "id": "353",
-      "title_spanish": "Chica de la fábrica de cerillos, La",
-      "title_english": "",
-      "director": "Aki Kaurismaki",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "353 Chica de la fábrica de cerillos, La Dir.  Aki Kaurismaki.."
-    },
-    {
-      "id": "357",
-      "title_spanish": "Chicos de la calle Paul, Los",
-      "title_english": "",
-      "director": "Alberto Mondadori",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "357 Chicos de la calle Paul, Los Dir. Alberto Mondadori"
     },
     {
       "id": "358",
@@ -2088,29 +1713,6 @@
       "raw_line": "374Cinema brasileiro contemporáneo : trailers Dir. Carlos Diegues "
     },
     {
-      "id": "375",
-      "title_spanish": "Cinema paradiso : la versión del director",
-      "title_english": "Cinema Paradise : the new version",
-      "director": "Guiussepe Tornatore",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "375Cinema paradiso : la versión del director = Cinema Paradise : the new versionDir. Guiussepe Tornatore"
-    },
-    {
-      "id": "376",
-      "title_spanish": "Círculo de la muerte, El",
-      "title_english": "",
-      "director": "Ernest Dickerson",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "376 Círculo de la muerte, El Dir. Ernest Dickerson"
-    },
-    {
       "id": "377",
       "title_spanish": "Círculo de pasiones",
       "title_english": "",
@@ -2143,29 +1745,6 @@
       ],
       "reason": "no_match",
       "raw_line": "381 Ciudad de Dios City of God Dir. Fernando Meirelles "
-    },
-    {
-      "id": "382",
-      "title_spanish": "La ciudad de las mujeres La cité des femmes",
-      "title_english": "",
-      "director": "Federico Fellini",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "382La ciudad de las mujeres La cité des femmesDir. Federico Fellini"
-    },
-    {
-      "id": "383",
-      "title_spanish": "Ciudad de los niños perdidos, La",
-      "title_english": "",
-      "director": "Jean-Pierre Je",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "383 Ciudad de los niños perdidos, La Dir. Jean-Pierre Je"
     },
     {
       "id": "385",
@@ -2224,29 +1803,6 @@
       "raw_line": "391 Closer Llevados por el deseo Dir. Mike Nichols"
     },
     {
-      "id": "392",
-      "title_spanish": "Club de la buena estrella, El",
-      "title_english": "",
-      "director": "Wayne Wang",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "392 Club de la buena estrella, El Dir. Wayne Wang "
-    },
-    {
-      "id": "393",
-      "title_spanish": "Club de la pelea",
-      "title_english": "",
-      "director": "David Fincher",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "393 Club de la pelea Dir: David Fincher"
-    },
-    {
       "id": "399",
       "title_spanish": "Coco e Igor",
       "title_english": "",
@@ -2256,18 +1812,6 @@
       ],
       "reason": "no_match",
       "raw_line": "399 Coco e Igor Dir, Jan Nanouen"
-    },
-    {
-      "id": "401",
-      "title_spanish": "Código Da Vinci, El",
-      "title_english": "",
-      "director": "Ron Howard",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "401 Código Da Vinci, El  Dir. Ron Howard "
     },
     {
       "id": "402",
@@ -2337,17 +1881,6 @@
       "raw_line": "408Colección de cortometrajes extranjeros 2 y 3Dir. Varios"
     },
     {
-      "id": "409",
-      "title_spanish": "La colina de la muerte Hamburguer hill",
-      "title_english": "",
-      "director": "John Irvin",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "409La colina de la muerte Hamburguer hill Dir. John Irvin "
-    },
-    {
       "id": "411",
       "title_spanish": "Color delcrimen.El",
       "title_english": "",
@@ -2384,18 +1917,6 @@
       "raw_line": "416Comando especial 21 Jump Street Dir. Phil Lord y Christopher Miller "
     },
     {
-      "id": "417",
-      "title_spanish": "Comedia de la inocencia, La",
-      "title_english": "",
-      "director": "Raoul Ruiz",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "417 Comedia de la inocencia, La Dir. Raoul Ruiz"
-    },
-    {
       "id": "418",
       "title_spanish": "Comedia del poder, La",
       "title_english": "",
@@ -2420,17 +1941,6 @@
       "raw_line": "419 Comer,beber, amar Dir. Ang Lee"
     },
     {
-      "id": "421",
-      "title_spanish": "Como agua para chocolate",
-      "title_english": "",
-      "director": "Alfonso Arau",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "421 Como agua para chocolate  Dir. y prod. Alfonso Arau."
-    },
-    {
       "id": "424",
       "title_spanish": "Cómo perder a tus amigos",
       "title_english": "",
@@ -2451,17 +1961,6 @@
       ],
       "reason": "no_match",
       "raw_line": "427 Comprendiendo a Jane Dir. Caleb Lindsay "
-    },
-    {
-      "id": "428",
-      "title_spanish": "Con \"M\" de muerte",
-      "title_english": "",
-      "director": "Alfred Hitchcock",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "428 Con \"M\" de muerte Dir. Alfred Hitchcock."
     },
     {
       "id": "430",
@@ -2577,17 +2076,6 @@
       "raw_line": "450 Corazón de caballero A Knight’s tale Dir. Brian Helgeland "
     },
     {
-      "id": "455",
-      "title_spanish": "Corazón del tiempo : un viaje al corazón de la resistencia zapatista",
-      "title_english": "",
-      "director": "Alberto Cortés",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "455Corazón del tiempo : un viaje al corazón de la resistencia zapatista Dir. Alberto Cortés "
-    },
-    {
       "id": "458",
       "title_spanish": "Coronel Redl",
       "title_english": "",
@@ -2665,17 +2153,6 @@
       "raw_line": "464Cortometrajes extranjeros de animación 5Dir. Varios"
     },
     {
-      "id": "467",
-      "title_spanish": "Cosas insignificantes Guión y",
-      "title_english": "",
-      "director": "Andrea Martínez Crowther",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "467Cosas insignificantes Guión y Dir. Andrea Martínez Crowther "
-    },
-    {
       "id": "468",
       "title_spanish": "Cosecha del diablo/ Prisión maldita",
       "title_english": "",
@@ -2735,18 +2212,6 @@
       "raw_line": "474 Crepúsculo - Luna Nueva Stephenie Meyer"
     },
     {
-      "id": "475",
-      "title_spanish": "Crimen del Padre Amaro, El",
-      "title_english": "",
-      "director": "Carlos Carrera",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "475 Crimen del Padre Amaro, El Dir. Carlos Carrera"
-    },
-    {
       "id": "476",
       "title_spanish": "Crimen virtual",
       "title_english": "",
@@ -2756,28 +2221,6 @@
       ],
       "reason": "no_match",
       "raw_line": "476 Crimen virtual Dir.Hideo Nakata"
-    },
-    {
-      "id": "480",
-      "title_spanish": "Crónicas de un zombi",
-      "title_english": "",
-      "director": "David Gebroe",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "480 Crónicas de un zombi Dir. David Gebroe"
-    },
-    {
-      "id": "483",
-      "title_spanish": "Cuando hierve la sangre Never so few",
-      "title_english": "",
-      "director": "John Sturges",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "483 Cuando hierve la sangre Never so few Dir. John Sturges "
     },
     {
       "id": "485",
@@ -2813,17 +2256,6 @@
       "raw_line": "489Cuarenta [ i. e.] 40 díasDir. Juan Carlos Martín Méndez."
     },
     {
-      "id": "490",
-      "title_spanish": "Cuarto de los muertos, El [videograbación]",
-      "title_english": "La chambre des morts",
-      "director": "Alfred Lot",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "490Cuarto de los muertos, El [videograbación] = La chambre des morts Dir. Alfred Lot "
-    },
-    {
       "id": "491",
       "title_spanish": "Cuatro amantes",
       "title_english": "",
@@ -2833,17 +2265,6 @@
       ],
       "reason": "no_match",
       "raw_line": "491 Cuatro amantes Dir. Antony Cordier "
-    },
-    {
-      "id": "492",
-      "title_spanish": "Cuatro bodas y un funeral",
-      "title_english": "",
-      "director": "Mike Newell",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "492 Cuatro bodas y un funeral Dir. Mike Newell"
     },
     {
       "id": "493",
@@ -2856,18 +2277,6 @@
       ],
       "reason": "no_match",
       "raw_line": "493 Cuatro Fantásticos, Los Dir.  Tim Story"
-    },
-    {
-      "id": "494",
-      "title_spanish": "Cuatro meses, 3 semanas y 2 dìas",
-      "title_english": "",
-      "director": "Cristian Mungiu",
-      "patterns": [
-        "spanish_only",
-        "encoding_artifact"
-      ],
-      "reason": "no_match",
-      "raw_line": "494 Cuatro meses, 3 semanas y 2 dìas Dir. Cristian Mungiu"
     },
     {
       "id": "495",
@@ -2904,17 +2313,6 @@
       "raw_line": "498 Cuenta final Dir: Frank Oz"
     },
     {
-      "id": "499",
-      "title_spanish": "Cuentos de la Cabaña Desolada",
-      "title_english": "",
-      "director": "John Mcnaughton",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "499 Cuentos de la Cabaña Desolada Dir.John Mcnaughton"
-    },
-    {
       "id": "500",
       "title_spanish": "Cuentos de Canterbury",
       "title_english": "",
@@ -2936,17 +2334,6 @@
       ],
       "reason": "no_match",
       "raw_line": "502 Cuentos y realidades Película Iraní"
-    },
-    {
-      "id": "503",
-      "title_spanish": "Cuerpo, El  ; El tercer milagro The Body ; The Third Miracle",
-      "title_english": "",
-      "director": "Jonas McCord",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "503Cuerpo, El  ; El tercer milagro The Body ; The Third Miracle Dir. Jonas McCord ; Agniezka Holland."
     },
     {
       "id": "505",
@@ -2996,18 +2383,6 @@
       "raw_line": "509 Dalia Negra, La Dir. Brian De Palma"
     },
     {
-      "id": "510",
-      "title_spanish": "Dama de Hierro The Iron Lady, La",
-      "title_english": "",
-      "director": "Phyllida Lloyd",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "510 Dama de Hierro The Iron Lady, La Dir. Phyllida Lloyd "
-    },
-    {
       "id": "511",
       "title_spanish": "Dama de honor, La",
       "title_english": "",
@@ -3018,19 +2393,6 @@
       ],
       "reason": "no_match",
       "raw_line": "511 Dama de honor, La Dir. Claude Chabrol"
-    },
-    {
-      "id": "513",
-      "title_spanish": "Dama y el fantasma, La",
-      "title_english": "",
-      "director": "Joseph L",
-      "patterns": [
-        "article_swapped",
-        "spanish_only",
-        "truncated_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "513 Dama y el fantasma, La  Dir. Joseph L. Mankiewicz"
     },
     {
       "id": "514",
@@ -3077,39 +2439,6 @@
       "raw_line": "520 David y Betsabé Dir.Henry King"
     },
     {
-      "id": "523",
-      "title_spanish": "De aquí a la eternidad",
-      "title_english": "",
-      "director": "Fred Zinnemann",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "523 De aquí a la eternidad  Dir. Fred Zinnemann"
-    },
-    {
-      "id": "524",
-      "title_spanish": "De hombres y de dioses",
-      "title_english": "",
-      "director": "XAVIER BEAUVOIS",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "524 De hombres y de dioses DIR. XAVIER BEAUVOIS"
-    },
-    {
-      "id": "525",
-      "title_spanish": "De puerta en puerta Door to door",
-      "title_english": "",
-      "director": "Steven Schachter",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "525 De puerta en puerta Door to door Dir. Steven Schachter "
-    },
-    {
       "id": "527",
       "title_spanish": "De tal padre, tal hijo Like father, like son",
       "title_english": "",
@@ -3119,18 +2448,6 @@
       ],
       "reason": "no_match",
       "raw_line": "527De tal padre, tal hijo Like father, like sonDir. Hirokazu Koreeda "
-    },
-    {
-      "id": "529",
-      "title_spanish": "Deal of the century ( Contrato del siglo)",
-      "title_english": "",
-      "director": "William Friedkin",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "529Deal of the century ( Contrato del siglo)Dir. William Friedkin "
     },
     {
       "id": "531",
@@ -3177,17 +2494,6 @@
       ],
       "reason": "no_match",
       "raw_line": "541 Demonios en la puerta Dir. Jiang Wen"
-    },
-    {
-      "id": "542",
-      "title_spanish": "Dentro de la piel",
-      "title_english": "",
-      "director": "Marina de Van",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "542 Dentro de la piel  Dir. Marina de Van."
     },
     {
       "id": "544",
@@ -3302,43 +2608,6 @@
       "raw_line": "561 Deudas de sangre Dir. Charley Stadler"
     },
     {
-      "id": "564",
-      "title_spanish": "Día de la bestia, El",
-      "title_english": "",
-      "director": "Álex de la Iglesia",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "564 Día de la bestia, El Dir. Álex de la Iglesia "
-    },
-    {
-      "id": "566",
-      "title_spanish": "Día de los inocentes.El",
-      "title_english": "",
-      "director": "Mitchell Altieri, Phil Flores",
-      "patterns": [
-        "spanish_only",
-        "multi_director",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "566 Día de los inocentes.El Dir. Mitchell Altieri, Phil Flores"
-    },
-    {
-      "id": "569",
-      "title_spanish": "Día que la tierra se detuvo, El",
-      "title_english": "",
-      "director": "Scott Derrickson",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "569 Día que la tierra se detuvo, El Dir. Scott Derrickson"
-    },
-    {
       "id": "570",
       "title_spanish": "Día que ví tu corazón, El",
       "title_english": "",
@@ -3420,17 +2689,6 @@
       "raw_line": "580 Días sin huella Dir.Billy Wilder"
     },
     {
-      "id": "581",
-      "title_spanish": "Diario de una mujer poseída",
-      "title_english": "",
-      "director": "János Szász",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "581 Diario de una mujer poseída Dir.János Szász.."
-    },
-    {
       "id": "582",
       "title_spanish": "Diarios de motocicleta",
       "title_english": "",
@@ -3498,18 +2756,6 @@
       "raw_line": "588 Diez punto cinco: Destrucción total Dir. John Lafia.."
     },
     {
-      "id": "589",
-      "title_spanish": "Difícil Arte de amar,El",
-      "title_english": "",
-      "director": "Mike Nichols",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "589 Difícil Arte de amar,El Director: Mike Nichols"
-    },
-    {
       "id": "590",
       "title_spanish": "Dinero fácil: la venganza",
       "title_english": "",
@@ -3519,18 +2765,6 @@
       ],
       "reason": "no_match",
       "raw_line": "590 Dinero fácil: la venganza Dir. Pen-ek Ratanaruang."
-    },
-    {
-      "id": "594",
-      "title_spanish": "Discreto encanto de la burgesía,  El",
-      "title_english": "",
-      "director": "Luis Buñuel",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "594 Discreto encanto de la burgesía,  El Dir. Luis Buñuel"
     },
     {
       "id": "595",
@@ -3543,28 +2777,6 @@
       ],
       "reason": "no_match",
       "raw_line": "595 Discurso del Rey, El The King’s Speech Dir. Tom Hooper "
-    },
-    {
-      "id": "599",
-      "title_spanish": "Divorcio a la francesa",
-      "title_english": "",
-      "director": "James Ivory",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "599 Divorcio a la francesa Dir. James Ivory"
-    },
-    {
-      "id": "600",
-      "title_spanish": "Divorcio a la italiana",
-      "title_english": "",
-      "director": "Pietro Germi",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "600 Divorcio a la italiana Dir. Pietro Germi"
     },
     {
       "id": "601",
@@ -3611,17 +2823,6 @@
       ],
       "reason": "no_match",
       "raw_line": "606 Doble traición.La / Asesinas Dir. Gary Ellis"
-    },
-    {
-      "id": "607",
-      "title_spanish": "Doble vida de Verónica, La  La double vie de Veronique",
-      "title_english": "",
-      "director": "Krzysztof Kieslowski",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "607Doble vida de Verónica, La  La double vie de Veronique Dir. Krzysztof Kieslowski "
     },
     {
       "id": "608",
@@ -3771,17 +2972,6 @@
       "raw_line": "637 Duelo de titanes  Dir. Boaz Yakin "
     },
     {
-      "id": "638",
-      "title_spanish": "Dueños de la noche We own the night",
-      "title_english": "",
-      "director": "James Gray",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "638Dueños de la noche We own the nightDir. James Gray "
-    },
-    {
       "id": "641",
       "title_spanish": "Dura y peligrosa",
       "title_english": "",
@@ -3828,17 +3018,6 @@
       "raw_line": "646 Escocés volador.El Dir.Douglas Mackinnon.."
     },
     {
-      "id": "647",
-      "title_spanish": "Ecos en la oscuridad",
-      "title_english": "",
-      "director": "Jonathan Levine",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "647 Ecos en la oscuridad Dir. Jonathan Levine"
-    },
-    {
       "id": "648",
       "title_spanish": "Ecos mortales Stir of echoes Guión y",
       "title_english": "",
@@ -3859,18 +3038,6 @@
       ],
       "reason": "no_match",
       "raw_line": "650Ed gein/ Ted bundy dos peliculasDir.Chuck Parello.. tiene diferentes directores"
-    },
-    {
-      "id": "651",
-      "title_spanish": "Edad de la peseta, La",
-      "title_english": "",
-      "director": "Pavel Giroud",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "651 Edad de la peseta, La Dir. Pavel Giroud."
     },
     {
       "id": "652",
@@ -3954,72 +3121,6 @@
       "raw_line": "660Emily Brontë cumbres borrascosas Emily Brontë wuthering heights Dir. Peter Kosminsky "
     },
     {
-      "id": "661",
-      "title_spanish": "En algún lugar de Africa Nowhere in Africa",
-      "title_english": "",
-      "director": "Caroline Link",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "661En algún lugar de Africa Nowhere in Africa Dir. Caroline Link "
-    },
-    {
-      "id": "664",
-      "title_spanish": "En el nombre de Dios Magdalene Sisters",
-      "title_english": "",
-      "director": "Peter Mullan",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "664En el nombre de Dios Magdalene Sisters Dir. Peter Mullan "
-    },
-    {
-      "id": "666",
-      "title_spanish": "En la boca del terror",
-      "title_english": "",
-      "director": "John Carpenter",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "666 En la boca del terror Dir. John Carpenter "
-    },
-    {
-      "id": "667",
-      "title_spanish": "En la linea de fuego",
-      "title_english": "",
-      "director": "Wolfgang Petersen",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "667 En la linea de fuego Dir. Wolfgang Petersen"
-    },
-    {
-      "id": "669",
-      "title_spanish": "En nombre de la rosa",
-      "title_english": "",
-      "director": "Hugo Rodríguez",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "669 En nombre de la rosa Dir. Hugo Rodríguez."
-    },
-    {
-      "id": "670",
-      "title_spanish": "En  nombre del honor",
-      "title_english": "",
-      "director": "Noyce Philip",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "670 En  nombre del honor  Dir.Noyce Philip "
-    },
-    {
       "id": "673",
       "title_spanish": "Encanto del erizo, El",
       "title_english": "",
@@ -4041,17 +3142,6 @@
       ],
       "reason": "no_match",
       "raw_line": "675 Encuentro exprosivo Dir.James Mangold"
-    },
-    {
-      "id": "676",
-      "title_spanish": "Encuentros cercanos del tercer tipo",
-      "title_english": "",
-      "director": "Steven Spielberg",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "676 Encuentros cercanos del tercer tipo Dir. Steven Spielberg"
     },
     {
       "id": "677",
@@ -4100,30 +3190,6 @@
       "raw_line": "681 Enfermera Betty, La Dir. Neil LaBute"
     },
     {
-      "id": "682",
-      "title_spanish": "Engendro, El : The astronauts wife",
-      "title_english": "",
-      "director": "Rand Ravich",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "682 Engendro, El : The astronauts wife Dir. Rand Ravich "
-    },
-    {
-      "id": "683",
-      "title_spanish": "Ente.El",
-      "title_english": "",
-      "director": "Sidney J",
-      "patterns": [
-        "spanish_only",
-        "truncated_director",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "683 Ente.El Dir.Sidney J. Furie."
-    },
-    {
       "id": "684",
       "title_spanish": "Ensayo de orquesta",
       "title_english": "",
@@ -4133,28 +3199,6 @@
       ],
       "reason": "no_match",
       "raw_line": "684 Ensayo de orquesta Dir. Federico Fellini"
-    },
-    {
-      "id": "685",
-      "title_spanish": "Entre el amor y la Gloria",
-      "title_english": "",
-      "director": "David Wu",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "685 Entre el amor y la Gloria Dir. David Wu"
-    },
-    {
-      "id": "690",
-      "title_spanish": "Entrevista con el vampiro",
-      "title_english": "",
-      "director": "Neil Jordan",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "690 Entrevista con el vampiro Dir. Neil Jordan "
     },
     {
       "id": "691",
@@ -4177,41 +3221,6 @@
       ],
       "reason": "no_match",
       "raw_line": "692 Equis equis ye [i.e. XXY] Dir. Lucía Puenzo "
-    },
-    {
-      "id": "694",
-      "title_spanish": "Erase una vez en América",
-      "title_english": "",
-      "director": "Sergio Leone",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "694 Erase una vez en América Dir. Sergio Leone"
-    },
-    {
-      "id": "695",
-      "title_spanish": "Érase una vez... una canción de amor",
-      "title_english": "",
-      "director": "John Carney",
-      "patterns": [
-        "spanish_only",
-        "ocr_artifact"
-      ],
-      "reason": "no_match",
-      "raw_line": "695 Érase una vez... una canción de amor Escrita y dir. John Carney "
-    },
-    {
-      "id": "699",
-      "title_spanish": "Escalón 29 (entrada al infierno)",
-      "title_english": "",
-      "director": "Yun Jae-yeon",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "699 Escalón 29 (entrada al infierno) Dir. Yun Jae-yeon"
     },
     {
       "id": "701",
@@ -4308,17 +3317,6 @@
       "raw_line": "712 Espejos siniestros Mirrors Dir. Alexandre Aja"
     },
     {
-      "id": "715",
-      "title_spanish": "Espíritu de la pasión",
-      "title_english": "",
-      "director": "Kim Ki-duk",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "715 Espíritu de la pasión Dir.  Kim Ki-duk"
-    },
-    {
       "id": "716",
       "title_spanish": "Espionaje En Berlín",
       "title_english": "",
@@ -4379,19 +3377,6 @@
       "raw_line": "723 Estas ruinas que ves Dir. Julian Pastor."
     },
     {
-      "id": "726",
-      "title_spanish": "Estrella alcanzar una historia de amistad y lecturas, La",
-      "title_english": "",
-      "director": "Cristián Galaz, Andrea Ugalde",
-      "patterns": [
-        "article_swapped",
-        "spanish_only",
-        "multi_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "726Estrella alcanzar una historia de amistad y lecturas, LaDir. Cristián Galaz, Andrea Ugalde."
-    },
-    {
       "id": "727",
       "title_spanish": "Estrellas del sur",
       "title_english": "",
@@ -4436,18 +3421,6 @@
       ],
       "reason": "no_match",
       "raw_line": "733 Ex mujer de mi vida, La Dir. Josiane Balasko "
-    },
-    {
-      "id": "736",
-      "title_spanish": "Exorcista La versión nunca antes vista, El",
-      "title_english": "The exorcist : the version you´ve never seen",
-      "director": "William Friedkin",
-      "patterns": [
-        "article_swapped",
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "736Exorcista La versión nunca antes vista, El  = The exorcist : the version you´ve never seenDir. William Friedkin."
     },
     {
       "id": "737",
@@ -4539,30 +3512,6 @@
       "raw_line": "745 Extraños en el paraíso Dir. Jim Jarmusch"
     },
     {
-      "id": "747",
-      "title_spanish": "Face( El rostro del mal)",
-      "title_english": "",
-      "director": "Yoo Sang-gon",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "747 Face( El rostro del mal) Dir.  Yoo Sang-gon"
-    },
-    {
-      "id": "753",
-      "title_spanish": "Fantasma de la libertad, El",
-      "title_english": "",
-      "director": "Luis Buñuel",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "753 Fantasma de la libertad, El Dir. Luis Buñuel"
-    },
-    {
       "id": "757",
       "title_spanish": "Farenheit 451",
       "title_english": "",
@@ -4584,18 +3533,6 @@
       ],
       "reason": "no_match",
       "raw_line": "761 Fauces  de la noche.Las Dir.Thom Fitzgerald"
-    },
-    {
-      "id": "762",
-      "title_spanish": "Fear and Loathing in Las Vegas ( pánico y locura en las vegas)",
-      "title_english": "",
-      "director": "Terry Gilliam",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "762Fear and Loathing in Las Vegas ( pánico y locura en las vegas)Dir.  Terry Gilliam"
     },
     {
       "id": "764",
@@ -4653,40 +3590,6 @@
       ],
       "reason": "no_match",
       "raw_line": "772 La fiesta inovidable The party Dir. y prod. Blake Edwards."
-    },
-    {
-      "id": "773",
-      "title_spanish": "Figuras de la Pasión  idea y",
-      "title_english": "",
-      "director": "Rafael Corkidi",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "773 Figuras de la Pasión  idea y dir. Rafael Corkidi."
-    },
-    {
-      "id": "776",
-      "title_spanish": "Final fantasy : el espíritu en nosotros",
-      "title_english": "",
-      "director": "Hironobu Sakaguchi,",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "776 Final fantasy : el espíritu en nosotros Dir. Hironobu Sakaguchi,"
-    },
-    {
-      "id": "777",
-      "title_spanish": "First Daughter (Travesuras de una princesa)",
-      "title_english": "",
-      "director": "Forest Whitaker",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "777First Daughter (Travesuras de una princesa)Dir. Forest Whitaker"
     },
     {
       "id": "778",
@@ -4782,18 +3685,6 @@
       "raw_line": "800 Fuego Fatuo Le Feu Follet Dir. y guión Louis Malle."
     },
     {
-      "id": "805",
-      "title_spanish": "Fuerza de la verdad, La",
-      "title_english": "",
-      "director": "Mike Nichols",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "805 Fuerza de la verdad, La Dir. Mike Nichols"
-    },
-    {
       "id": "806",
       "title_spanish": "Fuerzas de la naturaleza",
       "title_english": "",
@@ -4837,17 +3728,6 @@
       ],
       "reason": "no_match",
       "raw_line": "813 Furia en  dos ruedas Dir.Joseph Kahn"
-    },
-    {
-      "id": "818",
-      "title_spanish": "Garage Olimpo ; Himalaya ; Panic ; El falso mesías",
-      "title_english": "",
-      "director": "Varios",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "818Garage Olimpo ; Himalaya ; Panic ; El falso mesíasDir. Varios"
     },
     {
       "id": "821",
@@ -5023,18 +3903,6 @@
       "raw_line": "851 Gran comilona, La Dir. Marco Ferreri"
     },
     {
-      "id": "852",
-      "title_spanish": "Gran concierto.El",
-      "title_english": "",
-      "director": "Radu Mihaileanu",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "852 Gran concierto.El Dir.Radu Mihaileanu"
-    },
-    {
       "id": "853",
       "title_spanish": "Gran Dictador, El",
       "title_english": "",
@@ -5153,28 +4021,6 @@
       "raw_line": "870 Greta Garbo: Ninotchka Dir. Ernst Lubitsch"
     },
     {
-      "id": "871",
-      "title_spanish": "Grito de la lechuza",
-      "title_english": "",
-      "director": "Jamie Thraves",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "871 Grito de la lechuza Dir. Jamie Thraves"
-    },
-    {
-      "id": "873",
-      "title_spanish": "Gritos en la oscuridad/ Hoguera del diablo. La",
-      "title_english": "",
-      "director": "Glen Morgan",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "873Gritos en la oscuridad/ Hoguera del diablo. LaDir. Glen Morgan"
-    },
-    {
       "id": "874",
       "title_spanish": "Gritos  y  Susurros",
       "title_english": "",
@@ -5184,17 +4030,6 @@
       ],
       "reason": "no_match",
       "raw_line": "874 Gritos  y  Susurros Dir.Ingmar Bergman.."
-    },
-    {
-      "id": "878",
-      "title_spanish": "Guerra de los vendedores",
-      "title_english": "",
-      "director": "Barry Levinson",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "878 Guerra de los vendedores Dir. Barry Levinson "
     },
     {
       "id": "880",
@@ -5228,19 +4063,6 @@
       ],
       "reason": "no_match",
       "raw_line": "884 Guten tag, Ramón Dir. Jorge Ramírez Suárez"
-    },
-    {
-      "id": "885",
-      "title_spanish": "Guy Pearce ( Disco 1 : Amnesia -- Disco 2 : El Gran Houdini --Disco 3 : Zona de Miedo)",
-      "title_english": "",
-      "director": "Christopher Nolan,  Gillian Armstrong",
-      "patterns": [
-        "spanish_only",
-        "multi_director",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "885Guy Pearce ( Disco 1 : Amnesia -- Disco 2 : El Gran Houdini --Disco 3 : Zona de Miedo)Dir. Christopher Nolan,  Gillian Armstrong.  dir. Kathryn Bigelow.)"
     },
     {
       "id": "886",
@@ -5300,18 +4122,6 @@
       "raw_line": "892Halloween : veinte años después. Resurrección Dir. Steve Miner"
     },
     {
-      "id": "893",
-      "title_spanish": "Hambre ( un grito a la libertad)",
-      "title_english": "",
-      "director": "Steve McQueen",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "893 Hambre ( un grito a la libertad) Dir. Steve McQueen"
-    },
-    {
       "id": "895",
       "title_spanish": "Hanna Arendt",
       "title_english": "",
@@ -5332,17 +4142,6 @@
       ],
       "reason": "no_match",
       "raw_line": "896 Hanna y sus hermanas Dir. Woody Allen"
-    },
-    {
-      "id": "899",
-      "title_spanish": "Hard Candy : niña mala",
-      "title_english": "",
-      "director": "David Slade",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "899 Hard Candy : niña mala Dir. David Slade "
     },
     {
       "id": "900",
@@ -5444,18 +4243,6 @@
       ],
       "reason": "no_match",
       "raw_line": "919 Heroinas The Heroic Trio Dir. Johnny To "
-    },
-    {
-      "id": "921",
-      "title_spanish": "Hijo de la novia, El",
-      "title_english": "",
-      "director": "Juan José Campanella",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "921 Hijo de la novia, El Dir. Juan José Campanella "
     },
     {
       "id": "925",
@@ -5573,17 +4360,6 @@
       "raw_line": "935 Historias de ultratumba Dir. Simon Baré, Anna Reeves "
     },
     {
-      "id": "937",
-      "title_spanish": "Historias en la cocina",
-      "title_english": "",
-      "director": "Bent Hamer",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "937 Historias en la cocina Dir. Bent Hamer"
-    },
-    {
       "id": "939",
       "title_spanish": "Historias mínimas",
       "title_english": "",
@@ -5651,18 +4427,6 @@
       "raw_line": "946 Hombre en llamas Man on fire Tony Scott "
     },
     {
-      "id": "950",
-      "title_spanish": "Hombre mirando al sudeste",
-      "title_english": "",
-      "director": "y guión Eliseo Subiela",
-      "patterns": [
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "950 Hombre mirando al sudeste  Dir. y guión Eliseo Subiela."
-    },
-    {
       "id": "951",
       "title_spanish": "Hombre peligroso Lord of war",
       "title_english": "",
@@ -5686,17 +4450,6 @@
       "raw_line": "952 Hombre sin pasado, El  Escrita yDir. Aki Kaurismäki."
     },
     {
-      "id": "954",
-      "title_spanish": "Hombre sin sombra 2.El",
-      "title_english": "",
-      "director": "Claudio Fäh",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "954 Hombre sin sombra 2.El Dir.Claudio Fäh"
-    },
-    {
       "id": "955",
       "title_spanish": "Hombres que camínan sobre la cola del tigre : Los",
       "title_english": "",
@@ -5706,62 +4459,6 @@
       ],
       "reason": "no_match",
       "raw_line": "955Hombres que camínan sobre la cola del tigre : LosDir. Akira Kurosawa"
-    },
-    {
-      "id": "956",
-      "title_spanish": "Honor de un guerrero 3.El",
-      "title_english": "",
-      "director": "Tsui Hark",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "956 Honor de un guerrero 3.El Dir.Tsui Hark.."
-    },
-    {
-      "id": "959",
-      "title_spanish": "Hora de los héroes.La",
-      "title_english": "",
-      "director": "Peter Hyams",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "959 Hora de los héroes.La Dir. Peter Hyams"
-    },
-    {
-      "id": "960",
-      "title_spanish": "La hora del lobo Hour of the wolf Guión y",
-      "title_english": "",
-      "director": "Ingmar Bergman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "960 La hora del lobo Hour of the wolf Guión y dir. Ingmar Bergman."
-    },
-    {
-      "id": "965",
-      "title_spanish": "Hotel New Hampshire, El  The hotel New Hampshire",
-      "title_english": "",
-      "director": "Tony Richardson",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "965Hotel New Hampshire, El  The hotel New Hampshire Dir. Tony Richardson "
-    },
-    {
-      "id": "966",
-      "title_spanish": "Hotel Rwanda : la matanza",
-      "title_english": "",
-      "director": "Terry George",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "966 Hotel Rwanda : la matanza  Dir. Terry George "
     },
     {
       "id": "967",
@@ -5867,17 +4564,6 @@
       "raw_line": "979In necuepaliztli in Aztlan Retorno a AztlánDir.Juan Mora Catlett"
     },
     {
-      "id": "980",
-      "title_spanish": "I really hate my job: realmente odio mi trabajo",
-      "title_english": "",
-      "director": "Oliver Parker",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "980I really hate my job: realmente odio mi trabajoDir. Oliver Parker"
-    },
-    {
       "id": "985",
       "title_spanish": "Ilusión viaja en tranvía, La",
       "title_english": "",
@@ -5913,30 +4599,6 @@
       "raw_line": "989 Imperdonables unforgiven, Los Dir. Clint Eastwood"
     },
     {
-      "id": "991",
-      "title_spanish": "Imperio de la fortuna, El",
-      "title_english": "",
-      "director": "Arturo Ripstein",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "991 Imperio de la fortuna, El Dir. Arturo Ripstein"
-    },
-    {
-      "id": "992",
-      "title_spanish": "Imperio de los sentidos, El 愛のコリーダ",
-      "title_english": "L’empire des sens Guión y",
-      "director": "Nagisa Oshima",
-      "patterns": [
-        "bilingual_equals",
-        "encoding_artifact"
-      ],
-      "reason": "no_match",
-      "raw_line": "992Imperio de los sentidos, El 愛のコリーダ  = L’empire des sens Guión y dir. Nagisa Oshima "
-    },
-    {
       "id": "993",
       "title_spanish": "Imperio del dragón.El",
       "title_english": "",
@@ -5947,17 +4609,6 @@
       ],
       "reason": "no_match",
       "raw_line": "993 Imperio del dragón.El Dir. Wilson Yip"
-    },
-    {
-      "id": "994",
-      "title_spanish": "El imperio del sol Empire of sun",
-      "title_english": "",
-      "director": "Steven Spielberg",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "994 El imperio del sol Empire of sun Dir. Steven Spielberg "
     },
     {
       "id": "997",
@@ -6440,29 +5091,6 @@
       "raw_line": "1113Kramer contra Kramer Kramer vs Kramer  dir. Robert Benton "
     },
     {
-      "id": "1114",
-      "title_spanish": "La la land : una historia de amor",
-      "title_english": "",
-      "director": "Damien Chazelle",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1114 La la land : una historia de amor Dir. Damien Chazelle "
-    },
-    {
-      "id": "1117",
-      "title_spanish": "lado oscuro del corazón, El",
-      "title_english": "",
-      "director": "Eliseo Subiela",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1117 lado oscuro del corazón, El Dir. Eliseo Subiela.."
-    },
-    {
       "id": "1118",
       "title_spanish": "Lado profundo del mar, El",
       "title_english": "",
@@ -6495,30 +5123,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1121 Lágrimas del sol Dir. Antoine Fuqua "
-    },
-    {
-      "id": "1123",
-      "title_spanish": "Lansky (el hombre que organizó el crimen)",
-      "title_english": "",
-      "director": "John McNaughton",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "1123Lansky (el hombre que organizó el crimen)Dir. John McNaughton"
-    },
-    {
-      "id": "1125",
-      "title_spanish": "Larry Crowne (el amor llama dos veces)",
-      "title_english": "",
-      "director": "Tom Hanks",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "1125Larry Crowne (el amor llama dos veces) Escrita yDir. Tom Hanks "
     },
     {
       "id": "1126",
@@ -6602,64 +5206,6 @@
       "raw_line": "1138 Ley de Herodes, La Dir., prod. y guión Luis Estrada."
     },
     {
-      "id": "1139",
-      "title_spanish": "Leyenda de las ballenas, La Whale Rider",
-      "title_english": "",
-      "director": "igida por Niki Caro",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1139Leyenda de las ballenas, La Whale Rider Escrita y dirigida por Niki Caro"
-    },
-    {
-      "id": "1140",
-      "title_spanish": "Leyenda de la espada perdida.La",
-      "title_english": "",
-      "director": "Kim Young-jun",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "1140 Leyenda de la espada perdida.La Dir. Kim Young-jun"
-    },
-    {
-      "id": "1141",
-      "title_spanish": "Leyenda de los invencibles, La",
-      "title_english": "",
-      "director": "Yuen Woo-Ping",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1141 Leyenda de los invencibles, La Dir.  Yuen Woo-Ping "
-    },
-    {
-      "id": "1143",
-      "title_spanish": "Leyenda de los perdidos, La",
-      "title_english": "",
-      "director": "Henry Hathaway",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1143 Leyenda de los perdidos, La Dir. y prod. Henry Hathaway."
-    },
-    {
-      "id": "1145",
-      "title_spanish": "Leyenda del escorpión negro",
-      "title_english": "",
-      "director": "Feng Xiaogang",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1145 Leyenda del escorpión negro Dir. Feng Xiaogang"
-    },
-    {
       "id": "1146",
       "title_spanish": "Leyenda del fantasma. La",
       "title_english": "",
@@ -6693,17 +5239,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1148 Leyenda del jinete sin cabeza, La Dir. Pierre Gang. "
-    },
-    {
-      "id": "1149",
-      "title_spanish": "Leyenda de la velocidad. La",
-      "title_english": "",
-      "director": "Andrew Lau",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1149 Leyenda de la velocidad. La Dir. Andrew Lau"
     },
     {
       "id": "1150",
@@ -6837,17 +5372,6 @@
       "raw_line": "1164 Listón blanco, El Dir. Michael Haneke"
     },
     {
-      "id": "1166",
-      "title_spanish": "Llanto de la mariposa",
-      "title_english": "",
-      "director": "Julian Schnabe",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1166 Llanto de la mariposa Dir. Julian Schnabe"
-    },
-    {
       "id": "1167",
       "title_spanish": "Llave de Sarah, La",
       "title_english": "",
@@ -6949,17 +5473,6 @@
       "raw_line": "1192 Luna amarga Dir. Roman Polanski "
     },
     {
-      "id": "1193",
-      "title_spanish": "Luna de Miel para Tres",
-      "title_english": "",
-      "director": "Andrew Bergman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1193 Luna de Miel para Tres Dir. Andrew Bergman"
-    },
-    {
       "id": "1194",
       "title_spanish": "Luna de papel",
       "title_english": "",
@@ -6991,18 +5504,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1197Lunes al sol, Los  Guión yDir. Fernando León de Aranoa "
-    },
-    {
-      "id": "1199",
-      "title_spanish": "Luz en reposo Dirección, producción, guión y edición de Roberto Bolado.",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1199Luz en reposo Dirección, producción, guión y edición de Roberto Bolado."
     },
     {
       "id": "1200",
@@ -7039,17 +5540,6 @@
       "raw_line": "1204 Mad Max III Dir. George Miller."
     },
     {
-      "id": "1205",
-      "title_spanish": "Madeinusa Guión y",
-      "title_english": "",
-      "director": "Claudia Llosa",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1205 Madeinusa Guión y dir. Claudia Llosa"
-    },
-    {
       "id": "1207",
       "title_spanish": "Madre teresa, un corazón inagotable , La",
       "title_english": "",
@@ -7060,18 +5550,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1207Madre teresa, un corazón inagotable , LaDir.  Fabrizio Costa"
-    },
-    {
-      "id": "1208",
-      "title_spanish": "Maestros de la noche.Los",
-      "title_english": "",
-      "director": "Mark Joffe",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "1208 Maestros de la noche.Los Dir. Mark Joffe"
     },
     {
       "id": "1209",
@@ -7131,18 +5609,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1217 Maldición de Rosewood. La Dir. Victor Salva.."
-    },
-    {
-      "id": "1218",
-      "title_spanish": "Maldición de un reflejo.La",
-      "title_english": "",
-      "director": "Mary Lambert",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "1218 Maldición de un reflejo.La Dir.Mary Lambert"
     },
     {
       "id": "1224",
@@ -7227,29 +5693,6 @@
       "raw_line": "1235Mar abierto. El ojo Dir. Pelicula 1  Chris Kentis/ Pelicula 2 Dir. Oxide Pang y Danny Pang "
     },
     {
-      "id": "1237",
-      "title_spanish": "Marca de la bestia,La",
-      "title_english": "",
-      "director": "Wes Craven",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1237 Marca de la bestia,La Dir. Wes Craven.."
-    },
-    {
-      "id": "1241",
-      "title_spanish": "María Candelaria Escrita,",
-      "title_english": "",
-      "director": "Emilio Fernández",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1241 María Candelaria Escrita, dir. Emilio Fernández "
-    },
-    {
       "id": "1243",
       "title_spanish": "María llena eres de gracia",
       "title_english": "",
@@ -7271,39 +5714,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1244 Maria madre del hijo de dios Dir.Moacyr Góes.."
-    },
-    {
-      "id": "1249",
-      "title_spanish": "Más allá de la duda",
-      "title_english": "",
-      "director": "Peter Hyams",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1249 Más allá de la duda Dir. Peter Hyams "
-    },
-    {
-      "id": "1252",
-      "title_spanish": "Más allá de las nubes",
-      "title_english": "",
-      "director": "Michelangelo Ant",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1252 Más allá de las nubes  Escrita yDir. Michelangelo Ant"
-    },
-    {
-      "id": "1253",
-      "title_spanish": "Más allá de los sueños",
-      "title_english": "",
-      "director": "Vincent Ward",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1253 Más allá de los sueños Dir. Vincent Ward "
     },
     {
       "id": "1254",
@@ -7409,17 +5819,6 @@
       "raw_line": "1273 Media noche en parís Dir. y guión Woody Allen."
     },
     {
-      "id": "1275",
-      "title_spanish": "Memoria de los muertos .La",
-      "title_english": "",
-      "director": "Bennett Davlin",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1275 Memoria de los muertos .La Dir. Bennett Davlin"
-    },
-    {
       "id": "1276",
       "title_spanish": "Memoria de mis putas tristes",
       "title_english": "",
@@ -7440,17 +5839,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1277 Memorias de Antonia Dir. Marleen Gorris. "
-    },
-    {
-      "id": "1279",
-      "title_spanish": "Memorias de una geisha",
-      "title_english": "",
-      "director": "Rob Marshall",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1279 Memorias de una geisha Dir. Rob Marshall "
     },
     {
       "id": "1280",
