@@ -288,16 +288,16 @@ def search_director_filmography(director: str, title_query: str, min_score: int 
     if not candidates:
         return []
 
-    # Fetch details for top candidates to get Director field, then score
+    # Fetch details for each candidate to verify the Director field
     query_lower = title_query.lower().strip()
     director_lower = director.lower().strip()
-    ranked = []
+    enriched_candidates = []
 
     for item in candidates:
         iid = item.get('imdbID', '')
         candidate_title = item.get('Title', '')
 
-        # Title similarity
+        # Pre-filter by a loose thefuzz threshold to avoid unnecessary API calls
         title_score = max(
             fuzz.ratio(query_lower, candidate_title.lower()),
             fuzz.token_sort_ratio(query_lower, candidate_title.lower())
@@ -305,34 +305,51 @@ def search_director_filmography(director: str, title_query: str, min_score: int 
         if title_score < min_score:
             continue
 
-        # Fetch full details to check director
+        # Fetch full details to get the Director field
         details = get_movie_details(iid, include_full_plot=False)
         if not details:
             continue
 
         omdb_director = details.get('Director', '').lower()
-        # Check if any part of the director name appears in OMDB director field
         director_match = any(
             part.lower() in omdb_director
             for part in director_parts
             if len(part) > 2
         )
 
-        # Boost score if director matched
-        final_score = title_score + (20 if director_match else 0)
-
-        ranked.append({
+        enriched_candidates.append({
             'imdbID': iid,
             'title': details.get('Title', candidate_title),
             'year': details.get('Year', item.get('Year', '')),
             'director': details.get('Director', ''),
             'director_matched': director_match,
             'title_score': title_score,
-            'score': min(final_score, 100),
+            'score': title_score,  # will be overwritten by hybrid scorer below
         })
 
-    ranked.sort(key=lambda x: x['score'], reverse=True)
-    return ranked
+    if not enriched_candidates:
+        return []
+
+    # Single candidate: no disambiguation needed, return immediately
+    if len(enriched_candidates) == 1:
+        c = enriched_candidates[0]
+        c['score'] = min(c['title_score'] + (20 if c['director_matched'] else 0), 100)
+        return [c]
+
+    # Multiple candidates: use DuckDB hybrid scorer (Jaro-Winkler + VSS cosine)
+    try:
+        from omdb_duckdb import OMDBDuckDBScorer
+        ranked = OMDBDuckDBScorer().score_candidates(title_query, enriched_candidates, min_score=min_score)
+        if ranked:
+            return ranked
+    except Exception as e:
+        print(f"[omdb_duckdb] hybrid scoring failed, falling back to thefuzz: {e}")
+
+    # Fallback: thefuzz scoring
+    for c in enriched_candidates:
+        c['score'] = min(c['title_score'] + (20 if c['director_matched'] else 0), 100)
+    enriched_candidates.sort(key=lambda x: x['score'], reverse=True)
+    return enriched_candidates
 
 
 def enrich_movie_with_omdb(title: str, source_pdf: str = '', year: Optional[str] = None) -> dict:

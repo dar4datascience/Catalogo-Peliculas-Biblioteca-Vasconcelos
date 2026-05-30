@@ -7,10 +7,19 @@ Uses Bearer token authentication.
 import os
 import sys
 import re
+import time
 from typing import Optional, Dict, Any, List
 import requests
 from dotenv import load_dotenv
 from thefuzz import fuzz
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_exponential_jitter,
+    retry_if_exception_type,
+    before_sleep_log
+)
+import logging
 
 # Ensure src directory is in path for imports
 sys.path.insert(0, os.path.dirname(__file__))
@@ -35,19 +44,61 @@ def _get_headers() -> dict:
     }
 
 
-def _query_tmdb(endpoint: str, params: dict = None) -> Optional[dict]:
-    """Helper function to query the TMDB API and handle responses."""
+# Configure logging for retry attempts
+logger = logging.getLogger(__name__)
+
+
+def is_rate_limit_error(exception):
+    """Check if the exception is a rate limit (429) error."""
+    if isinstance(exception, requests.exceptions.HTTPError):
+        return exception.response.status_code == 429
+    return False
+
+
+@retry(
+    stop=stop_after_attempt(5),
+    wait=wait_exponential_jitter(initial=0.1, max=8, jitter=1),
+    retry=retry_if_exception_type((
+        requests.exceptions.HTTPError,
+        requests.exceptions.ConnectionError,
+        requests.exceptions.Timeout
+    )),
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+    reraise=True
+)
+def _query_tmdb_with_retry(endpoint: str, params: dict = None) -> Optional[dict]:
+    """Internal function with retry logic for TMDB API calls."""
     if not API_TOKEN:
         print("Error: TMDB_API_TOKEN not set in environment variables")
         return None
     
     url = f"{BASE_URL}{endpoint}"
-    try:
-        response = requests.get(url, headers=_get_headers(), params=params or {})
+    
+    # Add small preventive delay to stay under rate limit (~40 req/sec)
+    time.sleep(0.025)  # 25ms = ~40 requests per second max
+    
+    response = requests.get(url, headers=_get_headers(), params=params or {})
+    
+    # Check for rate limit specifically to trigger retry
+    if response.status_code == 429:
         response.raise_for_status()
-        return response.json()
+    
+    response.raise_for_status()
+    return response.json()
+
+
+def _query_tmdb(endpoint: str, params: dict = None) -> Optional[dict]:
+    """Helper function to query the TMDB API with exponential backoff retry."""
+    try:
+        return _query_tmdb_with_retry(endpoint, params)
     except requests.exceptions.RequestException as e:
-        print(f"Error querying TMDB: {e}")
+        if hasattr(e, 'response') and e.response is not None:
+            if e.response.status_code == 429:
+                print(f"Rate limit exceeded for {endpoint}: {e}")
+            else:
+                print(f"HTTP error {e.response.status_code} for {endpoint}: {e}")
+        else:
+            print(f"Error querying TMDB {endpoint}: {e}")
         return None
 
 
@@ -243,41 +294,75 @@ def search_movie_by_title(title: str, year: Optional[str] = None) -> List[dict]:
 def find_best_match_in_filmography(
     query_title: str,
     filmography: List[dict],
-    query_director: str = ""
+    query_director: str = "",
+    use_hybrid: bool = False,
 ) -> Optional[dict]:
     """
     Find the best matching movie in a director's filmography.
-    
+
     Args:
         query_title: The title from the catalog
         filmography: List of movies from TMDB person/movie_credits
         query_director: Optional director name for verification
-        
+        use_hybrid: If True, delegate to TMDBDuckDB.find_best_match_hybrid
+                    for Jaro-Winkler + BM25 + cosine scoring (requires
+                    the director to already be loaded in the DuckDB store).
+
     Returns:
         Best matching movie with confidence score, or None
     """
     if not filmography:
         return None
-    
+
+    if use_hybrid and query_director:
+        try:
+            from tmdb_duckdb import TMDBDuckDB
+            with TMDBDuckDB() as db:
+                match = db.find_best_match_hybrid(query_title, query_director)
+            if match:
+                # Wrap into the same shape that callers expect
+                movie_stub = {
+                    "id": match["movie_id"],
+                    "title": match["title"],
+                    "original_title": match["original_title"],
+                    "release_date": str(match.get("year", "")),
+                }
+                return {
+                    "movie": movie_stub,
+                    "similarity": {
+                        "fuzzy_score": int(match["hybrid_score"] * 100),
+                        "hybrid_score": match["hybrid_score"],
+                        "jaro_winkler_score": match["jaro_winkler_score"],
+                        "bm25_score": match.get("bm25_score", 0.0),
+                        "cosine_similarity": match.get("cosine_similarity", 0.0),
+                        "exact_match_title": False,
+                        "exact_match_original": False,
+                    },
+                    "score": min(int(match["hybrid_score"] * 100), 100),
+                }
+        except Exception as e:
+            print(f"[hybrid] fallback to thefuzz: {e}")
+            # Fall through to standard scoring below
+
     best_match = None
     best_score = 0
-    
+
     for movie in filmography:
         similarity = calculate_title_similarity(
             query_title,
             movie.get("title", ""),
             movie.get("original_title", "")
         )
-        
+
         # Base score from fuzzy matching
         score = similarity["fuzzy_score"]
-        
+
         # Boost for exact matches
         if similarity["exact_match_original"]:
             score = 100  # Spanish title matches original language title
         elif similarity["exact_match_title"]:
             score = 95   # Title matches localized title
-        
+
         if score > best_score:
             best_score = score
             best_match = {
@@ -285,7 +370,7 @@ def find_best_match_in_filmography(
                 "similarity": similarity,
                 "score": min(score, 100)
             }
-    
+
     return best_match if best_score >= 50 else None
 
 

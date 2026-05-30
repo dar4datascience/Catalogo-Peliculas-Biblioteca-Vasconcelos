@@ -24,6 +24,15 @@ python-Levenshtein>=0.25.0
 # MCP Server SDK
 mcp>=1.0.0
 
+# DuckDB for local storage and similarity search (FTS + VSS)
+duckdb>=1.1.0
+
+# Multilingual sentence embeddings for semantic similarity (VSS pipeline)
+sentence-transformers>=3.0.0
+
+# Retry logic for API rate limiting
+tenacity>=8.0.0
+
 # For LLM API integration (optional - can use environment variables)
 # openai>=1.0.0
 # anthropic>=0.20.0

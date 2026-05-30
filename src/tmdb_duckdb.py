@@ -12,6 +12,7 @@ from typing import List, Dict, Optional, Tuple
 
 sys.path.insert(0, os.path.dirname(__file__))
 from tmdb_client import search_person, get_person_movie_credits
+from embeddings import embed, embed_one, EMBEDDING_DIM
 
 # Paths
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -25,8 +26,17 @@ class TMDBDuckDB:
     def __init__(self, db_path: str = None):
         self.db_path = db_path or str(DUCKDB_FILE)
         self.conn = duckdb.connect(self.db_path)
+        self._load_extensions()
         self._init_tables()
     
+    def _load_extensions(self):
+        """Install and load DuckDB FTS and VSS extensions."""
+        self.conn.execute("INSTALL fts")
+        self.conn.execute("LOAD fts")
+        self.conn.execute("INSTALL vss")
+        self.conn.execute("LOAD vss")
+        self.conn.execute("SET hnsw_enable_experimental_persistence = true")
+
     def _init_tables(self):
         """Initialize database tables."""
         # Directors table
@@ -54,10 +64,16 @@ class TMDBDuckDB:
                 popularity DOUBLE,
                 vote_average DOUBLE,
                 vote_count INTEGER,
+                title_embedding FLOAT[384],
                 PRIMARY KEY (movie_id, director_id),
                 FOREIGN KEY (director_id) REFERENCES directors(id)
             )
         """)
+        # Migration: add title_embedding column to pre-existing databases
+        try:
+            self.conn.execute(f"ALTER TABLE filmography ADD COLUMN title_embedding FLOAT[{EMBEDDING_DIM}]")
+        except Exception:
+            pass  # Column already exists
         
         # Matches table for results
         self.conn.execute("""
@@ -108,20 +124,31 @@ class TMDBDuckDB:
             ])
         
         # Insert filmography
-        for movie in tmdb_data.get("filmography", []):
+        movies = tmdb_data.get("filmography", [])
+
+        # Batch-embed all titles at once to avoid per-row model calls
+        embed_texts = [
+            f"{m.get('title', '')} {m.get('original_title', '')}".strip()
+            for m in movies
+        ]
+        embeddings = embed(embed_texts) if embed_texts else []
+
+        for idx, movie in enumerate(movies):
             release_date = movie.get("release_date")
             release_year = None
             if release_date and len(release_date) >= 4:
                 try:
                     release_year = int(release_date[:4])
-                except:
+                except Exception:
                     pass
-            
+
+            title_emb = embeddings[idx] if idx < len(embeddings) else None
+
             self.conn.execute("""
                 INSERT OR REPLACE INTO filmography 
                 (movie_id, director_id, title, original_title, release_date, release_year,
-                 job, department, popularity, vote_average, vote_count)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 job, department, popularity, vote_average, vote_count, title_embedding)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, [
                 movie.get("id"),
                 director_id,
@@ -133,9 +160,10 @@ class TMDBDuckDB:
                 movie.get("department"),
                 movie.get("popularity"),
                 movie.get("vote_average"),
-                movie.get("vote_count")
+                movie.get("vote_count"),
+                title_emb,
             ])
-        
+
         return director_id
     
     def find_best_match(
@@ -245,57 +273,211 @@ class TMDBDuckDB:
         
         return results
     
+    def build_fts_index(self):
+        """Build a BM25 full-text search index over filmography titles."""
+        self.conn.execute("""
+            PRAGMA create_fts_index(
+                'filmography', 'movie_id', 'title', 'original_title',
+                stemmer = 'porter',
+                lower = 1,
+                overwrite = 1
+            )
+        """)
+        print("FTS index built on filmography.")
+
+    def build_hnsw_index(self):
+        """Build an HNSW cosine index over title_embedding for fast VSS."""
+        # Drop first if it exists (overwrite-safe)
+        try:
+            self.conn.execute("DROP INDEX IF EXISTS filmography_hnsw")
+        except Exception:
+            pass
+        self.conn.execute("""
+            CREATE INDEX filmography_hnsw
+            ON filmography USING HNSW (title_embedding)
+            WITH (metric = 'cosine')
+        """)
+        print("HNSW index built on filmography.title_embedding.")
+
+    def find_best_match_hybrid(
+        self,
+        catalog_title: str,
+        director_name: str,
+        min_similarity: float = 0.55,
+    ) -> Optional[Dict]:
+        """
+        Find the best matching movie using a hybrid score:
+          hybrid = 0.4 * jaro_winkler + 0.2 * bm25_norm + 0.4 * cosine_similarity
+
+        Falls back to Jaro-Winkler-only when the embedding is NULL
+        (pre-existing rows without embeddings).
+        """
+        director_result = self.conn.execute(
+            "SELECT id FROM directors WHERE name = ?",
+            [director_name]
+        ).fetchone()
+
+        if not director_result:
+            return None
+
+        director_id = director_result[0]
+
+        # Embed the query title once
+        query_emb = embed_one(catalog_title)
+        if not query_emb:
+            # Graceful fallback to Jaro-Winkler only
+            return self.find_best_match(catalog_title, director_name, min_similarity)
+
+        # BM25 scores for all films by this director
+        try:
+            bm25_rows = self.conn.execute("""
+                SELECT
+                    movie_id,
+                    fts_main_filmography.match_bm25(movie_id, ?) AS bm25_raw
+                FROM filmography
+                WHERE director_id = ?
+            """, [catalog_title, director_id]).fetchall()
+            bm25_map = {row[0]: (row[1] or 0.0) for row in bm25_rows}
+            max_bm25 = max(bm25_map.values()) if bm25_map else 0.0
+        except Exception:
+            bm25_map = {}
+            max_bm25 = 0.0
+
+        # Pull all candidates with Jaro + cosine in one SQL pass
+        rows = self.conn.execute("""
+            SELECT
+                movie_id,
+                title,
+                original_title,
+                release_year,
+                jaro_winkler_similarity(lower(?), lower(title))       AS jaro_title,
+                jaro_winkler_similarity(lower(?), lower(original_title)) AS jaro_original,
+                levenshtein(lower(?), lower(title))                   AS lev_title,
+                levenshtein(lower(?), lower(original_title))          AS lev_original,
+                CASE
+                    WHEN title_embedding IS NOT NULL
+                    THEN array_cosine_distance(title_embedding, ?::FLOAT[384])
+                    ELSE NULL
+                END AS cosine_dist
+            FROM filmography
+            WHERE director_id = ?
+        """, [
+            catalog_title, catalog_title,
+            catalog_title, catalog_title,
+            query_emb,
+            director_id,
+        ]).fetchall()
+
+        if not rows:
+            return None
+
+        best_hybrid = 0.0
+        best_row = None
+
+        for row in rows:
+            movie_id, title, original_title, year, jaro_t, jaro_o, lev_t, lev_o, cosine_dist = row
+
+            jaro = max(jaro_t or 0.0, jaro_o or 0.0)
+
+            # Normalise BM25 to [0, 1]
+            raw_bm25 = bm25_map.get(movie_id, 0.0)
+            bm25_norm = (raw_bm25 / max_bm25) if max_bm25 > 0 else 0.0
+
+            # Cosine distance → similarity (NULL-safe, distance in [0,2])
+            if cosine_dist is not None:
+                cosine_sim = max(0.0, 1.0 - float(cosine_dist))
+            else:
+                cosine_sim = jaro  # fallback: mirror Jaro
+
+            hybrid = 0.4 * jaro + 0.2 * bm25_norm + 0.4 * cosine_sim
+
+            if hybrid > best_hybrid:
+                best_hybrid = hybrid
+                best_row = {
+                    "movie_id": movie_id,
+                    "title": title,
+                    "original_title": original_title,
+                    "year": year,
+                    "jaro_winkler_score": jaro,
+                    "bm25_score": bm25_norm,
+                    "cosine_similarity": cosine_sim,
+                    "hybrid_score": hybrid,
+                    "levenshtein_distance": min(lev_t or 999, lev_o or 999),
+                    "matched_on": "original_title" if (jaro_o or 0) > (jaro_t or 0) else "title",
+                }
+
+        if best_row is None or best_hybrid < min_similarity:
+            return None
+
+        return best_row
+
     def _calculate_confidence(self, catalog_title: str, match: Dict) -> Dict:
         """
         Calculate confidence score based on similarity metrics.
-        
-        Confidence formula adapted for DuckDB metrics:
-        - Jaro-Winkler >= 0.9: exact match equivalent (40 points)
-        - Jaro-Winkler 0.7-0.9: high fuzzy (30-40 points scaled)
-        - Jaro-Winkler < 0.7: low confidence
+
+        Supports both legacy (Jaro-only) and hybrid matches.
+        Confidence formula:
+        - Hybrid score >= 0.9: exact match equivalent (40 points)
+        - Hybrid score 0.7-0.9: high fuzzy (30-40 points scaled)
+        - Hybrid score < 0.7: low confidence
         - Director confirmed: 30 points
         """
+        hybrid_score = match.get("hybrid_score")
         jaro_score = match.get("jaro_winkler_score", 0)
-        
-        # Scale Jaro-Winkler (0-1) to 0-40 points
-        if jaro_score >= 0.9:
+        primary_score = hybrid_score if hybrid_score is not None else jaro_score
+
+        # Scale primary score (0-1) to 0-40 points
+        if primary_score >= 0.9:
             title_points = 40
-        elif jaro_score >= 0.7:
-            title_points = int(30 + (jaro_score - 0.7) * 50)  # 30-40 range
+        elif primary_score >= 0.7:
+            title_points = int(30 + (primary_score - 0.7) * 50)  # 30-40 range
         else:
-            title_points = int(jaro_score * 42)  # 0-30 range
-        
+            title_points = int(primary_score * 42)  # 0-30 range
+
         # Director is confirmed (we searched their filmography)
         director_points = 30
-        
+
         total = min(title_points + director_points, 100)
-        
+
+        breakdown = {
+            "title_similarity": title_points,
+            "director_confirmed": director_points,
+        }
+        if hybrid_score is not None:
+            breakdown["hybrid_similarity"] = round(hybrid_score, 4)
+            breakdown["jaro_winkler"] = round(jaro_score, 4)
+            breakdown["bm25_norm"] = round(match.get("bm25_score", 0.0), 4)
+            breakdown["cosine_similarity"] = round(match.get("cosine_similarity", 0.0), 4)
+
         return {
             "confidence": total,
-            "confidence_breakdown": {
-                "title_similarity": title_points,
-                "director_confirmed": director_points
-            },
-            "match_type": "exact" if jaro_score >= 0.9 else ("high_fuzzy" if jaro_score >= 0.8 else "fuzzy")
+            "confidence_breakdown": breakdown,
+            "match_type": "exact" if primary_score >= 0.9 else ("high_fuzzy" if primary_score >= 0.8 else "fuzzy"),
         }
     
-    def load_from_json_cache(self, cache_file: str = None):
+    def load_from_json_cache(self, cache_file: str = None, build_indexes: bool = True):
         """Load directors from the existing JSON cache into DuckDB."""
         cache_file = cache_file or (FINAL_DIR / "director_filmographies.json")
-        
+
         if not os.path.exists(cache_file):
             print(f"Cache file not found: {cache_file}")
             return 0
-        
+
         with open(cache_file, 'r', encoding='utf-8') as f:
             cache = json.load(f)
-        
+
         count = 0
         for director_name, data in cache.items():
             self.add_director(director_name, data)
             count += 1
-        
+
         print(f"Loaded {count} directors into DuckDB")
+
+        if build_indexes and count > 0:
+            print("Building FTS and HNSW indexes...")
+            self.build_fts_index()
+            self.build_hnsw_index()
+
         return count
     
     def get_stats(self) -> Dict:
