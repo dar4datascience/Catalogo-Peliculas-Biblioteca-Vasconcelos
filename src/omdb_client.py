@@ -1,6 +1,7 @@
 import os
 import re
-from typing import Optional
+from typing import Optional, Dict, Any
+from source_of_truth import lookup_movie, update_movie
 
 import requests
 from dotenv import load_dotenv
@@ -98,15 +99,19 @@ def search_movie_id(title: str, year: Optional[str] = None) -> Optional[str]:
 def search_movie_bilingual(title: str, year: Optional[str] = None, preferred_language: str = 'es') -> Optional[dict]:
     """
     Search for a movie using bilingual strategy (Spanish -> English fallback).
-
-    Args:
-        title: Movie title (can be in Spanish)
-        year: Optional release year
-        preferred_language: Preferred language ('es' or 'en')
-
-    Returns:
-        dict with 'imdbID' and match metadata, or None if not found.
+    Checks Source of Truth first.
     """
+    # 0. Check Source of Truth first
+    sot_match = lookup_movie(title)
+    if sot_match:
+        return {
+            'imdbID': sot_match['imdb_id'],
+            'match_type': sot_match.get('match_type', 'source_of_truth'),
+            'searched_title': title,
+            'matched_title': sot_match['matched_title'],
+            'data': sot_match.get('full_data')
+        }
+
     normalized = normalize_spanish_title(title)
 
     # 1. Try exact match with original/normalized title
@@ -232,14 +237,6 @@ def get_movie_details(imdb_id: str, include_full_plot: bool = True) -> Optional[
 def enrich_movie_with_omdb(title: str, source_pdf: str = '', year: Optional[str] = None) -> dict:
     """
     Full enrichment pipeline for a single movie title.
-
-    Args:
-        title: Movie title (Spanish or English)
-        source_pdf: Source PDF filename for tracking
-        year: Optional release year hint
-
-    Returns:
-        dict with movie details, match metadata, and source info.
     """
     result = {
         'original_title': title,
@@ -249,11 +246,16 @@ def enrich_movie_with_omdb(title: str, source_pdf: str = '', year: Optional[str]
         'data': None
     }
 
-    # Try bilingual search
+    # Try bilingual search (which includes SoT check)
     match = search_movie_bilingual(title, year, preferred_language='es')
 
     if match:
-        details = get_movie_details(match['imdbID'])
+        # If we have data from SoT, use it directly
+        if match.get('data'):
+            details = match['data']
+        else:
+            details = get_movie_details(match['imdbID'])
+            
         if details:
             result['enriched'] = True
             result['match_type'] = match.get('match_type', 'unknown')
@@ -263,7 +265,7 @@ def enrich_movie_with_omdb(title: str, source_pdf: str = '', year: Optional[str]
             # Add computed fields
             result['director'] = details.get('Director', '')
             result['year'] = details.get('Year', '')
-            result['genre'] = details.get('Genre', '').split(', ') if details.get('Genre') else []
+            result['genre'] = [g.strip() for g in details.get('Genre', '').split(',')] if details.get('Genre') else []
             result['country'] = details.get('Country', '')
             result['plot'] = details.get('Plot', '')
             result['poster'] = details.get('Poster', '')

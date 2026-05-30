@@ -11,7 +11,8 @@ from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import TextContent, Tool
 
-from omdb_client import search_movie_bilingual, get_movie_details, find_best_fuzzy_match
+from omdb_client import search_movie_bilingual, get_movie_details, find_best_fuzzy_match, enrich_movie_with_omdb
+from source_of_truth import lookup_movie, update_movie
 from models import Movie
 
 
@@ -101,6 +102,38 @@ with multiple strategies (direct, fuzzy, bilingual).""",
                     }
                 }
             }
+        ),
+        Tool(
+            name="detect_title_patterns",
+            description="Analyze a movie title for common OCR artifacts, special characters, and casing issues.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "The title to analyze"
+                    }
+                },
+                "required": ["title"]
+            }
+        ),
+        Tool(
+            name="confirm_match",
+            description="Confirm a correct movie match and save it to the Source of Truth catalog.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "raw_title": {
+                        "type": "string",
+                        "description": "The original raw title from the PDF"
+                    },
+                    "imdb_id": {
+                        "type": "string",
+                        "description": "The correct IMDb ID (tt1234567)"
+                    }
+                },
+                "required": ["raw_title", "imdb_id"]
+            }
         )
     ]
 
@@ -115,6 +148,10 @@ async def call_tool(name: str, arguments: Any) -> list[TextContent]:
         return await handle_batch_analyze(arguments)
     elif name == "get_failed_matches_report":
         return await handle_failed_report(arguments)
+    elif name == "detect_title_patterns":
+        return await handle_detect_patterns(arguments)
+    elif name == "confirm_match":
+        return await handle_confirm_match(arguments)
     else:
         return [TextContent(type="text", text=f"Unknown tool: {name}")]
 
@@ -124,10 +161,11 @@ async def handle_analyze_and_match(args: dict) -> list[TextContent]:
     Analyze a raw title and find best OMDB match using multiple strategies.
     
     This is the core LLM-assisted matching logic:
-    1. Use LLM reasoning (via the prompt) to normalize/correct the title
-    2. Try bilingual search (Spanish -> English fallback)
-    3. Use fuzzy matching for broad results
-    4. Return best match with confidence score
+    1. Check Source of Truth (SoT) first
+    2. Use LLM reasoning (via the prompt) to normalize/correct the title
+    3. Try bilingual search (Spanish -> English fallback)
+    4. Use fuzzy matching for broad results
+    5. Return best match with confidence score
     """
     raw_title = args.get("raw_title", "").strip()
     director_hint = args.get("director_hint", "").strip()
@@ -137,6 +175,19 @@ async def handle_analyze_and_match(args: dict) -> list[TextContent]:
     
     if not raw_title:
         return [TextContent(type="text", text="Error: raw_title is required")]
+
+    # STEP 1: Check Source of Truth
+    sot_match = lookup_movie(raw_title)
+    if sot_match:
+        result = {
+            "source_of_truth_match": True,
+            "imdb_id": sot_match.get("imdb_id"),
+            "title": sot_match.get("matched_title"),
+            "match_type": sot_match.get("match_type"),
+            "full_data": sot_match.get("full_data"),
+            "recommendation": "Use this verified match from the Source of Truth."
+        }
+        return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
     
     # Build LLM reasoning prompt for title normalization
     analysis_prompt = f"""Analyze this extracted movie title and find the correct OMDB match.
@@ -260,6 +311,8 @@ async def handle_failed_report(args: dict) -> list[TextContent]:
     pdf_filter = args.get("pdf_filter", "")
     
     try:
+        if not os.path.exists(catalog_path):
+             return [TextContent(type="text", text=f"Catalog file not found at {catalog_path}. Run the pipeline first.")]
         with open(catalog_path, 'r', encoding='utf-8') as f:
             catalog = json.load(f)
     except Exception as e:
@@ -307,6 +360,72 @@ async def handle_failed_report(args: dict) -> list[TextContent]:
     }
     
     return [TextContent(type="text", text=json.dumps(report, indent=2, ensure_ascii=False))]
+
+
+async def handle_detect_patterns(args: dict) -> list[TextContent]:
+    """Analyze a title for common OCR artifacts and patterns."""
+    import re
+    title = args.get("title", "")
+    if not title:
+        return [TextContent(type="text", text="Error: title is required")]
+
+    patterns_found = []
+    suggested_fixes = []
+
+    # 1. Mixed casing/OCR artifacts
+    if re.search(r'[a-z][A-Z]', title):
+        patterns_found.append("Possible joined words (MixedCase)")
+        # Suggest split if possible, but for now just note it
+    
+    # 2. Number substitutions
+    if 'l' in title.lower() and re.search(r'\d', title):
+        patterns_found.append("Possible 'l' for '1' substitution")
+        suggested_fixes.append(re.sub(r'l', '1', title, flags=re.IGNORECASE))
+
+    if '0' in title and 'o' in title.lower():
+        patterns_found.append("Possible '0' for 'o' substitution")
+        suggested_fixes.append(re.sub(r'0', 'o', title, flags=re.IGNORECASE))
+
+    # 3. Special characters
+    special_chars = re.findall(r'[^a-zA-Z0-9\s,.\'\"\-]', title)
+    if special_chars:
+        patterns_found.append(f"Special characters detected: {''.join(set(special_chars))}")
+        suggested_fixes.append(re.sub(r'[^a-zA-Z0-9\s,.\'\"\-]', '', title))
+
+    # 4. Trailing artifacts
+    if re.search(r'[\.\-=:]{2,}$', title):
+        patterns_found.append("Trailing punctuation artifacts")
+        suggested_fixes.append(title.rstrip('. -=:'))
+
+    result = {
+        "title": title,
+        "patterns_detected": patterns_found,
+        "suggested_fixes": list(set(suggested_fixes)),
+        "recommendation": "Apply suggested fixes or use LLM to clean the title further."
+    }
+    
+    return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+
+
+async def handle_confirm_match(args: dict) -> list[TextContent]:
+    """Confirm a movie match and update the Source of Truth."""
+    raw_title = args.get("raw_title", "")
+    imdb_id = args.get("imdb_id", "")
+    
+    if not raw_title or not imdb_id:
+        return [TextContent(type="text", text="Error: raw_title and imdb_id are required")]
+    
+    # Fetch full data from OMDB to store in SoT
+    details = get_movie_details(imdb_id)
+    if not details:
+        return [TextContent(type="text", text=f"Error: Could not fetch details for IMDb ID {imdb_id}")]
+    
+    success = update_movie(raw_title, details, match_type="mcp_confirmed")
+    
+    if success:
+        return [TextContent(type="text", text=f"Successfully confirmed '{raw_title}' as '{details.get('Title')}' ({imdb_id}) and updated Source of Truth.")]
+    else:
+        return [TextContent(type="text", text="Error: Failed to update Source of Truth.")]
 
 
 async def main():
