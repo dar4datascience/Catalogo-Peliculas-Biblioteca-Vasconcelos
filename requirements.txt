@@ -20,3 +20,10 @@ python-Levenshtein>=0.25.0
 
 # Concurrent processing (built-in, but listed for clarity)
 # concurrent.futures - part of stdlib
+
+# MCP Server SDK
+mcp>=1.0.0
+
+# For LLM API integration (optional - can use environment variables)
+# openai>=1.0.0
+# anthropic>=0.20.0

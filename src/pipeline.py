@@ -122,40 +122,46 @@ def extract_movies_from_pdf(pdf_path: Path) -> tuple[list[Movie], PDFSource]:
     return movies, pdf_source
 
 
-def enrich_movie(movie: Movie) -> Movie:
+def enrich_movie(movie: Movie, use_llm: bool = True) -> Movie:
     """Enrich a single movie with OMDB data."""
-    result = enrich_movie_with_omdb(
-        title=movie.title,
-        source_pdf=movie.source_pdf
-    )
+    if use_llm:
+        # Use LLM-enhanced enrichment for better match rates
+        from llm_enrichment import enhanced_enrich_movie
+        return enhanced_enrich_movie(movie)
+    else:
+        # Use basic enrichment
+        result = enrich_movie_with_omdb(
+            title=movie.title,
+            source_pdf=movie.source_pdf
+        )
 
-    if result['enriched']:
-        movie.enriched = True
-        movie.match_type = result.get('match_type')
-        movie.searched_title = result.get('searched_title')
-        movie.matched_title = result.get('matched_title')
+        if result['enriched']:
+            movie.enriched = True
+            movie.match_type = result.get('match_type')
+            movie.searched_title = result.get('searched_title')
+            movie.matched_title = result.get('matched_title')
 
-        # Map OMDB fields
-        movie.imdb_id = result['data'].get('imdbID')
-        movie.year = result['data'].get('Year')
-        movie.director = result.get('director')
-        movie.writer = result['data'].get('Writer')
-        movie.actors = result['data'].get('Actors')
-        movie.plot = result.get('plot')
-        movie.language = result['data'].get('Language')
-        movie.country = result.get('country')
-        movie.awards = result['data'].get('Awards')
-        movie.poster = result.get('poster')
-        movie.imdb_rating = result.get('imdb_rating')
-        movie.imdb_votes = result['data'].get('imdbVotes')
-        movie.metascore = result['data'].get('Metascore')
+            # Map OMDB fields
+            movie.imdb_id = result['data'].get('imdbID')
+            movie.year = result['data'].get('Year')
+            movie.director = result.get('director')
+            movie.writer = result['data'].get('Writer')
+            movie.actors = result['data'].get('Actors')
+            movie.plot = result.get('plot')
+            movie.language = result['data'].get('Language')
+            movie.country = result.get('country')
+            movie.awards = result['data'].get('Awards')
+            movie.poster = result.get('poster')
+            movie.imdb_rating = result.get('imdb_rating')
+            movie.imdb_votes = result['data'].get('imdbVotes')
+            movie.metascore = result['data'].get('Metascore')
 
-        # Parse genre
-        genre_str = result['data'].get('Genre', '')
-        if genre_str:
-            movie.genre = [g.strip() for g in genre_str.split(',')]
+            # Parse genre
+            genre_str = result['data'].get('Genre', '')
+            if genre_str:
+                movie.genre = [g.strip() for g in genre_str.split(',')]
 
-    return movie
+        return movie
 
 
 def process_all_pdfs(max_workers: int = 5) -> CatalogIndex:
@@ -220,6 +226,61 @@ def process_all_pdfs(max_workers: int = 5) -> CatalogIndex:
     return catalog
 
 
+def calculate_pdf_stats(movies: list[Movie]) -> list[dict]:
+    """Calculate enrichment statistics per PDF source."""
+    from collections import defaultdict
+
+    stats = defaultdict(lambda: {'total': 0, 'enriched': 0})
+
+    for movie in movies:
+        source = movie.source_pdf
+        stats[source]['total'] += 1
+        if movie.enriched:
+            stats[source]['enriched'] += 1
+
+    # Convert to sorted list (by success rate, lowest first = most problematic)
+    result = []
+    for pdf, counts in sorted(stats.items(), key=lambda x: x[1]['enriched'] / max(x[1]['total'], 1)):
+        result.append({
+            'pdf_file': pdf,
+            'total_movies': counts['total'],
+            'enriched_movies': counts['enriched'],
+            'success_rate': counts['enriched'] / max(counts['total'], 1),
+            'failed_movies': counts['total'] - counts['enriched']
+        })
+
+    return result
+
+
+def print_pdf_stats_table(pdf_stats: list[dict]) -> None:
+    """Print a formatted table of per-PDF success rates."""
+    print("\n" + "=" * 70)
+    print("Per-PDF Enrichment Success Rates")
+    print("=" * 70)
+    print(f"{'PDF File':<35} {'Total':>8} {'Enriched':>10} {'Rate':>8} {'Status'}")
+    print("-" * 70)
+
+    for stat in pdf_stats:
+        pdf_name = stat['pdf_file'][:34]
+        total = stat['total_movies']
+        enriched = stat['enriched_movies']
+        rate = stat['success_rate']
+
+        # Status indicator based on success rate
+        if rate >= 0.5:
+            status = "✓ Good"
+        elif rate >= 0.3:
+            status = "⚠ Fair"
+        elif rate > 0:
+            status = "✗ Poor"
+        else:
+            status = "✗ None"
+
+        print(f"{pdf_name:<35} {total:>8} {enriched:>10} {rate:>7.1%} {status}")
+
+    print("-" * 70)
+
+
 def export_catalog(catalog: CatalogIndex, output_dir: Path) -> None:
     """
     Export catalog to all required formats.
@@ -229,6 +290,9 @@ def export_catalog(catalog: CatalogIndex, output_dir: Path) -> None:
         output_dir: Directory for output files.
     """
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Calculate per-PDF statistics
+    pdf_stats = calculate_pdf_stats(catalog.movies)
 
     # 1. JSON for ObservableJS (primary)
     json_path = output_dir / 'catalog.json'
@@ -250,18 +314,27 @@ def export_catalog(catalog: CatalogIndex, output_dir: Path) -> None:
     df.to_csv(csv_path, index=False)
     print(f"Exported CSV: {csv_path}")
 
-    # 3. Processing summary
+    # 3. Processing summary with per-PDF stats
     summary = {
         'total_movies': catalog.total_count,
         'enriched_movies': catalog.enriched_count,
         'enrichment_rate': catalog.enriched_count / max(catalog.total_count, 1),
         'categories': catalog.categories,
-        'pdf_sources': [s.model_dump() for s in catalog.sources]
+        'pdf_sources': [s.model_dump() for s in catalog.sources],
+        'pdf_stats': pdf_stats  # NEW: Per-PDF success rates
     }
 
     summary_path = output_dir / 'processing_summary.json'
     summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False))
     print(f"Exported summary: {summary_path}")
+
+    # 4. Per-PDF stats CSV for easy analysis
+    stats_csv_path = output_dir / 'pdf_success_rates.csv'
+    pd.DataFrame(pdf_stats).to_csv(stats_csv_path, index=False)
+    print(f"Exported PDF stats: {stats_csv_path}")
+
+    # Print table to console
+    print_pdf_stats_table(pdf_stats)
 
 
 def main():
