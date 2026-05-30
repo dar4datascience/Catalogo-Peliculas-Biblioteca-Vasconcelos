@@ -31,15 +31,36 @@ def lookup_movie(raw_title: str) -> Optional[Dict[str, Any]]:
     sot = load_sot()
     return sot.get(raw_title)
 
-def update_movie(raw_title: str, omdb_data: Dict[str, Any], match_type: str = "manual_confirmation") -> bool:
+def update_movie(
+    raw_title: str,
+    omdb_data: Dict[str, Any],
+    match_type: str = "manual_confirmation",
+    catalogue: str = "CINE.pdf",
+    catalogue_id: Optional[int] = None,
+    page_number: Optional[int] = None,
+) -> bool:
     """Update or add a movie to the Source of Truth."""
     sot = load_sot()
-    sot[raw_title] = {
+    entry: Dict[str, Any] = {
         "imdb_id": omdb_data.get("imdbID"),
         "matched_title": omdb_data.get("Title"),
         "match_type": match_type,
-        "full_data": omdb_data
+        "catalogue": catalogue,
+        "full_data": omdb_data,
     }
+    if catalogue_id is not None:
+        entry["catalogue_id"] = catalogue_id
+    if page_number is not None:
+        entry["page_number"] = page_number
+    # Preserve existing catalogue metadata if not provided
+    existing = sot.get(raw_title, {})
+    if catalogue_id is None and "catalogue_id" in existing:
+        entry["catalogue_id"] = existing["catalogue_id"]
+    if page_number is None and "page_number" in existing:
+        entry["page_number"] = existing["page_number"]
+    if not entry.get("catalogue") and "catalogue" in existing:
+        entry["catalogue"] = existing["catalogue"]
+    sot[raw_title] = entry
     return save_sot(sot)
 
 def get_all_mappings() -> Dict[str, Any]:

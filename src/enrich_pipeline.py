@@ -27,11 +27,30 @@ from omdb_client import search_movie_bilingual, get_movie_details, broad_search_
 from source_of_truth import lookup_movie, update_movie, load_sot
 
 CSV_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results', 'cine_hybrid_method.csv')
+PDF_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'pdfs', 'CINE.pdf')
+CATALOGUE_NAME = 'CINE.pdf'
 PATTERNS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results', 'title_patterns.json')
 PENDING_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results', 'pending_review.json')
 
 HIGH_CONFIDENCE_TYPES = {'exact_spanish', 'no_article', 'english_fallback', 'source_of_truth', 'exact'}
 RATE_LIMIT_DELAY = 0.25  # seconds between OMDB calls
+
+
+def build_page_index(pdf_path: str) -> dict[int, int]:
+    """Return {catalogue_id: page_number} by scanning the PDF."""
+    try:
+        from pypdf import PdfReader
+        reader = PdfReader(pdf_path)
+    except Exception:
+        return {}
+    id_to_page: dict[int, int] = {}
+    for page_num, page in enumerate(reader.pages, 1):
+        text = page.extract_text() or ''
+        for m in re.finditer(r'(?:^|\n)\s*(\d{1,4})(?=\s|[A-ZÁÉÍÓÚÜÑa-záéíóúüñ¿¡])', text):
+            n = int(m.group(1))
+            if 1 <= n <= 9999 and n not in id_to_page:
+                id_to_page[n] = page_num
+    return id_to_page
 
 
 def load_patterns() -> dict:
@@ -137,6 +156,9 @@ def is_high_confidence(match_type: str) -> bool:
 
 
 def run_pipeline(start_id: int = 1, end_id: int = 9999, dry_run: bool = False):
+    # Build PDF page index
+    page_index = build_page_index(PDF_PATH)
+
     # Load patterns
     patterns_by_id = load_patterns()
 
@@ -186,7 +208,15 @@ def run_pipeline(start_id: int = 1, end_id: int = 9999, dry_run: bool = False):
                     details = get_movie_details(imdb_id)
                     time.sleep(RATE_LIMIT_DELAY)
                     if details:
-                        update_movie(title_es, details, match_type=match_type)
+                        cat_id = int(row_id) if str(row_id).isdigit() else None
+                        page_num = page_index.get(cat_id) if cat_id else None
+                        update_movie(
+                            title_es, details,
+                            match_type=match_type,
+                            catalogue=CATALOGUE_NAME,
+                            catalogue_id=cat_id,
+                            page_number=page_num,
+                        )
                         confirmed.append({
                             'id': row_id,
                             'title_spanish': title_es,

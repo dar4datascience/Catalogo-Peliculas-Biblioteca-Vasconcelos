@@ -15,6 +15,8 @@ from omdb_client import search_movie_bilingual, get_movie_details, broad_search_
 from source_of_truth import lookup_movie, update_movie
 
 PENDING_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results', 'pending_review.json')
+PDF_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'pdfs', 'CINE.pdf')
+CATALOGUE_NAME = 'CINE.pdf'
 RATE_LIMIT_DELAY = 0.25
 HIGH_CONFIDENCE_TYPES = {'exact_spanish', 'no_article', 'english_fallback', 'source_of_truth', 'exact'}
 
@@ -113,7 +115,26 @@ def try_search_variants(variants: list, director: str = '') -> dict | None:
     return None
 
 
+def build_page_index(pdf_path: str) -> dict:
+    """Return {catalogue_id: page_number} by scanning the PDF."""
+    try:
+        from pypdf import PdfReader
+        reader = PdfReader(pdf_path)
+    except Exception:
+        return {}
+    id_to_page: dict = {}
+    for page_num, page in enumerate(reader.pages, 1):
+        text = page.extract_text() or ''
+        for m in re.finditer(r'(?:^|\n)\s*(\d{1,4})(?=\s|[A-ZÁÉÍÓÚÜÑ a-záéíóúüñ¿¡])', text):
+            n = int(m.group(1))
+            if 1 <= n <= 9999 and n not in id_to_page:
+                id_to_page[n] = page_num
+    return id_to_page
+
+
 def main():
+    page_index = build_page_index(PDF_PATH)
+
     with open(PENDING_PATH, 'r', encoding='utf-8') as f:
         pending = json.load(f)
 
@@ -171,7 +192,15 @@ def main():
                 details = get_movie_details(imdb_id)
                 time.sleep(RATE_LIMIT_DELAY)
                 if details:
-                    update_movie(title_es, details, match_type=f"reprocess_{match_type}")
+                    cat_id = int(row_id) if str(row_id).isdigit() else None
+                    page_num = page_index.get(cat_id) if cat_id else None
+                    update_movie(
+                        title_es, details,
+                        match_type=f"reprocess_{match_type}",
+                        catalogue=CATALOGUE_NAME,
+                        catalogue_id=cat_id,
+                        page_number=page_num,
+                    )
                     newly_confirmed.append({
                         'id': row_id, 'title_spanish': title_es,
                         'imdb_id': imdb_id, 'matched_title': details.get('Title'),
@@ -215,7 +244,15 @@ def main():
                         details = get_movie_details(best['imdbID'])
                         time.sleep(RATE_LIMIT_DELAY)
                         if details:
-                            update_movie(title_es, details, match_type=match_type)
+                            cat_id = int(row_id) if str(row_id).isdigit() else None
+                            page_num = page_index.get(cat_id) if cat_id else None
+                            update_movie(
+                                title_es, details,
+                                match_type=match_type,
+                                catalogue=CATALOGUE_NAME,
+                                catalogue_id=cat_id,
+                                page_number=page_num,
+                            )
                             newly_confirmed.append({
                                 'id': row_id, 'title_spanish': title_es,
                                 'imdb_id': best['imdbID'],
