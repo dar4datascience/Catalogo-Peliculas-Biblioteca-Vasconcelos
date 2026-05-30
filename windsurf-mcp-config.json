@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "movie-catalog": {
+      "command": "/home/chonkydev/Documents/Github Repos/Catalogo-Peliculas-Biblioteca-Vasconcelos/.venv/bin/python3",
+      "args": [
+        "/home/chonkydev/Documents/Github Repos/Catalogo-Peliculas-Biblioteca-Vasconcelos/src/mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "/home/chonkydev/Documents/Github Repos/Catalogo-Peliculas-Biblioteca-Vasconcelos/src"
+      },
+      "cwd": "/home/chonkydev/Documents/Github Repos/Catalogo-Peliculas-Biblioteca-Vasconcelos"
+    }
+  }
+}
