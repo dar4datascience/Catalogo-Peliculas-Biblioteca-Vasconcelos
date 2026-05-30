@@ -14,6 +14,9 @@ from mcp.types import TextContent, Tool
 from omdb_client import search_movie_bilingual, get_movie_details, find_best_fuzzy_match, enrich_movie_with_omdb, search_director_filmography
 from source_of_truth import lookup_movie, update_movie
 from models import Movie
+from tmdb_client import enrich_movie_with_tmdb, search_person, get_person_movie_credits
+from tmdb_pipeline import get_unique_directors_from_csv, load_director_cache, fetch_director_filmography
+from reconciliation import compare_matches, tag_conflict_resolution, get_all_conflicts, load_catalog_data
 
 
 app = Server("movie-catalog-mcp")
@@ -170,6 +173,100 @@ The LLM should reason: 'Which of these films directed by <director> best matches
                 },
                 "required": ["raw_title", "imdb_id"]
             }
+        ),
+        Tool(
+            name="get_cine_directors",
+            description="Returns list of unique directors extracted from CINE.pdf catalog. Use this to understand the director landscape before enrichment.",
+            inputSchema={
+                "type": "object",
+                "properties": {}
+            }
+        ),
+        Tool(
+            name="fetch_tmdb_filmography",
+            description="Fetch a director's complete filmography from TMDB API. Searches for the director and returns all their movies with titles, original titles, and years.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "director": {
+                        "type": "string",
+                        "description": "Director name to search for"
+                    },
+                    "use_cache": {
+                        "type": "boolean",
+                        "description": "Whether to use cached results (default: true)",
+                        "default": True
+                    }
+                },
+                "required": ["director"]
+            }
+        ),
+        Tool(
+            name="match_movie_by_director_tmdb",
+            description="Match a movie title against a director's TMDB filmography. Searches for the director, fetches their filmography, and finds the best fuzzy match for the title.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "raw_title": {
+                        "type": "string",
+                        "description": "Movie title from the catalog"
+                    },
+                    "director": {
+                        "type": "string",
+                        "description": "Director name"
+                    },
+                    "year_hint": {
+                        "type": "string",
+                        "description": "Optional year to help disambiguate"
+                    }
+                },
+                "required": ["raw_title", "director"]
+            }
+        ),
+        Tool(
+            name="compare_and_resolve_match",
+            description="Compare OMDB and TMDB matches for a specific movie, calculate confidence scores for both, and provide reasoning about which match is more likely correct. Tags conflicts for manual review when APIs disagree.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "raw_title": {
+                        "type": "string",
+                        "description": "Movie title from the catalog"
+                    },
+                    "director_hint": {
+                        "type": "string",
+                        "description": "Optional director name for verification"
+                    }
+                },
+                "required": ["raw_title"]
+            }
+        ),
+        Tool(
+            name="get_tmdb_match_report",
+            description="Get a comprehensive report comparing TMDB vs OMDB match rates and confidence distributions. Shows statistics on how many movies were matched by each pipeline.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "catalog_json_path": {
+                        "type": "string",
+                        "description": "Path to catalog.json file",
+                        "default": "data/final_results/catalog.json"
+                    },
+                    "tmdb_catalog_path": {
+                        "type": "string",
+                        "description": "Path to catalog_tmdb.json file",
+                        "default": "data/final_results/catalog_tmdb.json"
+                    }
+                }
+            }
+        ),
+        Tool(
+            name="get_conflicts_for_review",
+            description="Get all tagged conflicts between OMDB and TMDB matches that require manual review. Use this to see which movies have disagreements between the two APIs.",
+            inputSchema={
+                "type": "object",
+                "properties": {}
+            }
         )
     ]
 
@@ -190,6 +287,18 @@ async def call_tool(name: str, arguments: Any) -> list[TextContent]:
         return await handle_match_by_director(arguments)
     elif name == "confirm_match":
         return await handle_confirm_match(arguments)
+    elif name == "get_cine_directors":
+        return await handle_get_cine_directors(arguments)
+    elif name == "fetch_tmdb_filmography":
+        return await handle_fetch_tmdb_filmography(arguments)
+    elif name == "match_movie_by_director_tmdb":
+        return await handle_match_movie_by_director_tmdb(arguments)
+    elif name == "compare_and_resolve_match":
+        return await handle_compare_and_resolve_match(arguments)
+    elif name == "get_tmdb_match_report":
+        return await handle_get_tmdb_match_report(arguments)
+    elif name == "get_conflicts_for_review":
+        return await handle_get_conflicts_for_review(arguments)
     else:
         return [TextContent(type="text", text=f"Unknown tool: {name}")]
 
@@ -584,6 +693,172 @@ async def handle_confirm_match(args: dict) -> list[TextContent]:
         return [TextContent(type="text", text=f"Successfully confirmed '{raw_title}' as '{details.get('Title')}' ({imdb_id}) and updated Source of Truth.{meta}")]
     else:
         return [TextContent(type="text", text="Error: Failed to update Source of Truth.")]
+
+
+async def handle_get_cine_directors(args: dict) -> list[TextContent]:
+    """Get unique directors from CINE.pdf catalog."""
+    try:
+        directors = get_unique_directors_from_csv()
+        result = {
+            "total_directors": len(directors),
+            "directors": directors,
+            "sample": directors[:20] if len(directors) > 20 else directors
+        }
+        return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+    except Exception as e:
+        return [TextContent(type="text", text=f"Error: {str(e)}")]
+
+
+async def handle_fetch_tmdb_filmography(args: dict) -> list[TextContent]:
+    """Fetch a director's filmography from TMDB."""
+    director = args.get("director", "").strip()
+    use_cache = args.get("use_cache", True)
+    
+    if not director:
+        return [TextContent(type="text", text="Error: director is required")]
+    
+    try:
+        filmography = fetch_director_filmography(director, use_cache=use_cache)
+        if not filmography:
+            return [TextContent(type="text", text=f"No TMDB results found for director: {director}")]
+        
+        # Return summary + full filmography
+        result = {
+            "director": director,
+            "tmdb_name": filmography.get("tmdb_name"),
+            "tmdb_person_id": filmography.get("tmdb_person_id"),
+            "popularity": filmography.get("popularity"),
+            "movie_count": filmography.get("movie_count"),
+            "filmography": filmography.get("filmography", [])[:10]  # First 10 for brevity
+        }
+        return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+    except Exception as e:
+        return [TextContent(type="text", text=f"Error: {str(e)}")]
+
+
+async def handle_match_movie_by_director_tmdb(args: dict) -> list[TextContent]:
+    """Match a movie title against a director's TMDB filmography."""
+    raw_title = args.get("raw_title", "").strip()
+    director = args.get("director", "").strip()
+    year_hint = args.get("year_hint", "").strip()
+    
+    if not raw_title or not director:
+        return [TextContent(type="text", text="Error: raw_title and director are required")]
+    
+    try:
+        result = enrich_movie_with_tmdb(raw_title, director, year_hint if year_hint else None)
+        return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+    except Exception as e:
+        return [TextContent(type="text", text=f"Error: {str(e)}")]
+
+
+async def handle_compare_and_resolve_match(args: dict) -> list[TextContent]:
+    """Compare OMDB and TMDB matches for a specific movie."""
+    raw_title = args.get("raw_title", "").strip()
+    director_hint = args.get("director_hint", "").strip()
+    
+    if not raw_title:
+        return [TextContent(type="text", text="Error: raw_title is required")]
+    
+    try:
+        comparison = compare_matches(raw_title, director_hint)
+        
+        # Tag conflict if present
+        if comparison.get("conflict"):
+            tag_conflict_resolution(raw_title, comparison)
+        
+        return [TextContent(type="text", text=json.dumps(comparison, indent=2, ensure_ascii=False))]
+    except Exception as e:
+        return [TextContent(type="text", text=f"Error: {str(e)}")]
+
+
+async def handle_get_tmdb_match_report(args: dict) -> list[TextContent]:
+    """Get comprehensive report comparing TMDB vs OMDB match rates."""
+    catalog_path = args.get("catalog_json_path", "data/final_results/catalog.json")
+    tmdb_path = args.get("tmdb_catalog_path", "data/final_results/catalog_tmdb.json")
+    
+    try:
+        omdb_data, tmdb_data = load_catalog_data()
+        
+        # Calculate statistics
+        total_omdb = len([m for m in omdb_data.values() if m.get("enriched")])
+        total_tmdb = len([m for m in tmdb_data.values() if m.get("tmdb_matched")])
+        
+        # High confidence matches
+        high_conf_omdb = sum(1 for m in omdb_data.values() 
+                            if m.get("enriched") and m.get("match_type") in ["exact", "exact_spanish"])
+        high_conf_tmdb = sum(1 for m in tmdb_data.values() 
+                            if m.get("tmdb_matched") and m.get("confidence", 0) >= 90)
+        
+        # Calculate overlap
+        all_titles = set(omdb_data.keys()) | set(tmdb_data.keys())
+        matched_by_both = 0
+        matched_only_omdb = 0
+        matched_only_tmdb = 0
+        unmatched = 0
+        
+        for title in all_titles:
+            omdb_match = title in omdb_data and omdb_data[title].get("enriched")
+            tmdb_match = title in tmdb_data and tmdb_data[title].get("tmdb_matched")
+            
+            if omdb_match and tmdb_match:
+                matched_by_both += 1
+            elif omdb_match:
+                matched_only_omdb += 1
+            elif tmdb_match:
+                matched_only_tmdb += 1
+            else:
+                unmatched += 1
+        
+        result = {
+            "total_movies": len(all_titles),
+            "omdb_stats": {
+                "total_matched": total_omdb,
+                "high_confidence": high_conf_omdb
+            },
+            "tmdb_stats": {
+                "total_matched": total_tmdb,
+                "high_confidence": high_conf_tmdb
+            },
+            "overlap": {
+                "matched_by_both": matched_by_both,
+                "matched_only_omdb": matched_only_omdb,
+                "matched_only_tmdb": matched_only_tmdb,
+                "unmatched": unmatched
+            },
+            "files": {
+                "omdb_catalog": str(catalog_path),
+                "tmdb_catalog": str(tmdb_path)
+            }
+        }
+        
+        return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+    except Exception as e:
+        return [TextContent(type="text", text=f"Error: {str(e)}")]
+
+
+async def handle_get_conflicts_for_review(args: dict) -> list[TextContent]:
+    """Get all tagged conflicts requiring manual review."""
+    try:
+        conflicts = get_all_conflicts()
+        
+        if not conflicts:
+            return [TextContent(type="text", text="No conflicts found. Run compare_and_resolve_match on movies to tag conflicts.")]
+        
+        # Group by status
+        pending = [c for c in conflicts if c.get("status") == "pending_review"]
+        resolved = [c for c in conflicts if c.get("status") == "resolved"]
+        
+        result = {
+            "total_conflicts": len(conflicts),
+            "pending_review": len(pending),
+            "resolved": len(resolved),
+            "conflicts": pending[:10]  # First 10 pending conflicts
+        }
+        
+        return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
+    except Exception as e:
+        return [TextContent(type="text", text=f"Error: {str(e)}")]
 
 
 async def main():
