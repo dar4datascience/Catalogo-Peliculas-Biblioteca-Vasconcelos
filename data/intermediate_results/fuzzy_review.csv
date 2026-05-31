@@ -1,0 +1,147 @@
+id,title_spanish,director,candidate_title,candidate_imdb_id,match_type,score
+557,Después de medianoche,Davide Ferrario,6 Cortos para después de la Medianoche,tt30750940,fuzzy_71,71
+627,Drácula Bram Stoker’s Dracula,Francis Ford Coppola,Making 'Bram Stoker's Dracula',tt0263696,fuzzy_82,82
+630,Dragón vs Dragón,Art Camacho,Dragon vs. Ninja,tt15076646,fuzzy_69,69
+639,Duma Duma,Carroll Ballard,Duma about Mama,tt14562870,fuzzy_67,67
+644,Duros. los,Sheldon Lettichi,Los días duros,tt0065679,fuzzy_82,82
+686,Entre fantasmas,Douglas Elford-Argent,Entre Lembranças e Fantasmas,tt14080062,fuzzy_71,71
+787,Foxcatcher Foxcatcher,Bennett Miller,Team Foxcatcher,tt5598216,fuzzy_72,72
+849,"Gran amante, El",Woody Allen,Sweet and Lowdown,tt0158371,fuzzy_88,88
+995,Implacable. El,William Lustig,El rifle implacable,tt0281133,fuzzy_81,81
+1001,Infierno. El,John G,El infierno vasco,tt1329369,fuzzy_79,79
+1024,Invictus Invictus,Clint Eastwood,Sol Invictus,tt1584146,fuzzy_69,69
+1031,Irreversible Irréversible,Gaspar Noé,Irreversible Desires,tt29382607,fuzzy_76,76
+1081,Juego Prohibido,R,Juego de amor prohibido,tt0073218,fuzzy_79,79
+1345,Monte Cristo The count of Monte Cristo,Kevin Reynolds,The Story of the Count of Monte Cristo,tt0054761,fuzzy_84,84
+1422,Niños del hombre,Alfonso Cuarón,Children of the Wicker Man,tt32582337,fuzzy_73,73
+1468,Ocho y medio,Federico Fellini,Ocho Hombres y Medio,tt32639101,fuzzy_75,75
+1519,Papillón Papillon,Franklin J,Le papillon,tt0383554,fuzzy_74,74
+1691,"Reglas de Víktor Vogel, Las",Lars Kraume,Commercial Attacks Man,tt3122976,fuzzy_78,78
+1703,Rent no day but today,Chris Columbus,No Day But Today: The Story of 'Rent',tt0497421,fuzzy_76,76
+1740,Rojo amanecer,Jorge Fons,Cielo rojo al amanecer,tt1691833,fuzzy_74,74
+1762,Sanjuro Tsubaki Sanjûrô,Akira Kurosawa,Tsubaki Sanjûrô,tt0905366,fuzzy_79,79
+1957,The silence( silencio. el),Cate Shortland,El silencio de Neto,tt0111186,fuzzy_73,73
+49,"Aire de Clara, El",Sarah Minter,El aire de la tarde,tt0137347,director_filmography_80,80
+67,Alicia en las ciudades,Wim Wenders,Alicia en el País de las Ballenas,tt15067172,director_filmography_65,65
+78,"Amante de Mussolini, La",Marco Bellocchio,La amante de la mafia,tt4030964,director_filmography_70,70
+95,"Amo del viento, El",Roger Dona,El puño del amo,tt0049079,director_filmography_77,77
+150,"Aroma del exíto, El",Michael Polish,El aroma del Copal,tt0112391,director_filmography_78,78
+152,"Arte de matar,El",Christian Duguay,El arte de morir,tt0242285,director_filmography_71,71
+207,"Batalla de Riddick, La",y esc,La Batalla de Vieques,tt2962890,director_filmography_67,67
+226,"Beso del juego, El",Jerry London,El beso del ángel,tt0416516,director_filmography_79,79
+256,"Brujas de Eastwick, Las",George Miller,Juan de las Brujas,tt8521648,director_filmography_75,75
+257,"Brujas de Salem, Las",Joseph Sargent,Las Brujas de E'lente,tt9244584,director_filmography_80,80
+311,Carnaval en el trópico Carnaval en Veracruz,Carlos Villatoro,Carnaval en el trópico,tt0161377,fuzzy_83,83
+319,"Casa de Alicia, La",Chico Teixeira,La casa de palos,tt13699732,director_filmography_79,79
+320,"Casa de arena y niebla, La",Vadim Perlman,La Casa Que Arde de Noche,tt0278383,director_filmography_72,72
+346,"Cenizas de Ángela, Las",Alan Parker,Memoria de las cenizas,tt13288792,director_filmography_81,81
+472,"Clave del éxito, La",John Swanbeck,La clave del diablo,tt0777811,director_filmography_81,81
+498,Cuenta final,Frank Oz,Lo que cuenta es el final,tt8584690,director_filmography_65,65
+507,"Culpa la tiene fidel, La",Julie Gavras,Nadie tiene la culpa,tt1991133,fuzzy_82,82
+511,"Dama de honor, La",Claude Chabrol,La Dama de Sal,tt7509304,director_filmography_65,65
+531,"Decadencia del imperio americano, La",Denys Arcand,La decadencia del club,tt0474621,director_filmography_67,67
+548,Desde allá .,y guión Lorenzo Vigas,Desde el más allá,tt2788684,director_filmography_75,75
+570,"Día que ví tu corazón, El",Jennifer Devoldere,El día que me amen,tt0362582,director_filmography_66,66
+571,"Diablo dijo no, El",Ernest Lubitsch,Algo es algo dijo el diablo,tt0327406,director_filmography_68,68
+578,"Días del abandono, Los",Roberto Faenza,Los días del pasado,tt0075969,director_filmography_67,67
+673,"Encanto del erizo, El",Mona Achache,El Encanto del Regreso,tt9540792,director_filmography_86,86
+720,"Estaciones de la vida, Las",Kim Ki-duk,Las cuatro estaciones de un año,tt0333283,director_filmography_71,71
+742,"Expreso de von Ryan, El",Mark Robson,El hombre del expreso de Oriente,tt0054987,director_filmography_67,67
+767,"Festin de Babette, El",Isaac Dinesen,El festin de la loba,tt0322269,director_filmography_66,66
+769,"Fiebre del loco, La",Andrés Wood,La fiebre del oro,tt27427841,director_filmography_91,91
+779,"Flor del mal, La",Claude Chabrol,La última flor del cerezo,tt9826660,director_filmography_72,72
+927,"Historia de Jacobo, La",Peter Hall,La historia de Jan,tt5783124,director_filmography_87,87
+932,"Historia sin fin, La",Wolfgang Petersen,Cuanajillo: La historia sin agua,tt2104880,director_filmography_68,68
+952,"Hombre sin pasado, El",Aki Kaurismäki,El hombre sin miedo,tt0322582,director_filmography_67,67
+1000,"Infancia de Iván, La",Andrei Tarkovsky,De la infancia,tt1364479,director_filmography_88,88
+1004,"Infierno del odio, El",Akira Kurosawa,El trono del infierno,tt0261367,director_filmography_88,88
+1019,Intolerable cruelty Intolérable cruauté ( el amor cuesta caro),Joel Coen,Intolerable Cruelty,tt0138524,fuzzy_78,78
+1020,"Intriga del collar, La",Charles Shyer,La intriga del pez,tt34819367,director_filmography_77,77
+1046,"Jardin del paraiso, El",Siamak Shayeghi,El jardín del Edén,tt0110185,director_filmography_67,67
+1094,Jumanji Jumanji,Joe Johnston,Like Jumanji,tt1563146,director_filmography_67,67
+1126,"Latido del tambor, El",Kenneth Bi,El latido del bosque,tt30973796,director_filmography_80,80
+1134,"Lengua de las mariposas, La",Josés Luis Cuérda,La lengua de los Zorros,tt0104707,director_filmography_78,78
+1135,"Lenguaje del corazón, El",Jean-Pierre Améris,El lenguaje del tiempo,tt2487900,director_filmography_76,76
+1138,"Ley de Herodes, La",", prod",Fuera de la ley,tt0058120,director_filmography_75,75
+1147,"Leyenda del indomable Cool hand luke, La",Stuart Rosenberg,La leyenda del alcalde de Zalamea,tt0068848,director_filmography_67,67
+1148,"Leyenda del jinete sin cabeza, La",Pierre Gang,La leyenda del Manco,tt0378247,director_filmography_66,66
+1157,"Libros de Próspero, Los",y guión Peter Greenaway,El silencio de los libros,tt8293632,director_filmography_74,74
+1163,"Lista de Schindler, La",Steven Spielberg,La Lista De Porfirio,tt17338884,director_filmography_68,68
+1167,"Llave de Sarah, La",Antoine Theron,La llave de la locura,tt11781248,director_filmography_79,79
+1273,Media noche en parís,y guión Woody Allen,Gritos en la Media Noche,tt13190206,fuzzy_74,74
+1283,Mente criminal. La confesión,dir,SAC: En la mente criminal,tt35747160,fuzzy_83,83
+1314,"Milagro de Bern, El",Sönke Wortmann,El milagro de Candeal,tt0436590,director_filmography_67,67
+1337,"Misterio de Deauville, El",Sophie Marceau,El misterio de Vera Drudi,tt2942728,director_filmography_78,78
+1372,"Mujer de arena, La",Hiroshi Teshigahara,La mujer de Benjamín,tt0102478,director_filmography_83,83
+1421,"Niños del  brasil, Los",Franklin J,Los niños del Nepal,tt0474833,director_filmography_80,80
+1437,"Noche del crimen, La",Dan Algrant,La noche del hermano,tt0410381,director_filmography_82,82
+1473,"Ojos de Julia, Los",Guillem Morales,Los ojos de Alicia,tt0466908,director_filmography_66,66
+1538,"Pasión según Berenice, La",Jaime Humberto Hermosillo,La pasión según Ander,tt0462969,director_filmography_80,80
+1572,"Perros  de guerra, los",John Irvin,Los perros de Dios,tt0070525,director_filmography_74,74
+1582,"Piel del deseo, La",Robert Benton,La piel del signo,tt0406144,director_filmography_82,82
+1667,"Quimera de oro, La",Charles Chaplin,La quimera de los héroes,tt0318270,director_filmography_83,83
+1727,"Rey del barrio, El",Gilberto Martínez Solares,El Rey del sapo,tt9278434,director_filmography_69,69
+1749,"Saint Laurent Saint Laurent Bonello, Bertrand, 1968-",,Yves Saint Laurent,tt2707858,fuzzy_81,81
+1751,"Salario del miedo, El",Georges Clousot,El salario del crimen,tt0058540,director_filmography_83,83
+1874,Son de mar,Bigas Luna,El mar de los que son,tt7270844,director_filmography_65,65
+1877,"Sonrisa de Monalisa, La",Mike Newell,La sonrisa de los maniquíes,tt10039684,director_filmography_66,66
+1895,"Sueño de Walt Saving mr. Banks, El",John Lee Hancock,El sueño de la maestra,tt0348137,director_filmography_65,65
+1927,Terror bajo la nieve,Mark A,A Slice of Terror,tt0439814,director_filmography_70,70
+1977,"Tigre y la nieve, El",Roberto Beningni,El tigre y el venado,tt12752614,director_filmography_77,77
+2039,Tu que estás vivo,Roy Andersson,Ya que tu no estas,tt4057538,fuzzy_76,76
+2050,"Última tentación de Cristo, La",Martin Scorsese,La Última Tentación,tt3782668,director_filmography_79,79
+2132,"Valor de amar,El",Kari Skoglan,El valor de la moneda,tt1503111,director_filmography_81,81
+2159,"Versión de mi vida, La",Richard J,La versión de Marcial,tt0381691,director_filmography_81,81
+2170,"Vida de Adele, La",Abdellatif Kechiche,La vida de nadie,tt0339862,director_filmography_88,88
+2172,"Vida de David  Gale, La",Alan Parker,La vida de nadie,tt0339862,director_filmography_74,74
+2210,"Vuelo del fénix, El",John Moore,El Vuelo del Buitre,tt4635286,director_filmography_71,71
+2226,Y tú qué@v!* sabes?,"Mark Vicente, Willia",¿Y tú de qué vas?,tt2070580,fuzzy_76,76
+143,Arahan: amo de las  artes marciales,Ryoo Seung-wan,Arahan,,pass5_tmdb_hybrid_0.66,0.6623186977931432
+153,"Arte de matar,El 3",Gerry Lively,The Art of War III: Retribution,,pass5_tmdb_hybrid_0.67,0.670479317631747
+341,"Cebra una comedia indie revolucionaria, La",Fernando J,Me pasaron por la piedra,,pass5_tmdb_hybrid_0.58,0.5821449010334319
+487,Cuando un extraño llama,Simon West,When a Stranger Calls,,pass5_tmdb_hybrid_0.60,0.6038268325966356
+491,Cuatro amantes,Antony Cordier,Four Lovers,,pass5_tmdb_hybrid_0.59,0.5869623858863313
+493,"Cuatro Fantásticos, Los",Tim Story,Fantastic Four,,pass5_tmdb_hybrid_0.59,0.592439402212299
+497,"Cuchillo en el agua Knife in the water, El",Roman Polański,Knife in the Water,,pass5_tmdb_hybrid_0.58,0.5816367942820151
+595,"Discurso del Rey, El The King’s Speech",Tom Hooper,The King's Speech,,pass5_tmdb_hybrid_0.70,0.6983201566396975
+608,Doce años esclavo,Steve McQueen,12 Years a Slave,,pass5_tmdb_hybrid_0.61,0.6133313286745989
+612,"Doce sillas, Las",Tomás Gutiérrez Alea,The Twelve Chairs,,pass5_tmdb_hybrid_0.67,0.6690012733520023
+717,"Esqueleto de la señora Morales, El",Rogelio A,The Skeleton of Mrs. Morales,,pass5_tmdb_hybrid_0.69,0.6879743673581036
+729,Eterno Resplandor de una mente sin recuerdos,Michel Gondry,Mood Indigo,,pass5_tmdb_hybrid_0.61,0.6071195816752887
+730,Europa zentropa Europa,Lars von Trier,Europa,,pass5_tmdb_hybrid_0.72,0.7193860691243952
+792,"Francisco, juglar de Dios Francesco giullare di Dio",Roberto Rossellini,The Flowers of St. Francis,,pass5_tmdb_hybrid_0.61,0.6052991000056087
+806,Fuerzas de la naturaleza,Bronwen Hughes,Forces of Nature,,pass5_tmdb_hybrid_0.63,0.6288270976808337
+850,"Gran belleza, La",Paolo Sorrentino,The Great Beauty,,pass5_tmdb_hybrid_0.66,0.6648203123940363
+896,Hanna y sus hermanas,Woody Allen,Hannah and Her Sisters,,pass5_tmdb_hybrid_0.64,0.6423783466165716
+926,historia de Abraham:La,Joseph Sargent,Abraham,,pass5_tmdb_hybrid_0.59,0.5909497670384197
+955,Hombres que camínan sobre la cola del tigre : Los,Akira Kurosawa,The Men Who Tread on the Tiger's Tail,,pass5_tmdb_hybrid_0.62,0.6243251672165429
+968,Hoy morirás,Don E,Today You Die,,pass5_tmdb_hybrid_0.60,0.5983448112112845
+985,"Ilusión viaja en tranvía, La",Luis Buñuel,Illusion Travels by Streetcar,,pass5_tmdb_hybrid_0.64,0.6375595214318629
+997,Incident  en una carretera perdida,Don Coscarelli,Incident On and Off a Mountain Road,,pass5_tmdb_hybrid_0.60,0.6018725226859085
+1016,Instinto  de media noche,Antoine de Caunes,Love Bites,,pass5_tmdb_hybrid_0.62,0.6183683710868912
+1029,Iris: recuerdos imborrables,Richard Eyre,Iris,,pass5_tmdb_hybrid_0.63,0.6321934818338465
+1110,Kino : la leyenda del Padre Negro,Felipe Cazals,Kino: The Legend of the Black Priest,,pass5_tmdb_hybrid_0.66,0.6643247887582491
+1207,"Madre teresa, un corazón inagotable , La",Fabrizio Costa,Mother Teresa of Calcutta,,pass5_tmdb_hybrid_0.65,0.6540607961406553
+1215,"Mala educación, La",y esc,La Femenil: La Lucha No Acaba,,pass5_tmdb_hybrid_0.60,0.595274968024061
+1288,Mentira verdaderas,James Cameron,True Lies,,pass5_tmdb_hybrid_0.59,0.587693632973565
+1327,Mis últimos días : invasiones bárbaras,Denys Ar,The Barbarian Invasions,,pass5_tmdb_hybrid_0.60,0.6018346316567806
+1348,Morirse está en hebreo,Alejandro Springall,My Mexican Shivah,,pass5_tmdb_hybrid_0.72,0.7154505014419557
+1352,Moscú en llamas,Jeff Celentano,Moscow Heat,,pass5_tmdb_hybrid_0.58,0.5834845318938747
+1394,Nace una Estrella,Frank Pierson,A Star Is Born,,pass5_tmdb_hybrid_0.58,0.5841460010918583
+1464,Nunca te vayas sin decir te quiero Left Luggage,Jeroen Krabbé,Left Luggage,,pass5_tmdb_hybrid_0.66,0.6615446084498231
+1505,Padre e hijo,Alexander Sokurov,Father and Son,,pass5_tmdb_hybrid_0.63,0.6279595708090162
+1510,Pan y tulipanes,Silvio Soldini,Bread and Tulips,,pass5_tmdb_hybrid_0.70,0.6961667896906536
+1513,Pandillas de Nueva York,Martin Scorsese,"New York, New York",,pass5_tmdb_hybrid_0.61,0.614996541099621
+1568,Perfume de violetas,Maryse Sistach,Violet Perfume: Nobody Hears You,,pass5_tmdb_hybrid_0.61,0.6065073573798465
+1628,"Procesos de las señoritas Vivanco, El",Mauricio de la Serna,The Trial of the Vivanco Ladies,,pass5_tmdb_hybrid_0.66,0.6611554994891196
+1723,Rey escorpión.El,Chuck Russell,The Scorpion King,,pass5_tmdb_hybrid_0.60,0.5955041545668459
+1731,Río místico Mystic river,Clint Eastwood,Mystic River,,pass5_tmdb_hybrid_0.60,0.6011447390939436
+1768,Santo contra la mafia del vicio,Federico Curiel,Santo vs. the Vice Mafia,,pass5_tmdb_hybrid_0.67,0.6664658546447755
+1784,Santo y Blue Demon en el mundo de los muertos,Gilberto Martínez Solares,Santo and Blue Demon Against the Monsters,,pass5_tmdb_hybrid_0.64,0.6421119719259234
+1788,Santo y Mantequilla Nápoles en la venganza de La llorona,Miguel M,Los Secretos · Palacio de Exposiciones y Congresos de Madrid,,pass5_tmdb_hybrid_0.61,0.6127205857811606
+1816,"Sensualidad de Olga, La",Jérôme Bonnell,Le Chignon d'Olga,,pass5_tmdb_hybrid_0.64,0.6360543310000141
+1841,Siempre sabré lo que hiciste el verano pasado,Sylvain White,I'll Always Know What You Did Last Summer,,pass5_tmdb_hybrid_0.60,0.5999382112027057
+1844,Siete [ i. e. 7] soles,Pedro Ultreras,7 Suns,,pass5_tmdb_hybrid_0.66,0.6623709700668357
+2043,Tuya en septiembre,Robert Mulligan,Come September,,pass5_tmdb_hybrid_0.61,0.6082364005501193
+2062,Un amor loco,Pierre Thoretton,L'Amour Fou,,pass5_tmdb_hybrid_0.60,0.6015430695738799
+2201,"Vizconde de Montecristo, El",Gilberto Martínez Solares,The Count of Monte Cristo,,pass5_tmdb_hybrid_0.65,0.6515414400164106
