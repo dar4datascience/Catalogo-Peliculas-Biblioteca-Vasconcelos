@@ -267,6 +267,7 @@ def main():
                 print(f"? fuzzy: {matched_title} ({imdb_id}) [{match_type}]")
         else:
             # Final fallback: director filmography reasoning
+            dir_clean = ''
             if director:
                 dir_clean = re.sub(r'^(Dir\.|dir\.|Escrita y Dir\.|Guión y Dir\.|prod\. y)\s*', '', director, flags=re.IGNORECASE)
                 dir_clean = re.sub(r',\s*\d{4}-?$', '', dir_clean).strip().rstrip('.')
