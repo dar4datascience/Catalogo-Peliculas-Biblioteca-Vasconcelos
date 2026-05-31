@@ -5,9 +5,9 @@ execute:
   warning: false
 ---
 
-## 🎬 Catálogo Interactivo
+## 🎬 Catálogo Interactivo — CINE.pdf
 
-Explora el catálogo de películas de la Biblioteca Vasconcelos. Usa los filtros para buscar por categoría, título, director o género.
+Explora el catálogo de películas de la Biblioteca Vasconcelos (colección CINE). Usa los filtros para buscar por título, director o género.
 
 ```{ojs}
 //| echo: false
@@ -18,15 +18,13 @@ catalog = FileAttachment("data/final_results/catalog.json").json()
 // Extract movies array
 movies = catalog.movies || []
 
-// Get unique categories for filter
-categories = [...new Set(movies.map(m => m.pdf_category || "Sin categoría"))].sort()
-
 // Get unique genres for filter (flatten and dedupe)
-genres = [...new Set(movies.flatMap(m => m.genre || []))].sort()
+genres = [...new Set(movies.flatMap(m => m.genre || []))].filter(Boolean).sort()
 
 // Stats
 enrichedCount = movies.filter(m => m.enriched).length
 totalCount = movies.length
+enrichmentRate = Math.round(enrichedCount / totalCount * 100)
 ```
 
 ### 📊 Estadísticas del Catálogo
@@ -44,8 +42,8 @@ html`<div class="stats-container">
     <div class="stat-label">Con Datos OMDB</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value">${categories.length}</div>
-    <div class="stat-label">Categorías</div>
+    <div class="stat-value">${enrichmentRate}%</div>
+    <div class="stat-label">Enriquecidas</div>
   </div>
   <div class="stat-card">
     <div class="stat-value">${genres.length}</div>
@@ -62,15 +60,9 @@ html`<div class="stats-container">
 // Search input
 viewof searchQuery = Inputs.text({
   label: "Buscar",
-  placeholder: "Título, director, género, país...",
+  placeholder: "Título, director, género, país, año...",
   value: ""
 })
-
-// Category filter
-viewof selectedCategory = Inputs.select(
-  ["Todas", ...categories],
-  {label: "Categoría", value: "Todas"}
-)
 
 // Genre filter
 viewof selectedGenre = Inputs.select(
@@ -81,28 +73,30 @@ viewof selectedGenre = Inputs.select(
 // Director filter (dynamic based on data)
 directors = [...new Set(movies.map(m => m.director).filter(Boolean))].sort()
 viewof selectedDirector = Inputs.select(
-  ["Todos", ...directors.slice(0, 50)],  // Limit to top 50
+  ["Todos", ...directors.slice(0, 100)],
   {label: "Director", value: "Todos"}
 )
+
+// Enrichment filter
+viewof showEnrichedOnly = Inputs.toggle({label: "Solo con datos OMDB", value: false})
 
 // Reset button
 viewof resetFilters = Inputs.button("Restablecer filtros", {value: null})
 
 // Reactive: Reset filters when button clicked
-if (resetFilters) {
-  searchQuery.value = ""
-  selectedCategory.value = "Todas"
-  selectedGenre.value = "Todos"
-  selectedDirector.value = "Todos"
+resetTrigger = {
+  resetFilters;
+  return Date.now();
 }
 
 // Filtered movies (reactive)
 filteredMovies = {
+  resetTrigger;
   let result = movies;
 
-  // Category filter
-  if (selectedCategory !== "Todas") {
-    result = result.filter(m => m.pdf_category === selectedCategory);
+  // Enriched-only filter
+  if (showEnrichedOnly) {
+    result = result.filter(m => m.enriched);
   }
 
   // Genre filter
@@ -121,8 +115,10 @@ filteredMovies = {
     result = result.filter(m =>
       (m.search_text || "").includes(query) ||
       (m.title || "").toLowerCase().includes(query) ||
+      (m.matched_title || "").toLowerCase().includes(query) ||
       (m.director || "").toLowerCase().includes(query) ||
-      (m.country || "").toLowerCase().includes(query)
+      (m.country || "").toLowerCase().includes(query) ||
+      String(m.catalogue_id || "").includes(query)
     );
   }
 
@@ -135,21 +131,6 @@ filteredMovies = {
 ```{ojs}
 //| echo: false
 
-// Category badge colors
-const categoryColors = {
-  "BLU- RAY": "#3b82f6",
-  "BLU-RAY": "#3b82f6",
-  "CINE": "#f59e0b",
-  "PELICULAS INFANTILES": "#10b981",
-  "PISO 7": "#8b5cf6",
-  "PRESTAMO EN SALA 2026": "#ec4899",
-  "DOCUMENTALES": "#6366f1",
-  "IDIOMAS": "#14b8a6",
-  "ESTUDIO  GHIBLI": "#f97316",
-  "PELICULAS CHINAS": "#ef4444",
-  "RUSAS": "#dc2626"
-};
-
 // Movie grid
 movieGrid = {
   if (filteredMovies.length === 0) {
@@ -161,18 +142,19 @@ movieGrid = {
   for (const movie of filteredMovies) {
     const poster = movie.poster || "https://i.imgur.com/Ngnm5v6.png";
     const imdbUrl = movie.imdb_id ? `https://www.imdb.com/title/${movie.imdb_id}` : null;
-    const categoryColor = categoryColors[movie.pdf_category] || "#6b7280";
+    const idLabel = movie.catalogue_id != null ? `#${movie.catalogue_id}` : "";
 
     const card = html`
-      <div class="movie-card">
+      <div class="movie-card ${movie.enriched ? '' : 'unenriched'}">
         <div class="movie-poster-container">
           <img class="movie-poster" src="${poster}" alt="${movie.title}" loading="lazy"
                onerror="this.src='https://i.imgur.com/Ngnm5v6.png'">
           ${movie.imdb_rating ? html`<div class="rating-badge">⭐ ${movie.imdb_rating}</div>` : null}
         </div>
         <div class="movie-info">
-          <div class="category-badge" style="background: ${categoryColor}20; color: ${categoryColor}; border-color: ${categoryColor}">
-            ${movie.category_display || movie.pdf_category}
+          <div class="card-header-row">
+            ${idLabel ? html`<span class="catalogue-id-badge">${idLabel}</span>` : null}
+            ${!movie.enriched ? html`<span class="unenriched-badge">Sin datos</span>` : null}
           </div>
           <h3 class="movie-title" title="${movie.title}">${movie.title}</h3>
           ${movie.matched_title && movie.matched_title !== movie.title ?
