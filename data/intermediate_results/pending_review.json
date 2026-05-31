@@ -1,8 +1,8 @@
 {
   "summary": {
-    "newly_confirmed": 150,
-    "fuzzy_review": 97,
-    "failed_no_match": 634
+    "newly_confirmed": 343,
+    "fuzzy_review": 112,
+    "failed_no_match": 272
   },
   "fuzzy_candidates": [
     {
@@ -2921,31 +2921,226 @@
       "candidate_imdb_id": "tt2070580",
       "candidate_title": "¿Y tú de qué vas?",
       "match_type": "fuzzy_76"
+    },
+    {
+      "id": "292",
+      "title_spanish": "Camino del dragón. El",
+      "title_english": "",
+      "director": "Bruce Lee",
+      "patterns": [
+        "spanish_only"
+      ],
+      "reason": "no_match",
+      "raw_line": "292 Camino del dragón. El Dir. Bruce Lee",
+      "candidate_imdb_id": "tt0862869",
+      "candidate_title": "Way of the Dragon",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "458",
+      "title_spanish": "Coronel Redl",
+      "title_english": "",
+      "director": "István Szabó",
+      "patterns": [
+        "spanish_only"
+      ],
+      "reason": "no_match",
+      "raw_line": "458 Coronel Redl Dir. István Szabó ",
+      "candidate_imdb_id": "tt0089716",
+      "candidate_title": "Colonel Redl",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "527",
+      "title_spanish": "De tal padre, tal hijo Like father, like son",
+      "title_english": "",
+      "director": "Hirokazu Koreeda",
+      "patterns": [
+        "spanish_only"
+      ],
+      "reason": "no_match",
+      "raw_line": "527De tal padre, tal hijo Like father, like sonDir. Hirokazu Koreeda ",
+      "candidate_imdb_id": "tt1464174",
+      "candidate_title": "Big Mommas: Like Father, Like Son",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "868",
+      "title_spanish": "Gravedad Gravity",
+      "title_english": "",
+      "director": "Alfonso Cuarón",
+      "patterns": [
+        "spanish_only"
+      ],
+      "reason": "no_match",
+      "raw_line": "868 Gravedad Gravity Dir. Alfonso Cuarón ",
+      "candidate_imdb_id": "tt1454468",
+      "candidate_title": "Gravity",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "1065",
+      "title_spanish": "Juana de Arco",
+      "title_english": "",
+      "director": "Besson Luc",
+      "patterns": [
+        "spanish_only",
+        "duplicate_spanish_title"
+      ],
+      "reason": "no_match",
+      "raw_line": "1065 Juana de Arco Dir. Besson Luc. ",
+      "candidate_imdb_id": "tt0040491",
+      "candidate_title": "Joan of Arc",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "1066",
+      "title_spanish": "Juana de Arco",
+      "title_english": "",
+      "director": "Christian Duguay",
+      "patterns": [
+        "spanish_only",
+        "duplicate_spanish_title"
+      ],
+      "reason": "no_match",
+      "raw_line": "1066 Juana de Arco Dir. Christian Duguay",
+      "candidate_imdb_id": "tt0040491",
+      "candidate_title": "Joan of Arc",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "1111",
+      "title_spanish": "Kolya : el nombre de la esperanza",
+      "title_english": "",
+      "director": "Jean Sverak",
+      "patterns": [
+        "spanish_only"
+      ],
+      "reason": "no_match",
+      "raw_line": "1111 Kolya : el nombre de la esperanza Dir. Jean Sverak ",
+      "candidate_imdb_id": "tt0116790",
+      "candidate_title": "Kolya",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "1130",
+      "title_spanish": "Le Havre el puerto de la esperanza",
+      "title_english": "",
+      "director": "Aki Kaurismaki",
+      "patterns": [
+        "spanish_only"
+      ],
+      "reason": "no_match",
+      "raw_line": "1130 Le Havre el puerto de la esperanza Dir. Aki Kaurismaki",
+      "candidate_imdb_id": "tt1508675",
+      "candidate_title": "Le Havre",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "1305",
+      "title_spanish": "Mi vida como un perro",
+      "title_english": "",
+      "director": "Lasse Hallström",
+      "patterns": [
+        "spanish_only"
+      ],
+      "reason": "no_match",
+      "raw_line": "1305 Mi vida como un perro Dir. Lasse Hallström ",
+      "candidate_imdb_id": "tt0089606",
+      "candidate_title": "My Life as a Dog",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "1310",
+      "title_spanish": "Mil novecientos ochenta y cuatro =",
+      "title_english": "",
+      "director": "",
+      "patterns": [
+        "spanish_only",
+        "bilingual_equals",
+        "no_director"
+      ],
+      "reason": "no_match",
+      "raw_line": "1310Mil novecientos ochenta y cuatro = ",
+      "candidate_imdb_id": "tt2061762",
+      "candidate_title": "Nineteen Eighty-Four",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "1838",
+      "title_spanish": "Siempre a tu lado, Hachiko",
+      "title_english": "Hachiko: A dog's story",
+      "director": "Lasse Hallström",
+      "patterns": [
+        "bilingual_equals"
+      ],
+      "reason": "no_match",
+      "raw_line": "1838Siempre a tu lado, Hachiko = Hachiko: A dog's story Dir. Lasse Hallström ; prod",
+      "candidate_imdb_id": "tt1028532",
+      "candidate_title": "Hachi: A Dog's Tale",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "2089",
+      "title_spanish": "Un Perro andaluz",
+      "title_english": "",
+      "director": "Luis Buñuel",
+      "patterns": [
+        "spanish_only"
+      ],
+      "reason": "no_match",
+      "raw_line": "2089 Un Perro andaluz Dir. Luis Buñuel",
+      "candidate_imdb_id": "tt0020530",
+      "candidate_title": "Un chien andalou",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "2113",
+      "title_spanish": "Una sola entrega Dirección y guión, Oxide Pang.",
+      "title_english": "",
+      "director": "",
+      "patterns": [
+        "spanish_only",
+        "no_director"
+      ],
+      "reason": "no_match",
+      "raw_line": "2113 Una sola entrega Dirección y guión, Oxide Pang.",
+      "candidate_imdb_id": "tt0406759",
+      "candidate_title": "The Eye",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "2149",
+      "title_spanish": "Vengador del futuro Total recall Wiseman, Len, 1973-",
+      "title_english": "",
+      "director": "",
+      "patterns": [
+        "spanish_only",
+        "no_director"
+      ],
+      "reason": "no_match",
+      "raw_line": "2149 Vengador del futuro Total recall Wiseman, Len, 1973-",
+      "candidate_imdb_id": "tt0100802",
+      "candidate_title": "Total Recall",
+      "match_type": "mcp_pass4_director_mismatch"
+    },
+    {
+      "id": "2192",
+      "title_spanish": "Virgenes suicidas, Las",
+      "title_english": "",
+      "director": "Sofia Coppola",
+      "patterns": [
+        "article_swapped",
+        "spanish_only"
+      ],
+      "reason": "no_match",
+      "raw_line": "2192 Virgenes suicidas, Las Dir. Sofia Coppola",
+      "candidate_imdb_id": "tt0159097",
+      "candidate_title": "The Virgin Suicides",
+      "match_type": "mcp_pass4_director_mismatch"
     }
   ],
   "failed_no_match": [
-    {
-      "id": "7",
-      "title_spanish": "A media escalera",
-      "title_english": "Halbe treppe",
-      "director": "Andreas Dressen",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "7 A media escalera = Halbe treppe Dir. Andreas Dressen"
-    },
-    {
-      "id": "32",
-      "title_spanish": "Adiós al lenguaje",
-      "title_english": "Adieu au Langage",
-      "director": "Jean Luc Godard",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "32 Adiós al lenguaje = Adieu au Langage Dir. Jean Luc Godard"
-    },
     {
       "id": "37",
       "title_spanish": "African Footprint",
@@ -2981,18 +3176,6 @@
       "raw_line": "81 Amarillo mango Assis, Claudio, Dir."
     },
     {
-      "id": "82",
-      "title_spanish": "Ambiciosos, Los",
-      "title_english": "",
-      "director": "Catherine Corsini",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "82 Ambiciosos, Los Dir. Catherine Corsini "
-    },
-    {
       "id": "85",
       "title_spanish": "Amenaza virtual Antitrust",
       "title_english": "",
@@ -3002,18 +3185,6 @@
       ],
       "reason": "no_match",
       "raw_line": "85 Amenaza virtual Antitrust Dir. Peter Howitt "
-    },
-    {
-      "id": "91",
-      "title_spanish": "Amigos Untouchable",
-      "title_english": "",
-      "director": "Éric Toledano, Olivier Nakache",
-      "patterns": [
-        "spanish_only",
-        "multi_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "91Amigos Untouchable Dir. Éric Toledano, Olivier Nakache "
     },
     {
       "id": "93",
@@ -3036,18 +3207,6 @@
       ],
       "reason": "no_match",
       "raw_line": "94 Amo del terror Dir. Clive Barker"
-    },
-    {
-      "id": "96",
-      "title_spanish": "Amos de la Dogtown.Los",
-      "title_english": "",
-      "director": "Catherine Hardwicke",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "96 Amos de la Dogtown.Los Dir. Catherine Hardwicke"
     },
     {
       "id": "106",
@@ -3073,17 +3232,6 @@
       "raw_line": "109Anaconda 2 : en busca de la orquía sangrienta Dir. Dwight H. Little"
     },
     {
-      "id": "116",
-      "title_spanish": "Angel exterminador. El",
-      "title_english": "",
-      "director": "Luis Buñuel",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "116 Angel exterminador. El Dir. Luis Buñuel"
-    },
-    {
       "id": "118",
       "title_spanish": "Angel malvado",
       "title_english": "",
@@ -3093,39 +3241,6 @@
       ],
       "reason": "no_match",
       "raw_line": "118 Angel malvado Dir.Joseph Ruben"
-    },
-    {
-      "id": "120",
-      "title_spanish": "Ángeles caídos Fallen angels",
-      "title_english": "",
-      "director": "Wong Kar-Wai",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "120 Ángeles caídos Fallen angels Dir. Wong Kar-Wai."
-    },
-    {
-      "id": "121",
-      "title_spanish": "Angeles de Charlie al limite",
-      "title_english": "",
-      "director": "McGynty Nichol",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "121 Angeles de Charlie al limite Dir. McGynty Nichol"
-    },
-    {
-      "id": "122",
-      "title_spanish": "Animales fantásticos",
-      "title_english": "",
-      "director": "David Yates",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "122 Animales fantásticos Dir. David Yates"
     },
     {
       "id": "126",
@@ -3174,18 +3289,6 @@
       "raw_line": "136 Año nuevo del  dragón.El Dir.Yuen Woo-Ping"
     },
     {
-      "id": "142",
-      "title_spanish": "Apuesta final Rounders John Dahl",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "142 Apuesta final Rounders John Dahl "
-    },
-    {
       "id": "143",
       "title_spanish": "Arahan: amo de las  artes marciales",
       "title_english": "",
@@ -3195,18 +3298,6 @@
       ],
       "reason": "no_match",
       "raw_line": "143 Arahan: amo de las  artes marciales Dir.Ryoo Seung-wan"
-    },
-    {
-      "id": "145",
-      "title_spanish": "Arca rusa, El",
-      "title_english": "",
-      "director": "Sukurov, Alexander",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "145 Arca rusa, El  Dir. Sukurov, Alexander"
     },
     {
       "id": "146",
@@ -3220,17 +3311,6 @@
       "raw_line": "146 Arena roja Dir. Alex Turner"
     },
     {
-      "id": "148",
-      "title_spanish": "Arma virtual so close",
-      "title_english": "",
-      "director": "Cory Yuen",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "148 Arma virtual so close Dir. Cory Yuen "
-    },
-    {
       "id": "153",
       "title_spanish": "Arte de matar,El 3",
       "title_english": "",
@@ -3240,29 +3320,6 @@
       ],
       "reason": "no_match",
       "raw_line": "153 Arte de matar,El 3 Dir. Gerry Lively"
-    },
-    {
-      "id": "157",
-      "title_spanish": "Asesino dentro de mi, El",
-      "title_english": "",
-      "director": "Michael Winterbottom",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "157 Asesino dentro de mi, El Dir. Michael Winterbottom"
-    },
-    {
-      "id": "160",
-      "title_spanish": "Así del precipicio",
-      "title_english": "",
-      "director": "Teresa Suárez",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "160 Así del precipicio Dir. Teresa Suárez"
     },
     {
       "id": "165",
@@ -3288,17 +3345,6 @@
       "raw_line": "166 Ataque  a  sangre fría Dir.Michael Keusch"
     },
     {
-      "id": "169",
-      "title_spanish": "Atrapado sin salida",
-      "title_english": "",
-      "director": "Milos Forman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "169 Atrapado sin salida Dir. Milos Forman "
-    },
-    {
       "id": "177",
       "title_spanish": "Avaricia criminal",
       "title_english": "",
@@ -3310,107 +3356,6 @@
       "raw_line": "177 Avaricia criminal Dir.Ron Wolotzky"
     },
     {
-      "id": "198",
-      "title_spanish": "Barba roja",
-      "title_english": "",
-      "director": "Akira Kurosawa",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "198 Barba roja Dir. Akira Kurosawa"
-    },
-    {
-      "id": "206",
-      "title_spanish": "Bastardos Sin Gloria",
-      "title_english": "",
-      "director": "Quentin Tarantino",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "206 Bastardos Sin Gloria Dir. Quentin Tarantino "
-    },
-    {
-      "id": "211",
-      "title_spanish": "Batalla por la tierra",
-      "title_english": "",
-      "director": "Roger Christian",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "211 Batalla por la tierra Dir.Roger Christian "
-    },
-    {
-      "id": "212",
-      "title_spanish": "Bebé de Rosemary, El",
-      "title_english": "",
-      "director": "Roman Polanski",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "212 Bebé de Rosemary, El Dir. Roman Polanski "
-    },
-    {
-      "id": "215",
-      "title_spanish": "Beethoven monstruo inmortal",
-      "title_english": "",
-      "director": "Agnieszka Holland",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "215 Beethoven monstruo inmortalDir. Agnieszka Holland"
-    },
-    {
-      "id": "220",
-      "title_spanish": "Belleza robada",
-      "title_english": "",
-      "director": "Bernardo Bertolucci",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "220 Belleza robada Dir. Bernardo Bertolucci."
-    },
-    {
-      "id": "221",
-      "title_spanish": "Bello durmiente, El",
-      "title_english": "",
-      "director": "Gilberto Martínez Solares",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "221 Bello durmiente, El Dir. Gilberto Martínez Solares "
-    },
-    {
-      "id": "223",
-      "title_spanish": "Beowulf : la leyenda",
-      "title_english": "",
-      "director": "Robert Zemeckis",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "223 Beowulf : la leyenda Dir. Robert Zemeckis"
-    },
-    {
-      "id": "225",
-      "title_spanish": "Bernardita de Lourdes",
-      "title_english": "",
-      "director": "León Klimovsky",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "225 Bernardita de Lourdes Dir. León Klimovsky."
-    },
-    {
       "id": "229",
       "title_spanish": "Betty Fisher y otras historias",
       "title_english": "",
@@ -3420,52 +3365,6 @@
       ],
       "reason": "no_match",
       "raw_line": "229 Betty Fisher y otras historias  Dir. Claude Mi"
-    },
-    {
-      "id": "232",
-      "title_spanish": "Bicicleta verde, La",
-      "title_english": "",
-      "director": "Al-Mansour, Haifaa",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "232 Bicicleta verde, La Dir. Al-Mansour, Haifaa"
-    },
-    {
-      "id": "238",
-      "title_spanish": "Blanca nieves un cuento de terror",
-      "title_english": "Snowwhite : a tale of horror",
-      "director": "Michel Cohn",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "238Blanca nieves un cuento de terror = Snowwhite : a tale of horror Dir. Michel Cohn "
-    },
-    {
-      "id": "244",
-      "title_spanish": "Borat : el segudo mejor reportero del glorioso país Kazajistán viaja a américa",
-      "title_english": "",
-      "director": "Larry Charles",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "244Borat : el segudo mejor reportero del glorioso país Kazajistán viaja a américaDir. Larry Charles"
-    },
-    {
-      "id": "245",
-      "title_spanish": "Bordadoras, Las",
-      "title_english": "",
-      "director": "Eléonore Faucher",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "245 Bordadoras, Las Dir. Eléonore Faucher "
     },
     {
       "id": "251",
@@ -3480,17 +3379,6 @@
       "raw_line": "251 Brasil Brazil Terry Gilliam"
     },
     {
-      "id": "253",
-      "title_spanish": "Brigada A -los magníficos The A-team",
-      "title_english": "",
-      "director": "Joe Carnahan",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "253 Brigada A -los magníficos The A-team Dir. Joe Carnahan "
-    },
-    {
       "id": "254",
       "title_spanish": "Brigadas rojas",
       "title_english": "",
@@ -3502,116 +3390,6 @@
       "raw_line": "254 Brigadas rojas Dir. Uli Edel. "
     },
     {
-      "id": "258",
-      "title_spanish": "Buda explotó de vergüenza",
-      "title_english": "",
-      "director": "HANA MAKHMALBAF",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "258 Buda explotó de vergüenza Dir. HANA MAKHMALBAF"
-    },
-    {
-      "id": "261",
-      "title_spanish": "Buenos días noche",
-      "title_english": "",
-      "director": "Marco Bellochio",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "261 Buenos días noche Dir. Marco Bellochio"
-    },
-    {
-      "id": "262",
-      "title_spanish": "Buenos muchachos Goodfellas",
-      "title_english": "",
-      "director": "Martin Scorsese",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "262 Buenos muchachos Goodfellas Dir. Martin Scorsese "
-    },
-    {
-      "id": "263",
-      "title_spanish": "Búfalo Americano",
-      "title_english": "",
-      "director": "Michael Corrente",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "263 Búfalo Americano Dir.  Michael Corrente "
-    },
-    {
-      "id": "270",
-      "title_spanish": "Cacería voraz II",
-      "title_english": "",
-      "director": "John Gulager",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "270 Cacería voraz II Dir. John Gulager "
-    },
-    {
-      "id": "273",
-      "title_spanish": "Cada loco con su tema",
-      "title_english": "",
-      "director": "Juan Bustillo Oro",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "273 Cada loco con su tema Dir. Juan Bustillo Oro"
-    },
-    {
-      "id": "276",
-      "title_spanish": "Cadena de favores",
-      "title_english": "",
-      "director": "Mimi Leder",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "276 Cadena de favores Dir. Mimi Leder"
-    },
-    {
-      "id": "277",
-      "title_spanish": "Caída del Halcón negro",
-      "title_english": "",
-      "director": "Ridley Scott",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "277 Caída del Halcón negro Dir. Ridley Scott "
-    },
-    {
-      "id": "287",
-      "title_spanish": "Cambiamos pareja?",
-      "title_english": "",
-      "director": "Bruno Dega",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "287 Cambiamos pareja? Dir. Bruno Dega"
-    },
-    {
-      "id": "292",
-      "title_spanish": "Camino del dragón. El",
-      "title_english": "",
-      "director": "Bruce Lee",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "292 Camino del dragón. El Dir. Bruce Lee"
-    },
-    {
       "id": "297",
       "title_spanish": "Campos de  Esperanza",
       "title_english": "",
@@ -3621,84 +3399,6 @@
       ],
       "reason": "no_match",
       "raw_line": "297 Campos de  Esperanza Dir.Lajos Koltai"
-    },
-    {
-      "id": "300",
-      "title_spanish": "Canciones del segundo piso",
-      "title_english": "",
-      "director": "Roy Andersson",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "300 Canciones del segundo piso Dir. Roy Andersson."
-    },
-    {
-      "id": "304",
-      "title_spanish": "Capitán América y el soldado del invierno",
-      "title_english": "",
-      "director": "Anthony Russo",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "304Capitán América y el soldado del inviernoDir. Anthony Russo"
-    },
-    {
-      "id": "314",
-      "title_spanish": "Carretera sangrienta",
-      "title_english": "",
-      "director": "Greg Swinson",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "314 Carretera sangrienta Dir. Greg Swinson"
-    },
-    {
-      "id": "326",
-      "title_spanish": "Casa silenciosa",
-      "title_english": "",
-      "director": "Chris Kentis",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "326 Casa silenciosa Dir.  Chris Kentis"
-    },
-    {
-      "id": "327",
-      "title_spanish": "Casarse... está en griego",
-      "title_english": "",
-      "director": "Joel Zwick",
-      "patterns": [
-        "spanish_only",
-        "ocr_artifact"
-      ],
-      "reason": "no_match",
-      "raw_line": "327 Casarse... está en griego  Dir. Joel Zwick."
-    },
-    {
-      "id": "335",
-      "title_spanish": "Caza chicas, El  The pick-up artist",
-      "title_english": "",
-      "director": "James Toback",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "335 Caza chicas, El  The pick-up artist Dir. James Toback "
-    },
-    {
-      "id": "338",
-      "title_spanish": "Cazador de dinosaurios",
-      "title_english": "",
-      "director": "Hyams, Peter",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "338 Cazador de dinosaurios  Dir.Hyams, Peter"
     },
     {
       "id": "339",
@@ -3749,52 +3449,6 @@
       "raw_line": "344 Celular: llamada  desesperada Dir. David R. Ellis"
     },
     {
-      "id": "358",
-      "title_spanish": "Chicos y Chicas",
-      "title_english": "",
-      "director": "Robert Iscove",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "358 Chicos y Chicas Dir. Robert Iscove"
-    },
-    {
-      "id": "364",
-      "title_spanish": "Ciego, El, Vida sin mi La,",
-      "title_english": "",
-      "director": "woody Allen y Isabel Coixet",
-      "patterns": [
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "364 Ciego, El, Vida sin mi La, Dir. woody Allen y Isabel Coixet"
-    },
-    {
-      "id": "365",
-      "title_spanish": "Cielo de octubre",
-      "title_english": "",
-      "director": "Joe Johnston",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "365 Cielo de octubre Dir. Joe Johnston.."
-    },
-    {
-      "id": "366",
-      "title_spanish": "Cielo dividido, El",
-      "title_english": "",
-      "director": "Julian Hernández",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "366 Cielo dividido, El  Dir. Julian Hernández"
-    },
-    {
       "id": "367",
       "title_spanish": "Cien [i.e. 100] mujeres 100 girls",
       "title_english": "",
@@ -3805,29 +3459,6 @@
       ],
       "reason": "no_match",
       "raw_line": "367 Cien [i.e. 100] mujeres 100 girls  Dir. y Escrita Michael Davis "
-    },
-    {
-      "id": "371",
-      "title_spanish": "Cinco segundos antes del fin del mundo",
-      "title_english": "",
-      "director": "Tony Krantz",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "371Cinco segundos antes del fin del mundoDir. Tony Krantz"
-    },
-    {
-      "id": "373",
-      "title_spanish": "Cine en corto : los mejores cortos del cine extranjero, El",
-      "title_english": "",
-      "director": "Varios",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "373Cine en corto : los mejores cortos del cine extranjero, ElDir. Varios"
     },
     {
       "id": "377",
@@ -3841,74 +3472,6 @@
       "raw_line": "377 Círculo de pasiones Dir.Pat O'Connor"
     },
     {
-      "id": "379",
-      "title_spanish": "Cisne negro, El",
-      "title_english": "",
-      "director": "Darren Aronofsky",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "379 Cisne negro, El  Dir. Darren Aronofsky "
-    },
-    {
-      "id": "381",
-      "title_spanish": "Ciudad de Dios City of God",
-      "title_english": "",
-      "director": "Fernando Meirelles",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "381 Ciudad de Dios City of God Dir. Fernando Meirelles "
-    },
-    {
-      "id": "385",
-      "title_spanish": "Ciudad virtual",
-      "title_english": "",
-      "director": "Min Byeong-cheon",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "385 Ciudad virtual Dir. Min Byeong-cheon"
-    },
-    {
-      "id": "386",
-      "title_spanish": "Ciudadano Kane",
-      "title_english": "",
-      "director": "Orson Wells",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "386 Ciudadano Kane Dir. Orson Wells"
-    },
-    {
-      "id": "387",
-      "title_spanish": "Ciudadano Kane y Ladrón de bicicletas",
-      "title_english": "",
-      "director": "Orson Welles",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "387Ciudadano Kane y Ladrón de bicicletasDir. Orson Welles "
-    },
-    {
-      "id": "388",
-      "title_spanish": "Clan del oso cavernario, El",
-      "title_english": "",
-      "director": "Michael Chapman",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "388 Clan del oso cavernario, El  dir Michael Chapman "
-    },
-    {
       "id": "399",
       "title_spanish": "Coco e Igor",
       "title_english": "",
@@ -3918,62 +3481,6 @@
       ],
       "reason": "no_match",
       "raw_line": "399 Coco e Igor Dir, Jan Nanouen"
-    },
-    {
-      "id": "402",
-      "title_spanish": "Código de familia",
-      "title_english": "",
-      "director": "Gavin O'Connor",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "402 Código de familia Dir. Gavin O'Connor "
-    },
-    {
-      "id": "403",
-      "title_spanish": "Código de honor",
-      "title_english": "",
-      "director": "Robert Mandel",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "403 Código de honor Dir.Robert Mandel"
-    },
-    {
-      "id": "404",
-      "title_spanish": "Códigos de guerra",
-      "title_english": "",
-      "director": "John Woo",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "404 Códigos de guerra Dir. y prod. John Woo "
-    },
-    {
-      "id": "407",
-      "title_spanish": "Colección de cortometrajes ccc",
-      "title_english": "",
-      "director": "Alejandro Guzman Alvarez",
-      "patterns": [
-        "spanish_only",
-        "ocr_artifact"
-      ],
-      "reason": "no_match",
-      "raw_line": "407 Colección de cortometrajes ccc Dir. Alejandro Guzman Alvarez"
-    },
-    {
-      "id": "408",
-      "title_spanish": "Colección de cortometrajes extranjeros 2 y 3",
-      "title_english": "",
-      "director": "Varios",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "408Colección de cortometrajes extranjeros 2 y 3Dir. Varios"
     },
     {
       "id": "411",
@@ -3986,75 +3493,6 @@
       ],
       "reason": "no_match",
       "raw_line": "411 Color delcrimen.El Dir.Joe Roth"
-    },
-    {
-      "id": "416",
-      "title_spanish": "Comando especial 21 Jump Street",
-      "title_english": "",
-      "director": "Phil Lord y Christopher Miller",
-      "patterns": [
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "416Comando especial 21 Jump Street Dir. Phil Lord y Christopher Miller "
-    },
-    {
-      "id": "418",
-      "title_spanish": "Comedia del poder, La",
-      "title_english": "",
-      "director": "Chabrol, Claude, 1930-2010",
-      "patterns": [
-        "article_swapped",
-        "spanish_only",
-        "multi_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "418 Comedia del poder, La Dir.Chabrol, Claude, 1930-2010"
-    },
-    {
-      "id": "419",
-      "title_spanish": "Comer,beber, amar",
-      "title_english": "",
-      "director": "Ang Lee",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "419 Comer,beber, amar Dir. Ang Lee"
-    },
-    {
-      "id": "424",
-      "title_spanish": "Cómo perder a tus amigos",
-      "title_english": "",
-      "director": "Robert We",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "424 Cómo perder a tus amigos Dir. Robert We"
-    },
-    {
-      "id": "430",
-      "title_spanish": "Con las alas rotas",
-      "title_english": "",
-      "director": "Nir Bergman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "430 Con las alas rotas Dir. Nir Bergman "
-    },
-    {
-      "id": "431",
-      "title_spanish": "Conductor y el forastero. El",
-      "title_english": "",
-      "director": "Larry Cohen",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "431 Conductor y el forastero. El Dir. Larry Cohen"
     },
     {
       "id": "440",
@@ -4078,39 +3516,6 @@
       ],
       "reason": "no_match",
       "raw_line": "441 Conspiración entre espías  Dir. y prod. James D. Deck "
-    },
-    {
-      "id": "445",
-      "title_spanish": "Contacto en rusia",
-      "title_english": "",
-      "director": "Fred Schepisi",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "445 Contacto en rusia Dir.Fred Schepisi.."
-    },
-    {
-      "id": "458",
-      "title_spanish": "Coronel Redl",
-      "title_english": "",
-      "director": "István Szabó",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "458 Coronel Redl Dir. István Szabó "
-    },
-    {
-      "id": "459",
-      "title_spanish": "Correo explosivo",
-      "title_english": "",
-      "director": "Brad Turner",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "459 Correo explosivo Dir.Brad Turner"
     },
     {
       "id": "461",
@@ -4157,17 +3562,6 @@
       "raw_line": "464Cortometrajes extranjeros de animación 5Dir. Varios"
     },
     {
-      "id": "468",
-      "title_spanish": "Cosecha del diablo/ Prisión maldita",
-      "title_english": "",
-      "director": "James Shanks",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "468 Cosecha del diablo/ Prisión maldita Dir.James Shanks.."
-    },
-    {
       "id": "469",
       "title_spanish": "Cosecha estéril, La",
       "title_english": "",
@@ -4190,29 +3584,6 @@
       ],
       "reason": "no_match",
       "raw_line": "470 Cosechador de almas,El Dir Tim Card.."
-    },
-    {
-      "id": "474",
-      "title_spanish": "Crepúsculo - Luna Nueva Stephenie Meyer",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "474 Crepúsculo - Luna Nueva Stephenie Meyer"
-    },
-    {
-      "id": "476",
-      "title_spanish": "Crimen virtual",
-      "title_english": "",
-      "director": "Hideo Nakata",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "476 Crimen virtual Dir.Hideo Nakata"
     },
     {
       "id": "485",
@@ -4317,29 +3688,6 @@
       "raw_line": "502 Cuentos y realidades Película Iraní"
     },
     {
-      "id": "505",
-      "title_spanish": "Cuervo, The Crow",
-      "title_english": "",
-      "director": "Alex Proyas",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "505 Cuervo, The Crow Dir. Alex Proyas. "
-    },
-    {
-      "id": "509",
-      "title_spanish": "Dalia Negra, La",
-      "title_english": "",
-      "director": "Brian De Palma",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "509 Dalia Negra, La Dir. Brian De Palma"
-    },
-    {
       "id": "514",
       "title_spanish": "Damas del Mar",
       "title_english": "",
@@ -4349,94 +3697,6 @@
       ],
       "reason": "no_match",
       "raw_line": "514 Damas del Mar Dir.  Kaneto Shindō"
-    },
-    {
-      "id": "516",
-      "title_spanish": "Danza con lobos",
-      "title_english": "",
-      "director": "Kevin Costner",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "516 Danza con lobos Dir. Kevin Costner "
-    },
-    {
-      "id": "518",
-      "title_spanish": "Daredevil : el hombre sin miedo",
-      "title_english": "",
-      "director": "Mark Steven Johnson",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "518 Daredevil : el hombre sin miedo Dir. Mark Steven Johnson"
-    },
-    {
-      "id": "520",
-      "title_spanish": "David y Betsabé",
-      "title_english": "",
-      "director": "Henry King",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "520 David y Betsabé Dir.Henry King"
-    },
-    {
-      "id": "527",
-      "title_spanish": "De tal padre, tal hijo Like father, like son",
-      "title_english": "",
-      "director": "Hirokazu Koreeda",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "527De tal padre, tal hijo Like father, like sonDir. Hirokazu Koreeda "
-    },
-    {
-      "id": "537",
-      "title_spanish": "Demasiada Carne",
-      "title_english": "",
-      "director": "Jean-Marc Barr",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "537 Demasiada Carne Dir.Jean-Marc Barr"
-    },
-    {
-      "id": "541",
-      "title_spanish": "Demonios en la puerta",
-      "title_english": "",
-      "director": "Jiang Wen",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "541 Demonios en la puerta Dir. Jiang Wen"
-    },
-    {
-      "id": "544",
-      "title_spanish": "Desafío a los gigantes Facing the Gigants",
-      "title_english": "",
-      "director": "Alex Kendrick",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "544Desafío a los gigantes Facing the Gigants Dir. Alex Kendrick "
-    },
-    {
-      "id": "547",
-      "title_spanish": "Descubriendo el país de nunca jamás",
-      "title_english": "",
-      "director": "Forster, Marc",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "547 Descubriendo el país de nunca jamás  Dir.Forster, Marc"
     },
     {
       "id": "551",
@@ -4517,28 +3777,6 @@
       "raw_line": "575 Diamantes para el desayuno Dir. Blake Edwards"
     },
     {
-      "id": "577",
-      "title_spanish": "Días de trueno",
-      "title_english": "",
-      "director": "Tony Scott",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "577 Días de trueno Dir. Tony Scott"
-    },
-    {
-      "id": "580",
-      "title_spanish": "Días sin huella",
-      "title_english": "",
-      "director": "Billy Wilder",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "580 Días sin huella Dir.Billy Wilder"
-    },
-    {
       "id": "583",
       "title_spanish": "Diez  historias cortas de amor",
       "title_english": "",
@@ -4548,40 +3786,6 @@
       ],
       "reason": "no_match",
       "raw_line": "583 Diez  historias cortas de amor Dir. Rodrigo García "
-    },
-    {
-      "id": "584",
-      "title_spanish": "Diez cosas que odio de ti",
-      "title_english": "",
-      "director": "Varios",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "584 Diez cosas que odio de ti Dir. Varios"
-    },
-    {
-      "id": "586",
-      "title_spanish": "Diez mil A.C.",
-      "title_english": "",
-      "director": "Ronald Emmerich",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "586 Diez mil A.C. Dir. Ronald Emmerich"
-    },
-    {
-      "id": "587",
-      "title_spanish": "Diez. La mujer perfecta",
-      "title_english": "",
-      "director": "Blake Edwards",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "587 Diez. La mujer perfecta Dir. Blake Edwards"
     },
     {
       "id": "588",
@@ -4618,17 +3822,6 @@
       "raw_line": "595 Discurso del Rey, El The King’s Speech Dir. Tom Hooper "
     },
     {
-      "id": "601",
-      "title_spanish": "Django sin cadenas Django unchained",
-      "title_english": "",
-      "director": "Quentin Tarantino",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "601Django sin cadenas Django unchained Dir. Quentin Tarantino."
-    },
-    {
       "id": "603",
       "title_spanish": "Doble del  diablo.El",
       "title_english": "",
@@ -4639,17 +3832,6 @@
       ],
       "reason": "no_match",
       "raw_line": "603 Doble del  diablo.El Dir.Lee Tamahori"
-    },
-    {
-      "id": "605",
-      "title_spanish": "Doble riesgo",
-      "title_english": "",
-      "director": "Bruce Beresford",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "605 Doble riesgo Dir. Bruce Beresford"
     },
     {
       "id": "606",
@@ -4767,50 +3949,6 @@
       "raw_line": "624 Dos  mulas para la hermana Sara Dir.Don Siegel "
     },
     {
-      "id": "629",
-      "title_spanish": "Drácula príncipe de la tinieblas",
-      "title_english": "",
-      "director": "Joe Chappelle",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "629 Drácula príncipe de la tinieblas Dir. Joe Chappelle.."
-    },
-    {
-      "id": "631",
-      "title_spanish": "Dragón rojo",
-      "title_english": "",
-      "director": "Jason Yee",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "631 Dragón rojo Dir.Jason Yee"
-    },
-    {
-      "id": "635",
-      "title_spanish": "Drive el escape",
-      "title_english": "",
-      "director": "Nicolas Winding Refn",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "635 Drive el escape Dir.Nicolas Winding Refn"
-    },
-    {
-      "id": "637",
-      "title_spanish": "Duelo de titanes",
-      "title_english": "",
-      "director": "Boaz Yakin",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "637 Duelo de titanes  Dir. Boaz Yakin "
-    },
-    {
       "id": "641",
       "title_spanish": "Dura y peligrosa",
       "title_english": "",
@@ -4831,64 +3969,6 @@
       ],
       "reason": "no_match",
       "raw_line": "642Duro de martar(un buen díapara morirDir.John Moore"
-    },
-    {
-      "id": "643",
-      "title_spanish": "Duro de matar 4.0",
-      "title_english": "",
-      "director": "Len Wiseman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "643 Duro de matar 4.0 Dir.Len Wiseman "
-    },
-    {
-      "id": "646",
-      "title_spanish": "Escocés volador.El",
-      "title_english": "",
-      "director": "Douglas Mackinnon",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words",
-        "duplicate_spanish_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "646 Escocés volador.El Dir.Douglas Mackinnon.."
-    },
-    {
-      "id": "648",
-      "title_spanish": "Ecos mortales Stir of echoes Guión y",
-      "title_english": "",
-      "director": "David Koepp",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "648 Ecos mortales Stir of echoes Guión y dir. David Koepp "
-    },
-    {
-      "id": "653",
-      "title_spanish": "Edukadores,Los",
-      "title_english": "",
-      "director": "Hans Weingartner",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "653 Edukadores,Los Dir.Hans Weingartner"
-    },
-    {
-      "id": "655",
-      "title_spanish": "Ella es única",
-      "title_english": "",
-      "director": "Edward Burns",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "655 Ella es única Dir. Edward Burns"
     },
     {
       "id": "657",
@@ -4949,98 +4029,6 @@
       "raw_line": "679 Enemigo querido enemigo Dir. Ettore Scola "
     },
     {
-      "id": "680",
-      "title_spanish": "Enemigos públicos",
-      "title_english": "",
-      "director": "Michael Mann",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "680 Enemigos públicos Dir. Michael Mann"
-    },
-    {
-      "id": "684",
-      "title_spanish": "Ensayo de orquesta",
-      "title_english": "",
-      "director": "Federico Fellini",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "684 Ensayo de orquesta Dir. Federico Fellini"
-    },
-    {
-      "id": "691",
-      "title_spanish": "Equipo triunfador, El The Mighty Macs",
-      "title_english": "",
-      "director": "Tim Chambers",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "691 Equipo triunfador, El The Mighty Macs Dir. Tim Chambers "
-    },
-    {
-      "id": "692",
-      "title_spanish": "Equis equis ye [i.e. XXY]",
-      "title_english": "",
-      "director": "Lucía Puenzo",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "692 Equis equis ye [i.e. XXY] Dir. Lucía Puenzo "
-    },
-    {
-      "id": "701",
-      "title_spanish": "Escándalos del rey Jorge, Los",
-      "title_english": "",
-      "director": "Nicholas Hytner",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "701 Escándalos del rey Jorge, Los Dir. Nicholas Hytner "
-    },
-    {
-      "id": "702",
-      "title_spanish": "Escocés volador.El",
-      "title_english": "",
-      "director": "Douglas Mackinnon",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words",
-        "duplicate_spanish_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "702 Escocés volador.El Dir. Douglas Mackinnon"
-    },
-    {
-      "id": "703",
-      "title_spanish": "Escritores de la libertad",
-      "title_english": "",
-      "director": "Richard LaGravenese",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "703 Escritores de la libertad Dir. Richard LaGravenese"
-    },
-    {
-      "id": "704",
-      "title_spanish": "Escuadrón Gran Rojo: La reconstrucción, El",
-      "title_english": "",
-      "director": "Samuel Fuller",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "704Escuadrón Gran Rojo: La reconstrucción, ElDir. Samuel Fuller"
-    },
-    {
       "id": "705",
       "title_spanish": "Escucha tu destino August Rush Kirsten Sheridan",
       "title_english": "",
@@ -5051,40 +4039,6 @@
       ],
       "reason": "no_match",
       "raw_line": "705 Escucha tu destino August Rush Kirsten Sheridan"
-    },
-    {
-      "id": "711",
-      "title_spanish": "Especies III",
-      "title_english": "",
-      "director": "Brad Turner",
-      "patterns": [
-        "spanish_only",
-        "ocr_artifact"
-      ],
-      "reason": "no_match",
-      "raw_line": "711 Especies III Dir. Brad Turner"
-    },
-    {
-      "id": "712",
-      "title_spanish": "Espejos siniestros Mirrors",
-      "title_english": "",
-      "director": "Alexandre Aja",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "712 Espejos siniestros Mirrors Dir. Alexandre Aja"
-    },
-    {
-      "id": "716",
-      "title_spanish": "Espionaje En Berlín",
-      "title_english": "",
-      "director": "Frank Pierson",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "716 Espionaje En Berlín Dir.Frank Pierson "
     },
     {
       "id": "717",
@@ -5147,94 +4101,6 @@
       "raw_line": "730 Europa zentropa Europa Dir. Lars von Trier "
     },
     {
-      "id": "737",
-      "title_spanish": "Expectro",
-      "title_english": "",
-      "director": "Paul Spurrier",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "737 Expectro Dir. Paul Spurrier"
-    },
-    {
-      "id": "738",
-      "title_spanish": "Expedientes secretos X",
-      "title_english": "",
-      "director": "Chris Carter",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "738 Expedientes secretos X Dir. Chris Carter"
-    },
-    {
-      "id": "739",
-      "title_spanish": "Expiación, deseo y pecado",
-      "title_english": "",
-      "director": "Joe Wright",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "739 Expiación, deseo y pecado Dir. Joe Wright."
-    },
-    {
-      "id": "740",
-      "title_spanish": "Expreso de media noche",
-      "title_english": "",
-      "director": "Alan Parker",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "740 Expreso de media noche Dir. Alan Parker "
-    },
-    {
-      "id": "741",
-      "title_spanish": "Expreso de la muerte",
-      "title_english": "",
-      "director": "Gideon Raff",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "741 Expreso de la muerte Dir. Gideon Raff"
-    },
-    {
-      "id": "744",
-      "title_spanish": "Estraños:Los",
-      "title_english": "",
-      "director": "Bryan Bertino",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "744 Estraños:Los Dir. Bryan Bertino"
-    },
-    {
-      "id": "745",
-      "title_spanish": "Extraños en el paraíso",
-      "title_english": "",
-      "director": "Jim Jarmusch",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "745 Extraños en el paraíso Dir. Jim Jarmusch"
-    },
-    {
-      "id": "757",
-      "title_spanish": "Farenheit 451",
-      "title_english": "",
-      "director": "Francois Truffaut",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "757 Farenheit 451 Dir.  Francois Truffaut"
-    },
-    {
       "id": "761",
       "title_spanish": "Fauces  de la noche.Las",
       "title_english": "",
@@ -5245,28 +4111,6 @@
       ],
       "reason": "no_match",
       "raw_line": "761 Fauces  de la noche.Las Dir.Thom Fitzgerald"
-    },
-    {
-      "id": "764",
-      "title_spanish": "Fenómeno siniestro 2",
-      "title_english": "",
-      "director": "John Poliquin",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "764 Fenómeno siniestro 2 Dir. John Poliquin "
-    },
-    {
-      "id": "772",
-      "title_spanish": "La fiesta inovidable The party",
-      "title_english": "",
-      "director": "Blake Edwards",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "772 La fiesta inovidable The party Dir. y prod. Blake Edwards."
     },
     {
       "id": "782",
@@ -5373,29 +4217,6 @@
       "raw_line": "813 Furia en  dos ruedas Dir.Joseph Kahn"
     },
     {
-      "id": "821",
-      "title_spanish": "Gatopardo, El",
-      "title_english": "",
-      "director": "Luchino Visconti",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "821 Gatopardo, El Dir. Luchino Visconti"
-    },
-    {
-      "id": "822",
-      "title_spanish": "Gattaca: experimento genético",
-      "title_english": "",
-      "director": "Andrew Niccol",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "822 Gattaca: experimento genético  escrita yDir. Andrew Niccol "
-    },
-    {
       "id": "823",
       "title_spanish": "Gauguín:diario de un genio",
       "title_english": "",
@@ -5418,50 +4239,6 @@
       ],
       "reason": "no_match",
       "raw_line": "824 Gendarme desconocido, El Dir. Migel M. Delgado"
-    },
-    {
-      "id": "826",
-      "title_spanish": "Gente de Roma Gente di Roma",
-      "title_english": "",
-      "director": "Ettore Scola",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "826 Gente de Roma Gente di Roma Dir. Ettore Scola "
-    },
-    {
-      "id": "832",
-      "title_spanish": "Gigantes de acero",
-      "title_english": "",
-      "director": "Shawn Levy",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "832 Gigantes de acero Dir. Shawn Levy"
-    },
-    {
-      "id": "845",
-      "title_spanish": "Gotcha: juego de la muerte",
-      "title_english": "",
-      "director": "Daniel Benmayor",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "845 Gotcha: juego de la muerte Dir.Daniel Benmayor.."
-    },
-    {
-      "id": "847",
-      "title_spanish": "Goya y la inquisición",
-      "title_english": "",
-      "director": "Milos Forman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "847 Goya y la inquisición Dir. Milos Forman"
     },
     {
       "id": "848",
@@ -5524,62 +4301,6 @@
       "raw_line": "854Gran Dictador, El  y Luces de la ciudadDir.  guión y prod. Charles Chaplin.."
     },
     {
-      "id": "862",
-      "title_spanish": "Gran papel, El",
-      "title_english": "",
-      "director": "Steve Suissa",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "862 Gran papel, El Dir. Steve Suissa"
-    },
-    {
-      "id": "867",
-      "title_spanish": "Grandes esperanzas",
-      "title_english": "",
-      "director": "Alfonso Cuarón",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "867 Grandes esperanzas Dir. Alfonso Cuarón"
-    },
-    {
-      "id": "868",
-      "title_spanish": "Gravedad Gravity",
-      "title_english": "",
-      "director": "Alfonso Cuarón",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "868 Gravedad Gravity Dir. Alfonso Cuarón "
-    },
-    {
-      "id": "869",
-      "title_spanish": "Grbavica la revelación de Sara",
-      "title_english": "",
-      "director": "Jazmila Zbanic",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "869 Grbavica la revelación de Sara Dir. Jazmila Zbanic"
-    },
-    {
-      "id": "870",
-      "title_spanish": "Greta Garbo: Ninotchka",
-      "title_english": "",
-      "director": "Ernst Lubitsch",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "870 Greta Garbo: Ninotchka Dir. Ernst Lubitsch"
-    },
-    {
       "id": "874",
       "title_spanish": "Gritos  y  Susurros",
       "title_english": "",
@@ -5589,40 +4310,6 @@
       ],
       "reason": "no_match",
       "raw_line": "874 Gritos  y  Susurros Dir.Ingmar Bergman.."
-    },
-    {
-      "id": "880",
-      "title_spanish": "Guerra de novias",
-      "title_english": "",
-      "director": "Julie Yorn",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "880 Guerra de novias Dir.Julie Yorn"
-    },
-    {
-      "id": "883",
-      "title_spanish": "Guerreros de honor Three swordsmen",
-      "title_english": "",
-      "director": "Taylor Wong",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "883 Guerreros de honor Three swordsmen Dir. Taylor Wong."
-    },
-    {
-      "id": "888",
-      "title_spanish": "Halcón maltés, El",
-      "title_english": "",
-      "director": "John Huston",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "888 Halcón maltés, El Dir. John Huston."
     },
     {
       "id": "892",
@@ -5735,17 +4422,6 @@
       "raw_line": "926 historia de Abraham:La Dir. Joseph Sargent"
     },
     {
-      "id": "928",
-      "title_spanish": "Historia americana X",
-      "title_english": "",
-      "director": "Tony Kaye",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "928 Historia americana X Dir. Tony Kaye"
-    },
-    {
       "id": "929",
       "title_spanish": "Historia del camello que llora",
       "title_english": "",
@@ -5757,53 +4433,6 @@
       "raw_line": "929 Historia del camello que llora Dir. Byambasur Davaa"
     },
     {
-      "id": "930",
-      "title_spanish": "Historia Oficial, La",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "article_swapped",
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "930 Historia Oficial, La Dir. . Luis Puenzo "
-    },
-    {
-      "id": "931",
-      "title_spanish": "Historia de Sansón y Dalila :La",
-      "title_english": "",
-      "director": "Nicolas Roeg",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "931 Historia de Sansón y Dalila :La Dir. Nicolas Roeg"
-    },
-    {
-      "id": "934",
-      "title_spanish": "Historias cruzadas The help",
-      "title_english": "",
-      "director": "Tate Taylor",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "934 Historias cruzadas The help Dir. Tate Taylor "
-    },
-    {
-      "id": "935",
-      "title_spanish": "Historias de ultratumba",
-      "title_english": "",
-      "director": "Simon Baré, Anna Reeves",
-      "patterns": [
-        "spanish_only",
-        "multi_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "935 Historias de ultratumba Dir. Simon Baré, Anna Reeves "
-    },
-    {
       "id": "940",
       "title_spanish": "Hitler: el nacimiento del mal",
       "title_english": "",
@@ -5813,62 +4442,6 @@
       ],
       "reason": "no_match",
       "raw_line": "940 Hitler: el nacimiento del mal Dir. Christian Duguay"
-    },
-    {
-      "id": "941",
-      "title_spanish": "Hollywood: Departamento de homicidios",
-      "title_english": "",
-      "director": "Ron Shelton",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "941Hollywood: Departamento de homicidiosDir. Ron Shelton"
-    },
-    {
-      "id": "942",
-      "title_spanish": "Hombre de familia",
-      "title_english": "",
-      "director": "Brett Ratner",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "942 Hombre de familia Dir. Brett Ratner"
-    },
-    {
-      "id": "945",
-      "title_spanish": "Hombre de marmol",
-      "title_english": "",
-      "director": "Andrzej Wajda",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "945 Hombre de marmol Dir. Andrzej Wajda"
-    },
-    {
-      "id": "946",
-      "title_spanish": "Hombre en llamas Man on fire Tony Scott",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "946 Hombre en llamas Man on fire Tony Scott "
-    },
-    {
-      "id": "951",
-      "title_spanish": "Hombre peligroso Lord of war",
-      "title_english": "",
-      "director": "Andrew Niccol",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "951 Hombre peligroso Lord of war Dir. Andrew Niccol"
     },
     {
       "id": "955",
@@ -5916,18 +4489,6 @@
       "raw_line": "976 Hundan al bismarck Dir. Lewis Gilbert "
     },
     {
-      "id": "977",
-      "title_spanish": "I.A. Inteligencia artificial",
-      "title_english": "",
-      "director": "Steven Spielberg",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "977 I.A. Inteligencia artificial Dir. Steven Spielberg"
-    },
-    {
       "id": "985",
       "title_spanish": "Ilusión viaja en tranvía, La",
       "title_english": "",
@@ -5951,18 +4512,6 @@
       "raw_line": "987 Imágenes del más allá Dir.Masayuki Ochiai "
     },
     {
-      "id": "989",
-      "title_spanish": "Imperdonables unforgiven, Los",
-      "title_english": "",
-      "director": "Clint Eastwood",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "989 Imperdonables unforgiven, Los Dir. Clint Eastwood"
-    },
-    {
       "id": "997",
       "title_spanish": "Incident  en una carretera perdida",
       "title_english": "",
@@ -5974,29 +4523,6 @@
       "raw_line": "997 Incident  en una carretera perdida Dir. Don Coscarelli"
     },
     {
-      "id": "1006",
-      "title_spanish": "Informe pelícano, El",
-      "title_english": "",
-      "director": "Alan Pakula",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1006 Informe pelícano, El Dir. Alan Pakula"
-    },
-    {
-      "id": "1008",
-      "title_spanish": "Inframundo Underworld",
-      "title_english": "",
-      "director": "Len Wiselman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1008 Inframundo Underworld Dir. Len Wiselman "
-    },
-    {
       "id": "1016",
       "title_spanish": "Instinto  de media noche",
       "title_english": "",
@@ -6006,29 +4532,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1016 Instinto  de media noche Dir. Antoine de Caunes"
-    },
-    {
-      "id": "1023",
-      "title_spanish": "Invasores del tesoro",
-      "title_english": "",
-      "director": "Brent Huff",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1023 Invasores del tesoro Dir. Brent Huff"
-    },
-    {
-      "id": "1027",
-      "title_spanish": "Ira de los dioses, La",
-      "title_english": "",
-      "director": "Edward Dmytryk",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1027 Ira de los dioses, La Dir. Edward Dmytryk "
     },
     {
       "id": "1028",
@@ -6125,87 +4628,6 @@
       "raw_line": "1061 Joven manos de tijeras,El Dir. Tim Burton"
     },
     {
-      "id": "1062",
-      "title_spanish": "Joven con el arete de perla, La",
-      "title_english": "",
-      "director": "Peter Webbe",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1062 Joven con el arete de perla, La Dir. Peter Webbe"
-    },
-    {
-      "id": "1063",
-      "title_spanish": "Jovenes brujas",
-      "title_english": "",
-      "director": "Andrew Fleming",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1063 Jovenes brujas Dir. Andrew Fleming"
-    },
-    {
-      "id": "1065",
-      "title_spanish": "Juana de Arco",
-      "title_english": "",
-      "director": "Besson Luc",
-      "patterns": [
-        "spanish_only",
-        "duplicate_spanish_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "1065 Juana de Arco Dir. Besson Luc. "
-    },
-    {
-      "id": "1066",
-      "title_spanish": "Juana de Arco",
-      "title_english": "",
-      "director": "Christian Duguay",
-      "patterns": [
-        "spanish_only",
-        "duplicate_spanish_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "1066 Juana de Arco Dir. Christian Duguay"
-    },
-    {
-      "id": "1070",
-      "title_spanish": "Juego de ladrones",
-      "title_english": "",
-      "director": "Mimi Leder",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1070 Juego de ladrones Dir.Mimi Leder"
-    },
-    {
-      "id": "1080",
-      "title_spanish": "Juego perfecto, El",
-      "title_english": "",
-      "director": "William Dear",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1080 Juego perfecto, El Dir. William Dear"
-    },
-    {
-      "id": "1082",
-      "title_spanish": "Juego sangriento",
-      "title_english": "",
-      "director": "Fukasaku Kinji",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1082 Juego sangriento Dir. Fukasaku Kinji"
-    },
-    {
       "id": "1083",
       "title_spanish": "Juego y pasión",
       "title_english": "",
@@ -6215,73 +4637,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1083 Juego y pasión Dir.Chris Iovenko"
-    },
-    {
-      "id": "1085",
-      "title_spanish": "Juegos del corazón",
-      "title_english": "",
-      "director": "Willard Carroll",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1085 Juegos del corazón Dir.  Willard Carroll.."
-    },
-    {
-      "id": "1086",
-      "title_spanish": "Juegos diábolicos Poltergeist",
-      "title_english": "",
-      "director": "Tobe Hooper",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1086 Juegos diábolicos Poltergeist Dir. Tobe Hooper"
-    },
-    {
-      "id": "1087",
-      "title_spanish": "Juegos mortales",
-      "title_english": "",
-      "director": "Gilles Marchand",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1087 Juegos mortales Dir. Gilles Marchand"
-    },
-    {
-      "id": "1088",
-      "title_spanish": "Juegos, trampas y dos armas humeantes",
-      "title_english": "",
-      "director": "Guy Ritchie",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1088Juegos, trampas y dos armas humeantesDir. Guy Ritchie. "
-    },
-    {
-      "id": "1090",
-      "title_spanish": "juez del apocalipsis,El",
-      "title_english": "",
-      "director": "Pete Travis",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1090  juez del apocalipsis,El Dir.Pete Travis "
-    },
-    {
-      "id": "1093",
-      "title_spanish": "Julieta de los espíritus",
-      "title_english": "",
-      "director": "Federico Fellini",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1093 Julieta de los espíritus Dir. Federico Fellini"
     },
     {
       "id": "1110",
@@ -6295,84 +4650,6 @@
       "raw_line": "1110 Kino : la leyenda del Padre Negro Dir. Felipe Cazals "
     },
     {
-      "id": "1111",
-      "title_spanish": "Kolya : el nombre de la esperanza",
-      "title_english": "",
-      "director": "Jean Sverak",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1111 Kolya : el nombre de la esperanza Dir. Jean Sverak "
-    },
-    {
-      "id": "1118",
-      "title_spanish": "Lado profundo del mar, El",
-      "title_english": "",
-      "director": "Ulu Grosbard",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1118 Lado profundo del mar, El Dir. Ulu Grosbard ; prod. K"
-    },
-    {
-      "id": "1119",
-      "title_spanish": "Ladrona de corazón Guión y",
-      "title_english": "",
-      "director": "Stephen Metcalfe",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1119 Ladrona de corazón Guión y dir. Stephen Metcalfe "
-    },
-    {
-      "id": "1121",
-      "title_spanish": "Lágrimas del sol",
-      "title_english": "",
-      "director": "Antoine Fuqua",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1121 Lágrimas del sol Dir. Antoine Fuqua "
-    },
-    {
-      "id": "1130",
-      "title_spanish": "Le Havre el puerto de la esperanza",
-      "title_english": "",
-      "director": "Aki Kaurismaki",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1130 Le Havre el puerto de la esperanza Dir. Aki Kaurismaki"
-    },
-    {
-      "id": "1146",
-      "title_spanish": "Leyenda del fantasma. La",
-      "title_english": "",
-      "director": "Jean-Paul Salomé",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1146 Leyenda del fantasma. La Dir. Jean-Paul Salomé"
-    },
-    {
-      "id": "1150",
-      "title_spanish": "Leyendas de pasión",
-      "title_english": "",
-      "director": "prod",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1150 Leyendas de pasión Dir. prod., Edward Zwick "
-    },
-    {
       "id": "1151",
       "title_spanish": "Leyendas de Rita, Las",
       "title_english": "",
@@ -6384,18 +4661,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1151 Leyendas de Rita, Las Dir. y guión Volker Schlôndorff."
-    },
-    {
-      "id": "1152",
-      "title_spanish": "Leyes de la atracción, Las",
-      "title_english": "",
-      "director": "Peter Howitt",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1152 Leyes de la atracción, Las Dir. Peter Howitt "
     },
     {
       "id": "1153",
@@ -6457,62 +4722,6 @@
       "raw_line": "1164 Listón blanco, El Dir. Michael Haneke"
     },
     {
-      "id": "1171",
-      "title_spanish": "Lo que ellas quieren Prod. y",
-      "title_english": "",
-      "director": "Nancy Meyers",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1171 Lo que ellas quieren Prod. y Dir. Nancy Meyers"
-    },
-    {
-      "id": "1172",
-      "title_spanish": "Lobo de Wall Street",
-      "title_english": "",
-      "director": "Martin Scorsese",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1172 Lobo de Wall Street Dir. Martin Scorsese"
-    },
-    {
-      "id": "1174",
-      "title_spanish": "Locos de Ira",
-      "title_english": "",
-      "director": "Peter Segal",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1174 Locos de Ira Dir. Peter Segal"
-    },
-    {
-      "id": "1185",
-      "title_spanish": "Luces distantes",
-      "title_english": "",
-      "director": "Hans-Christian Schmid",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1185 Luces distantes Dir. Hans-Christian Schmid "
-    },
-    {
-      "id": "1189",
-      "title_spanish": "Lugar sin límites, El",
-      "title_english": "",
-      "director": "Arturo Ripsten",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1189 Lugar sin límites, El Dir. Arturo Ripsten."
-    },
-    {
       "id": "1190",
       "title_spanish": "Lujuria y traición",
       "title_english": "",
@@ -6522,50 +4731,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1190 Lujuria y traición Dir. Ang Lee"
-    },
-    {
-      "id": "1191",
-      "title_spanish": "Lulú en el puente",
-      "title_english": "",
-      "director": "Paul Auster",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1191 Lulú en el puente Dir. Paul Auster "
-    },
-    {
-      "id": "1192",
-      "title_spanish": "Luna amarga",
-      "title_english": "",
-      "director": "Roman Polanski",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1192 Luna amarga Dir. Roman Polanski "
-    },
-    {
-      "id": "1194",
-      "title_spanish": "Luna de papel",
-      "title_english": "",
-      "director": "Peter Bogdanovich",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1194Luna de papel Dir. y prod. Peter Bogdanovich."
-    },
-    {
-      "id": "1195",
-      "title_spanish": "Luna sangrienta",
-      "title_english": "",
-      "director": "Tony Leung Hung-Wah",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1195 Luna sangrienta Dir. Tony Leung Hung-Wah"
     },
     {
       "id": "1207",
@@ -6638,18 +4803,6 @@
       "raw_line": "1225 Manicomio siniestro Dir.Jeff Bühler"
     },
     {
-      "id": "1228",
-      "title_spanish": "Mansión del Pánico",
-      "title_english": "",
-      "director": "Craig R",
-      "patterns": [
-        "spanish_only",
-        "truncated_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1228 Mansión del Pánico Dir.Craig R. Baxley "
-    },
-    {
       "id": "1229",
       "title_spanish": "Mantenidas sin sueños, Las",
       "title_english": "",
@@ -6664,17 +4817,6 @@
       "raw_line": "1229Mantenidas sin sueños, LasDir. y guión Vera Fogwill, Martín de Salvo."
     },
     {
-      "id": "1232",
-      "title_spanish": "Mapa a las estrellas Maps to the stars",
-      "title_english": "",
-      "director": "David Cronenberg",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1232 Mapa a las estrellas Maps to the stars Dir. David Cronenberg "
-    },
-    {
       "id": "1233",
       "title_spanish": "Marabunta",
       "title_english": "",
@@ -6684,109 +4826,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1233 Marabunta Dir. Byron Haskin"
-    },
-    {
-      "id": "1235",
-      "title_spanish": "Mar abierto. El ojo",
-      "title_english": "",
-      "director": "Pelicula 1  Chris Kentis/ Pelicula 2 Dir",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1235Mar abierto. El ojo Dir. Pelicula 1  Chris Kentis/ Pelicula 2 Dir. Oxide Pang y Danny Pang "
-    },
-    {
-      "id": "1243",
-      "title_spanish": "María llena eres de gracia",
-      "title_english": "",
-      "director": "y guión Joshua Marston",
-      "patterns": [
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "1243 María llena eres de gracia Dir. y guión Joshua Marston ;"
-    },
-    {
-      "id": "1254",
-      "title_spanish": "Más barato por docena",
-      "title_english": "",
-      "director": "Shaen Lvy",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1254 Más barato por docena Dir. Shaen Lvy "
-    },
-    {
-      "id": "1256",
-      "title_spanish": "Más grande historia jamás contada",
-      "title_english": "",
-      "director": "George Stevens",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1256 Más grande historia jamás contada Dir. y prod. George Stevens.."
-    },
-    {
-      "id": "1258",
-      "title_spanish": "Masacre en Nueva York",
-      "title_english": "",
-      "director": "Stanley Tong",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1258 Masacre en Nueva York Dir.Stanley Tong"
-    },
-    {
-      "id": "1262",
-      "title_spanish": "Mataría por tú Trabajo",
-      "title_english": "",
-      "director": "Adam Goldberg",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1262 Mataría por tú Trabajo Dir. Adam Goldberg."
-    },
-    {
-      "id": "1266",
-      "title_spanish": "Máxima riesgo",
-      "title_english": "",
-      "director": "Wong Jing, Lam Wai-Lun",
-      "patterns": [
-        "spanish_only",
-        "multi_director",
-        "duplicate_spanish_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "1266 Máxima riesgo Dir.Wong Jing, Lam Wai-Lun.."
-    },
-    {
-      "id": "1267",
-      "title_spanish": "Máxima riesgo",
-      "title_english": "",
-      "director": "Wai-Lun Lam",
-      "patterns": [
-        "spanish_only",
-        "duplicate_spanish_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "1267 Máxima riesgo Dir. Wai-Lun Lam."
-    },
-    {
-      "id": "1272",
-      "title_spanish": "Mejor que el sexo",
-      "title_english": "",
-      "director": "Jonathan Teplitzky",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1272 Mejor que el sexo Dir. Jonathan Teplitzky"
     },
     {
       "id": "1276",
@@ -6901,17 +4940,6 @@
       "raw_line": "1299 Mi Encuentro Conmigo Dir. Jon Turteltaub"
     },
     {
-      "id": "1301",
-      "title_spanish": "Mi novio atómico Blast from the past",
-      "title_english": "",
-      "director": "Hugh Wilson",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1301 Mi novio atómico Blast from the past Dir Hugh Wilson "
-    },
-    {
       "id": "1303",
       "title_spanish": "Mi pareja es mi rival",
       "title_english": "",
@@ -6921,17 +4949,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1303 Mi pareja es mi rival Dir. Lea Fazer"
-    },
-    {
-      "id": "1305",
-      "title_spanish": "Mi vida como un perro",
-      "title_english": "",
-      "director": "Lasse Hallström",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1305 Mi vida como un perro Dir. Lasse Hallström "
     },
     {
       "id": "1308",
@@ -6945,30 +4962,6 @@
       "raw_line": "1308 Miedo punto com Dir William Malone.."
     },
     {
-      "id": "1309",
-      "title_spanish": "Mil cuatrocientos noventa y dos: la conquista del paraíso",
-      "title_english": "",
-      "director": "Ridley Scott",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1309Mil cuatrocientos noventa y dos: la conquista del paraísoDir. Ridley Scott"
-    },
-    {
-      "id": "1310",
-      "title_spanish": "Mil novecientos ochenta y cuatro =",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "bilingual_equals",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1310Mil novecientos ochenta y cuatro = "
-    },
-    {
       "id": "1315",
       "title_spanish": "Milagro Si lo crees, todo es posible",
       "title_english": "",
@@ -6978,39 +4971,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1315 Milagro Si lo crees, todo es posible Dir.Gavin O'Conor."
-    },
-    {
-      "id": "1318",
-      "title_spanish": "Millenium Mambo",
-      "title_english": "",
-      "director": "Hou Hsia-hsien",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1318 Millenium Mambo Dir. Hou Hsia-hsien"
-    },
-    {
-      "id": "1322",
-      "title_spanish": "Minority report Sentencia previa",
-      "title_english": "",
-      "director": "Steven Spielberg",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1322 Minority report Sentencia previa Dir. Steven Spielberg "
-    },
-    {
-      "id": "1325",
-      "title_spanish": "Mitad Siniestra",
-      "title_english": "",
-      "director": "Michael Lander",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1325 Mitad Siniestra Dir.Michael Lander"
     },
     {
       "id": "1326",
@@ -7136,17 +5096,6 @@
       "raw_line": "1365 Muerte negra Dir.Chuck Bowman"
     },
     {
-      "id": "1370",
-      "title_spanish": "Muhammad Alí: El invencible",
-      "title_english": "",
-      "director": "Tom Gries",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1370 Muhammad Alí: El invencible Dir. Tom Gries"
-    },
-    {
       "id": "1378",
       "title_spanish": "Mujeres  perfectas.Las",
       "title_english": "",
@@ -7157,28 +5106,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1378 Mujeres  perfectas.Las Dir. Frank Oz"
-    },
-    {
-      "id": "1383",
-      "title_spanish": "Mundo cool",
-      "title_english": "",
-      "director": "Ralph Baksi",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1383 Mundo cool Dir. Ralph Baksi"
-    },
-    {
-      "id": "1388",
-      "title_spanish": "Muñeca inflable",
-      "title_english": "",
-      "director": "Hirokazu Kore-Eda",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1388 Muñeca inflable Dir. Hirokazu Kore-Eda."
     },
     {
       "id": "1390",
@@ -7272,17 +5199,6 @@
       "raw_line": "1408 New World [Sinsegye - Sin-se-gae] Park Hoon-Jung"
     },
     {
-      "id": "1412",
-      "title_spanish": "Nicotina cuando el destino te da el golpe",
-      "title_english": "",
-      "director": "Hugo Rodríguez",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1412Nicotina cuando el destino te da el golpeDir. Hugo Rodríguez"
-    },
-    {
       "id": "1419",
       "title_spanish": "Niño con el pijama de rayas, El",
       "title_english": "",
@@ -7304,85 +5220,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1420 Niño del sótano. El Dir.  William Malone"
-    },
-    {
-      "id": "1423",
-      "title_spanish": "Niños están Bien, Los",
-      "title_english": "",
-      "director": "Lisa Cholodenko",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1423 Niños están Bien, Los Dir. Lisa Cholodenko."
-    },
-    {
-      "id": "1425",
-      "title_spanish": "No amarás",
-      "title_english": "A shortfilm about love",
-      "director": "Krzysztof Kieflowski",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "1425 No amarás = A shortfilm about love  Dir. Krzysztof Kieflowski "
-    },
-    {
-      "id": "1430",
-      "title_spanish": "No quiero dormir solo",
-      "title_english": "",
-      "director": "Tsai Ming Lia",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1430 No quiero dormir solo Dir. Tsai Ming Lia"
-    },
-    {
-      "id": "1436",
-      "title_spanish": "Noche del asesino",
-      "title_english": "",
-      "director": "Jason Todd Ipson",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1436 Noche del asesino Dir. Jason Todd Ipson"
-    },
-    {
-      "id": "1439",
-      "title_spanish": "Noche Har shab Tanhai, La",
-      "title_english": "",
-      "director": "Rasul Sadr Ameli",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1439 Noche Har shab Tanhai, La Dir. Rasul Sadr Ameli "
-    },
-    {
-      "id": "1440",
-      "title_spanish": "Noches púrpura",
-      "title_english": "",
-      "director": "Wong Kar-wa",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1440 Noches púrpura Dir.Wong Kar-wa"
-    },
-    {
-      "id": "1441",
-      "title_spanish": "Norteado",
-      "title_english": "",
-      "director": "Rogoberto Perezcano",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1441 Norteado Dir. Rogoberto Perezcano"
     },
     {
       "id": "1446",
@@ -7475,109 +5312,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1470 Odio perro/ Sepultados doble pelicula Dir. pendiente"
-    },
-    {
-      "id": "1471",
-      "title_spanish": "Ojo 2. El",
-      "title_english": "",
-      "director": "Oxide Pang",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1471 Ojo 2. El Dir.Oxide Pang"
-    },
-    {
-      "id": "1472",
-      "title_spanish": "Ojos bien cerrados",
-      "title_english": "",
-      "director": "Stanley Kubrick",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1472 Ojos bien cerrados Dir. Stanley Kubrick."
-    },
-    {
-      "id": "1474",
-      "title_spanish": "Ojos de serpiente",
-      "title_english": "",
-      "director": "Brian De Palma",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1474 Ojos de serpiente Dir.Brian De Palma"
-    },
-    {
-      "id": "1480",
-      "title_spanish": "Once:catorce [i.e. 11:14] : hora de morir",
-      "title_english": "",
-      "director": "y guión Greg Marcks",
-      "patterns": [
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "1480 Once:catorce [i.e. 11:14] : hora de morir Dir. y guión Greg Marcks "
-    },
-    {
-      "id": "1483",
-      "title_spanish": "Operación dragón",
-      "title_english": "",
-      "director": "Robert Clouse",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1483 Operación dragón Dir. Robert Clouse"
-    },
-    {
-      "id": "1488",
-      "title_spanish": "Oro y cobre",
-      "title_english": "",
-      "director": "Homayun Asadian",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1488 Oro y cobre Dir. Homayun Asadian "
-    },
-    {
-      "id": "1495",
-      "title_spanish": "Otra Huérfana.La",
-      "title_english": "",
-      "director": "Bryan Goeres",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "1495 Otra Huérfana.La Dir. Bryan Goeres"
-    },
-    {
-      "id": "1498",
-      "title_spanish": "Otra reina, La",
-      "title_english": "",
-      "director": "Justin Chadwick",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1498 Otra reina, La  Dir. Justin Chadwick "
-    },
-    {
-      "id": "1503",
-      "title_spanish": "Paciente inglés, El",
-      "title_english": "",
-      "director": "Anthony Minghella",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1503 Paciente inglés, El Dir. Anthony Minghella "
     },
     {
       "id": "1504",
@@ -7692,29 +5426,6 @@
       "raw_line": "1522 Pare de pecar Dir. George Ratliff"
     },
     {
-      "id": "1523",
-      "title_spanish": "Parecido a la felicidad",
-      "title_english": "",
-      "director": "Bohdan Sláma",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1523 Parecido a la felicidad Dir. Bohdan Sláma "
-    },
-    {
-      "id": "1528",
-      "title_spanish": "Partes usadas",
-      "title_english": "",
-      "director": "y guión de Aarón Fernández",
-      "patterns": [
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "1528Partes usadas Dir. y guión de Aarón Fernández "
-    },
-    {
       "id": "1531",
       "title_spanish": "Pasión al atardecer",
       "title_english": "",
@@ -7726,18 +5437,6 @@
       "raw_line": "1531 Pasión al atardecer Dir. Lajos Koltai "
     },
     {
-      "id": "1533",
-      "title_spanish": "Pasión de Camile Claudel Camille Claudel : violence et passion, La",
-      "title_english": "",
-      "director": "Bruno Nuytten",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1533Pasión de Camile Claudel Camille Claudel : violence et passion, LaDir. Bruno Nuytten"
-    },
-    {
       "id": "1536",
       "title_spanish": "Pasión ilícita",
       "title_english": "",
@@ -7747,42 +5446,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1536 Pasión ilícita  Dir. David Mackenzie"
-    },
-    {
-      "id": "1539",
-      "title_spanish": "Pasiones Privadas en Lugares Públicos / La Vida que te Espera (se tiene dos cds en una misma caja con titulos diferentes)",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "1539Pasiones Privadas en Lugares Públicos / La Vida que te Espera (se tiene dos cds en una misma caja con titulos diferentes)Dir. . Alain Resnais y Dir. Roger Michell"
-    },
-    {
-      "id": "1545",
-      "title_spanish": "Pauline y Paulette",
-      "title_english": "",
-      "director": "Leven Debrauwer",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1545 Pauline y Paulette Dir. Leven Debrauwer"
-    },
-    {
-      "id": "1550",
-      "title_spanish": "Peligro hombres- trabajando  Brigitte Roü",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1550 Peligro hombres- trabajando  Brigitte Roü"
     },
     {
       "id": "1555",
@@ -7900,64 +5563,6 @@
       "raw_line": "1568 Perfume de violetas dir. Maryse Sistach"
     },
     {
-      "id": "1570",
-      "title_spanish": "Perro Rabio, El",
-      "title_english": "",
-      "director": "Akira Kurosawa",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1570 Perro Rabio, El Dir.Akira Kurosawa.."
-    },
-    {
-      "id": "1575",
-      "title_spanish": "Pesadillas en la casa sombría",
-      "title_english": "",
-      "director": "Stuart Gordon",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1575 Pesadillas en la casa sombría Dir.Stuart Gordon"
-    },
-    {
-      "id": "1576",
-      "title_spanish": "PI, el orden del caos",
-      "title_english": "",
-      "director": "Darren Aronofsky",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1576 PI, el orden del caos  Dir. Darren Aronofsky"
-    },
-    {
-      "id": "1581",
-      "title_spanish": "Pieza final.La",
-      "title_english": "",
-      "director": "John Suits, Gabriel Cowan",
-      "patterns": [
-        "spanish_only",
-        "multi_director",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "1581 Pieza final.La Dir. John Suits, Gabriel Cowan"
-    },
-    {
-      "id": "1583",
-      "title_spanish": "Pijama para dos Lover come back",
-      "title_english": "",
-      "director": "Delbert Mann",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1583 Pijama para dos Lover come back Dir. Delbert Mann "
-    },
-    {
       "id": "1584",
       "title_spanish": "Pinceladas de fuego",
       "title_english": "",
@@ -7967,40 +5572,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1584 Pinceladas de fuego Dir. Im Kwon Taek"
-    },
-    {
-      "id": "1586",
-      "title_spanish": "Piso 13 .El",
-      "title_english": "",
-      "director": "Josef Rusna",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1586 Piso 13 .El Dir. Josef Rusna"
-    },
-    {
-      "id": "1588",
-      "title_spanish": "Plan 9 del espacio exterior",
-      "title_english": "",
-      "director": "Ed Wood",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1588 Plan 9 del espacio exterior Dir. Ed Wood"
-    },
-    {
-      "id": "1594",
-      "title_spanish": "Planeta salvaje, El",
-      "title_english": "",
-      "director": "René Laloux",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1594 Planeta salvaje, El Dir. René Laloux"
     },
     {
       "id": "1603",
@@ -8036,18 +5607,6 @@
       "raw_line": "1606Por siempre: cenicienta, una historia de amor Dir. Andy Tennant "
     },
     {
-      "id": "1609",
-      "title_spanish": "Poseidos .Los ( tiene dos peliculas) y Secta  de los vampiros",
-      "title_english": "",
-      "director": "Kim Jee-woon",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "1609Poseidos .Los ( tiene dos peliculas) y Secta  de los vampirosDir.Kim Jee-woon.Dir. Harry Basil."
-    },
-    {
       "id": "1610",
       "title_spanish": "Posibilidad de escape",
       "title_english": "",
@@ -8057,52 +5616,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1610 Posibilidad de escape Dir. Paul Schrader"
-    },
-    {
-      "id": "1616",
-      "title_spanish": "Precio del mañana.El",
-      "title_english": "",
-      "director": "Andrew Nicco",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "1616 Precio del mañana.El Dir.  Andrew Nicco"
-    },
-    {
-      "id": "1617",
-      "title_spanish": "Precious Preciosa",
-      "title_english": "",
-      "director": "Daniels, Lee, 1959-",
-      "patterns": [
-        "spanish_only",
-        "multi_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1617 Precious Preciosa Dir. Daniels, Lee, 1959-"
-    },
-    {
-      "id": "1619",
-      "title_spanish": "Presagio Knowing",
-      "title_english": "",
-      "director": "Alex Proyas",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1619 Presagio Knowing Dir. Alex Proyas "
-    },
-    {
-      "id": "1620",
-      "title_spanish": "Presidente por un día",
-      "title_english": "",
-      "director": "Ivan Reitman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1620 Presidente por un día dir. Ivan Reitman "
     },
     {
       "id": "1623",
@@ -8127,85 +5640,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1628 Procesos de las señoritas Vivanco, El Dir. Mauricio de la Serna"
-    },
-    {
-      "id": "1632",
-      "title_spanish": "Profundo carmesí",
-      "title_english": "",
-      "director": "Arturo Ripstein",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1632 Profundo carmesí Dir. Arturo Ripstein"
-    },
-    {
-      "id": "1633",
-      "title_spanish": "Proyecto andrómeda",
-      "title_english": "",
-      "director": "John Strickland",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1633 Proyecto andrómeda Dir. John Strickland."
-    },
-    {
-      "id": "1634",
-      "title_spanish": "Promesa de amor",
-      "title_english": "",
-      "director": "Jean-Loup Hubert",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1634 Promesa de amor Dir. Jean-Loup Hubert"
-    },
-    {
-      "id": "1636",
-      "title_spanish": "Provocación, La : Match point",
-      "title_english": "",
-      "director": "Woody Allen",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1636 Provocación, La : Match point Dir. Woody Allen "
-    },
-    {
-      "id": "1638",
-      "title_spanish": "Próximo hombre, El",
-      "title_english": "",
-      "director": "Richard C",
-      "patterns": [
-        "article_swapped",
-        "spanish_only",
-        "truncated_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1638 Próximo hombre, El Dir. Richard C. Sarafian "
-    },
-    {
-      "id": "1639",
-      "title_spanish": "Prueba de vida",
-      "title_english": "",
-      "director": "Taylor Hackford",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1639 Prueba de vida Dir. Taylor Hackford "
-    },
-    {
-      "id": "1641",
-      "title_spanish": "Psicópata americano",
-      "title_english": "",
-      "director": "Mary Harron",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1641 Psicópata americano Dir. Mary Harron"
     },
     {
       "id": "1653",
@@ -8265,62 +5699,6 @@
       "raw_line": "1665 Quiero ser famosa Dir. Dominique Deruddere."
     },
     {
-      "id": "1671",
-      "title_spanish": "Rabino y el pistolero, El The Frisco kid",
-      "title_english": "",
-      "director": "Robert Aldrich",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1671 Rabino y el pistolero, El The Frisco kid Dir. Robert Aldrich"
-    },
-    {
-      "id": "1683",
-      "title_spanish": "Recien enterrados",
-      "title_english": "",
-      "director": "Chaz Thorne",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1683 Recien enterrados Dir. Chaz Thorne"
-    },
-    {
-      "id": "1688",
-      "title_spanish": "Redondo ; Tres historias de amor",
-      "title_english": "",
-      "director": "y guión  Raúl Busteros",
-      "patterns": [
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "1688 Redondo ; Tres historias de amor Dir. y guión  Raúl Busteros "
-    },
-    {
-      "id": "1694",
-      "title_spanish": "Regreso a Cold Mountain",
-      "title_english": "",
-      "director": "Antony Minghella",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1694 Regreso a Cold Mountain  Dir. Antony Minghella"
-    },
-    {
-      "id": "1695",
-      "title_spanish": "Regreso al presente",
-      "title_english": "",
-      "director": "Christopher Kulikowski",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1695 Regreso al presente Dir.Christopher Kulikowski"
-    },
-    {
       "id": "1699",
       "title_spanish": "Reina de persia",
       "title_english": "",
@@ -8331,18 +5709,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1699 Reina de persia Dir. Michael O. Sajbel "
-    },
-    {
-      "id": "1700",
-      "title_spanish": "Reinado del fuego, El",
-      "title_english": "",
-      "director": "Rob Bowman",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1700 Reinado del fuego, El Dir. Rob Bowman "
     },
     {
       "id": "1715",
@@ -8424,75 +5790,6 @@
       "raw_line": "1732 Río sangriento Dir.Charles Robert Carner"
     },
     {
-      "id": "1733",
-      "title_spanish": "Río suzhou",
-      "title_english": "",
-      "director": "Lou Ye",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1733 Río suzhou Dir. Lou Ye"
-    },
-    {
-      "id": "1752",
-      "title_spanish": "Salems Lot",
-      "title_english": "",
-      "director": "Tobe Hooper",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1752 Salems Lot Dir. Tobe Hooper"
-    },
-    {
-      "id": "1753",
-      "title_spanish": "Saló, o, Los 120 días de Sodoma",
-      "title_english": "",
-      "director": "Pier Paolo Passolini",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1753 Saló, o, Los 120 días de Sodoma Dir. Pier Paolo Passolini"
-    },
-    {
-      "id": "1754",
-      "title_spanish": "Salvaje río, El",
-      "title_english": "",
-      "director": "Curtis Hanson",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1754 Salvaje río, El Dir. Curtis Hanson "
-    },
-    {
-      "id": "1757",
-      "title_spanish": "Sandalias del pescador, Las - The shoes of the fisherman Dirigida Michael Anderson",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1757Sandalias del pescador, Las - The shoes of the fisherman Dirigida Michael Anderson"
-    },
-    {
-      "id": "1767",
-      "title_spanish": "Santo contra la hija de Frankenstein",
-      "title_english": "",
-      "director": "Manuel M",
-      "patterns": [
-        "spanish_only",
-        "truncated_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1767 Santo contra la hija de Frankenstein Dir. Manuel M. Delgado "
-    },
-    {
       "id": "1768",
       "title_spanish": "Santo contra la mafia del vicio",
       "title_english": "",
@@ -8526,17 +5823,6 @@
       "raw_line": "1777Santo en la frontera del terror Dir. y prod. Rafael Pérez Grovias."
     },
     {
-      "id": "1778",
-      "title_spanish": "Santo en la venganza de la momia",
-      "title_english": "",
-      "director": "René Cardona",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1778 Santo en la venganza de la momia Dir. René Cardona"
-    },
-    {
       "id": "1779",
       "title_spanish": "Santo en la venganza de la momia azteca",
       "title_english": "",
@@ -8546,40 +5832,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1779Santo en la venganza de la momia azteca Dir. Rene Cardona Jr. "
-    },
-    {
-      "id": "1781",
-      "title_spanish": "Santo vs el asesino de la televisión",
-      "title_english": "",
-      "director": "Rafael Pérez Grovas",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1781Santo vs el asesino de la televisión Dir. y prod. Rafael Pérez Grovas."
-    },
-    {
-      "id": "1782",
-      "title_spanish": "Santo vs el espectro del estrangulador  [viedograbación]",
-      "title_english": "",
-      "director": "René Cardona",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1782Santo vs el espectro del estrangulador  [viedograbación] Dir. René Cardona"
-    },
-    {
-      "id": "1783",
-      "title_spanish": "Santo y Blue Demon contra el dr. Frankenstein",
-      "title_english": "",
-      "director": "Miguel M",
-      "patterns": [
-        "spanish_only",
-        "truncated_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1783Santo y Blue Demon contra el dr. Frankenstein Dir. Miguel M. Delgado "
     },
     {
       "id": "1784",
@@ -8593,29 +5845,6 @@
       "raw_line": "1784Santo y Blue Demon en el mundo de los muertos Dir. Gilberto Martínez Solares "
     },
     {
-      "id": "1785",
-      "title_spanish": "Santo y Blue Demon vs Drácula y el hombre lobo",
-      "title_english": "",
-      "director": "Miguel M",
-      "patterns": [
-        "spanish_only",
-        "truncated_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1785Santo y Blue Demon vs Drácula y el hombre loboDir. Miguel M. Delgado "
-    },
-    {
-      "id": "1786",
-      "title_spanish": "Santo y Blue Demon vs los monstruos",
-      "title_english": "",
-      "director": "Gilberto Martínez Solares",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1786 Santo y Blue Demon vs los monstruos Dir. Gilberto Martínez Solares "
-    },
-    {
       "id": "1788",
       "title_spanish": "Santo y Mantequilla Nápoles en la venganza de La llorona",
       "title_english": "",
@@ -8626,28 +5855,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1788Santo y Mantequilla Nápoles en la venganza de La llorona Dir. Miguel M. Delgado "
-    },
-    {
-      "id": "1795",
-      "title_spanish": "Se busca pareja Must love dogs",
-      "title_english": "",
-      "director": "Gary David Goldberg",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1795 Se busca pareja Must love dogs  Dir. Gary David Goldberg "
-    },
-    {
-      "id": "1798",
-      "title_spanish": "Secreto de estado",
-      "title_english": "",
-      "director": "Philippe Haim",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1798 Secreto de estado Dir. Philippe Haim"
     },
     {
       "id": "1803",
@@ -8670,17 +5877,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1804 Secretos de un matrimonio Dir. Ingmar Bergman. "
-    },
-    {
-      "id": "1805",
-      "title_spanish": "Secretos ocultos",
-      "title_english": "",
-      "director": "Tom McLoughlin",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1805 Secretos ocultos  Dir. Tom McLoughlin "
     },
     {
       "id": "1808",
@@ -8764,39 +5960,6 @@
       "raw_line": "1821 Septiembre 11 Varios Directores"
     },
     {
-      "id": "1826",
-      "title_spanish": "Serendipity , señales de amor",
-      "title_english": "",
-      "director": "John De Borman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1826 Serendipity , señales de amor Dir. John De Borman"
-    },
-    {
-      "id": "1834",
-      "title_spanish": "Shortbús: tu última parada",
-      "title_english": "",
-      "director": "John Cameron Mitchell",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1834 Shortbús: tu última parada Dir.  John Cameron Mitchell "
-    },
-    {
-      "id": "1838",
-      "title_spanish": "Siempre a tu lado, Hachiko",
-      "title_english": "Hachiko: A dog's story",
-      "director": "Lasse Hallström",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "1838Siempre a tu lado, Hachiko = Hachiko: A dog's story Dir. Lasse Hallström ; prod"
-    },
-    {
       "id": "1841",
       "title_spanish": "Siempre sabré lo que hiciste el verano pasado",
       "title_english": "",
@@ -8806,17 +5969,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1841Siempre sabré lo que hiciste el verano pasadoDir.Sylvain White"
-    },
-    {
-      "id": "1842",
-      "title_spanish": "Seis mujeres para un asesino",
-      "title_english": "",
-      "director": "Mario Bava",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1842 Seis mujeres para un asesino Dir  Mario Bava.."
     },
     {
       "id": "1844",
@@ -8830,30 +5982,6 @@
       "raw_line": "1844 Siete [ i. e. 7] soles Dir. Pedro Ultreras"
     },
     {
-      "id": "1847",
-      "title_spanish": "Siete copas, El",
-      "title_english": "",
-      "director": "Roberto Gavldón",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1847 Siete copas, El Dir. Roberto Gavldón "
-    },
-    {
-      "id": "1849",
-      "title_spanish": "Siete Samurai, Los",
-      "title_english": "",
-      "director": "Akira Kurosawa",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1849 Siete Samurai, Los Dir. Akira Kurosawa"
-    },
-    {
       "id": "1855",
       "title_spanish": "Sin edad para el amor",
       "title_english": "",
@@ -8865,39 +5993,6 @@
       "raw_line": "1855 Sin edad para el amor Dir.  Max Winkler"
     },
     {
-      "id": "1860",
-      "title_spanish": "Sr. Sra. Smith",
-      "title_english": "",
-      "director": "Doug Liman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1860 Sr. Sra. Smith Dir. Doug Liman "
-    },
-    {
-      "id": "1861",
-      "title_spanish": "Sr. Venganza",
-      "title_english": "",
-      "director": "Chan-wook Park",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1861 Sr. Venganza Dir. Chan-wook Park "
-    },
-    {
-      "id": "1864",
-      "title_spanish": "Sociedad de los poetas muertos",
-      "title_english": "",
-      "director": "Peter Weir",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1864 Sociedad de los poetas muertos  Dir. Peter Weir ; prod. S"
-    },
-    {
       "id": "1870",
       "title_spanish": "Solo contra sí mismo",
       "title_english": "",
@@ -8907,40 +6002,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1870 Solo contra sí mismo Dir. Mikael Hafstrom "
-    },
-    {
-      "id": "1872",
-      "title_spanish": "Sombras tenebrosas Dark shadows Dirigida por Tim Burton",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1872 Sombras tenebrosas Dark shadows Dirigida por Tim Burton "
-    },
-    {
-      "id": "1878",
-      "title_spanish": "Sonrisas de una noche de verano",
-      "title_english": "",
-      "director": "Ingmar Bergman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1878 Sonrisas de una noche de verano Dir. Ingmar Bergman"
-    },
-    {
-      "id": "1881",
-      "title_spanish": "Soy espía",
-      "title_english": "",
-      "director": "Betty Thomas",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1881 Soy espía Dir, Betty Thomas "
     },
     {
       "id": "1883",
@@ -8965,40 +6026,6 @@
       "raw_line": "1898Sueños de orquesta Dir. Danièle Thompson, Christopher"
     },
     {
-      "id": "1899",
-      "title_spanish": "Sueños ocultos",
-      "title_english": "",
-      "director": "Dark Corners",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1899 Sueños ocultos Dir.Dark Corners"
-    },
-    {
-      "id": "1902",
-      "title_spanish": "Super policias",
-      "title_english": "",
-      "director": "Jackie Chan, Chen Chi-Hwa",
-      "patterns": [
-        "spanish_only",
-        "multi_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "1902 Super policias Dir.Jackie Chan, Chen Chi-Hwa"
-    },
-    {
-      "id": "1908",
-      "title_spanish": "Talentoso sr. ripley .El",
-      "title_english": "",
-      "director": "Anthony Minghella",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1908 Talentoso sr. ripley .El Dir.Anthony Minghella "
-    },
-    {
       "id": "1912",
       "title_spanish": "Tarea prohibida, La",
       "title_english": "",
@@ -9009,28 +6036,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1912Tarea prohibida, LaDir. Jaime Humberto Hermosillo."
-    },
-    {
-      "id": "1920",
-      "title_spanish": "Temporada de patos",
-      "title_english": "",
-      "director": "Fernando Eimbcke",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1920 Temporada de patos Dir. Fernando Eimbcke"
-    },
-    {
-      "id": "1921",
-      "title_spanish": "Temporada de sequia",
-      "title_english": "",
-      "director": "Mahamat-Saleh Haroun",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1921 Temporada de sequia  Dir. Mahamat-Saleh Haroun."
     },
     {
       "id": "1924",
@@ -9045,40 +6050,6 @@
       "raw_line": "1924 Tercer tiro, El Dir. Alfred Hitchcock "
     },
     {
-      "id": "1930",
-      "title_spanish": "Terror en chernóbil",
-      "title_english": "",
-      "director": "Brad Parker",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1930 Terror en chernóbil Dir. Brad Parker"
-    },
-    {
-      "id": "1933",
-      "title_spanish": "Testigo mudo",
-      "title_english": "",
-      "director": "Anthony Waller",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1933 Testigo mudo Dir.Anthony Waller"
-    },
-    {
-      "id": "1959",
-      "title_spanish": "The Tenant(quimérico inquilino) El",
-      "title_english": "",
-      "director": "Roman Polanski",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "1959 The Tenant(quimérico inquilino) El Dir. Roman Polanski "
-    },
-    {
       "id": "1961",
       "title_spanish": "Thomas esta enamorado",
       "title_english": "",
@@ -9088,28 +6059,6 @@
       ],
       "reason": "no_match",
       "raw_line": "1961 Thomas esta enamorado Dir. Pierre-Paul"
-    },
-    {
-      "id": "1965",
-      "title_spanish": "Tiempo de mentir",
-      "title_english": "",
-      "director": "Laurent Cantet",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1965 Tiempo de mentir Dir.Laurent Cantet"
-    },
-    {
-      "id": "1968",
-      "title_spanish": "La tiendita de los horrores The Little Shop of Horrors",
-      "title_english": "",
-      "director": "Roger Corman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "1968La tiendita de los horrores The Little Shop of Horrors Dir. Roger Corman."
     },
     {
       "id": "1973",
@@ -9157,28 +6106,6 @@
       "raw_line": "1996 Todo un parto Dir. Todd Philips"
     },
     {
-      "id": "2000",
-      "title_spanish": "Tomates verdes fritos",
-      "title_english": "",
-      "director": "Joan Avnet",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2000 Tomates verdes fritos Dir. Joan Avnet"
-    },
-    {
-      "id": "2001",
-      "title_spanish": "Tonto pero no tanto Billy Madison",
-      "title_english": "",
-      "director": "Tamra Davis",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2001 Tonto pero no tanto Billy Madison Dir. Tamra Davis "
-    },
-    {
       "id": "2002",
       "title_spanish": "Tontos de altura",
       "title_english": "",
@@ -9188,75 +6115,6 @@
       ],
       "reason": "no_match",
       "raw_line": "2002 Tontos de altura Dir. Edward Sutherland"
-    },
-    {
-      "id": "2012",
-      "title_spanish": "Tragedia de Franz Woyzeck",
-      "title_english": "",
-      "director": "Werner Herzog",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2012 Tragedia de Franz Woyzeck Dir. Werner Herzog"
-    },
-    {
-      "id": "2013",
-      "title_spanish": "Traicinados",
-      "title_english": "",
-      "director": "Costa-Gavras",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2013 Traicinados Dir. Costa-Gavras"
-    },
-    {
-      "id": "2014",
-      "title_spanish": "Transportador, El",
-      "title_english": "",
-      "director": "Louis Leterrier y Corey Yuen",
-      "patterns": [
-        "article_swapped",
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "2014Transportador, ElDir. Louis Leterrier y Corey Yuen "
-    },
-    {
-      "id": "2016",
-      "title_spanish": "Tras la Tormenta",
-      "title_english": "",
-      "director": "escrita y dir",
-      "patterns": [
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "2016Tras la TormentaDir.  escrita y dir. Hirokazu Koreeda.."
-    },
-    {
-      "id": "2017",
-      "title_spanish": "Tras líneas enemigas Behind enemy lines",
-      "title_english": "",
-      "director": "John Moore",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2017Tras líneas enemigas Behind enemy lines Dir. John Moore"
-    },
-    {
-      "id": "2020",
-      "title_spanish": "Treinta dias de noche",
-      "title_english": "",
-      "director": "David Slade",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2020 Treinta dias de noche Dir. David Slade"
     },
     {
       "id": "2021",
@@ -9270,87 +6128,6 @@
       "raw_line": "2021 Treinta segundos antes de morir Dir. Brian Trenchard-Smith"
     },
     {
-      "id": "2023",
-      "title_spanish": "Trenes rigurosamente vigilados",
-      "title_english": "",
-      "director": "Jirí Menzel",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2023 Trenes rigurosamente vigilados Dir. Jirí Menzel "
-    },
-    {
-      "id": "2025",
-      "title_spanish": "Tres mil [i.e.3000] millas al infierno",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director",
-        "ocr_artifact"
-      ],
-      "reason": "no_match",
-      "raw_line": "2025Tres mil [i.e.3000] millas al infierno "
-    },
-    {
-      "id": "2028",
-      "title_spanish": "Trece días",
-      "title_english": "",
-      "director": "Roger Donaldson",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2028 Trece días Dir.  Roger Donaldson "
-    },
-    {
-      "id": "2032",
-      "title_spanish": "El triángulo The Triangle",
-      "title_english": "",
-      "director": "Dean Devlin, Bryan Singer",
-      "patterns": [
-        "spanish_only",
-        "multi_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2032 El triángulo The Triangle Dir. Dean Devlin, Bryan Singer."
-    },
-    {
-      "id": "2033",
-      "title_spanish": "Tribunal en fuga",
-      "title_english": "",
-      "director": "Gary Fleder",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2033 Tribunal en fuga Dir. Gary Fleder "
-    },
-    {
-      "id": "2038",
-      "title_spanish": "Truman show historia de una vida",
-      "title_english": "",
-      "director": "Peter Weir",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2038 Truman show historia de una vida Dir. Peter Weir "
-    },
-    {
-      "id": "2042",
-      "title_spanish": "Tutia  (Pelicula íraní)",
-      "title_english": "",
-      "director": "Irach Ghaderi",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "2042 Tutia  (Pelicula íraní) Dir. Irach Ghaderi"
-    },
-    {
       "id": "2043",
       "title_spanish": "Tuya en septiembre",
       "title_english": "",
@@ -9360,78 +6137,6 @@
       ],
       "reason": "no_match",
       "raw_line": "2043 Tuya en septiembre Dir. Robert Mulligan "
-    },
-    {
-      "id": "2046",
-      "title_spanish": "U-Quinientos setenta y uno [i.e. 571] La batalla del atlántico U-571",
-      "title_english": "",
-      "director": "Jonathan Mostow",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2046U-Quinientos setenta y uno [i.e. 571] La batalla del atlántico U-571Dir. Jonathan Mostow"
-    },
-    {
-      "id": "2051",
-      "title_spanish": "última vida en el universo, La - Ruang rak noi nid mahasan = Last Life in the Universe Pen-Ek Ratanaruang",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "bilingual_equals",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2051última vida en el universo, La - Ruang rak noi nid mahasan = Last Life in the Universe Pen-Ek Ratanaruang "
-    },
-    {
-      "id": "2052",
-      "title_spanish": "Último camino, El",
-      "title_english": "",
-      "director": "John Hillcoat",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2052 Último camino, El Dir. John Hillcoat"
-    },
-    {
-      "id": "2053",
-      "title_spanish": "Último emperador, El",
-      "title_english": "",
-      "director": "Bernardo Bertolucci",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2053 Último emperador, El  Dir. Bernardo Bertolucci"
-    },
-    {
-      "id": "2055",
-      "title_spanish": "Último paciente Chronic, El  Franco, Michel, 1979-",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2055 Último paciente Chronic, El  Franco, Michel, 1979-"
-    },
-    {
-      "id": "2057",
-      "title_spanish": "Último samurai, El",
-      "title_english": "",
-      "director": "Edward  Zwick",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2057 Último samurai, El Dir. Edward  Zwick"
     },
     {
       "id": "2060",
@@ -9456,162 +6161,6 @@
       "raw_line": "2062 Un amor loco Dir.Pierre Thoretton"
     },
     {
-      "id": "2063",
-      "title_spanish": "Un amor muy especial",
-      "title_english": "",
-      "director": "Francisco J",
-      "patterns": [
-        "spanish_only",
-        "truncated_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2063Un amor muy especial Escrita yDir. Francisco J. Fernández"
-    },
-    {
-      "id": "2064",
-      "title_spanish": "Un amor surrealista Marie & Bruce",
-      "title_english": "",
-      "director": "Tom Cairns",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2064 Un amor surrealista Marie & Bruce Dir. Tom Cairns "
-    },
-    {
-      "id": "2072",
-      "title_spanish": "Un destello en la obscuridad",
-      "title_english": "",
-      "director": "David Seltzer",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2072 Un destello en la obscuridad Dir. David Seltzer. "
-    },
-    {
-      "id": "2074",
-      "title_spanish": "Un domingo maravilloso",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2074 Un domingo maravilloso Dir. . Akira Kurosawa"
-    },
-    {
-      "id": "2075",
-      "title_spanish": "Un dulce olor a muerte",
-      "title_english": "",
-      "director": "Gabriel Retes",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2075 Un dulce olor a muerte Dir. Gabriel Retes "
-    },
-    {
-      "id": "2078",
-      "title_spanish": "Un gato sobre el tejado caliente",
-      "title_english": "",
-      "director": "Elia Kazan",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2078 Un gato sobre el tejado caliente Dir. Elia Kazan"
-    },
-    {
-      "id": "2080",
-      "title_spanish": "Un grito  antes de morir",
-      "title_english": "",
-      "director": "Dennis Dimster",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2080 Un grito  antes de morir Dir. Dennis Dimster"
-    },
-    {
-      "id": "2082",
-      "title_spanish": "Un Hombre Solitario",
-      "title_english": "",
-      "director": "Brian Koppelman",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2082 Un Hombre Solitario Dir. Brian Koppelman"
-    },
-    {
-      "id": "2083",
-      "title_spanish": "Un horizonte lejano",
-      "title_english": "",
-      "director": "Ron Howard",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2083 Un horizonte lejano Dir. Ron Howard"
-    },
-    {
-      "id": "2084",
-      "title_spanish": "Un milagro para Henry",
-      "title_english": "",
-      "director": "Mark Pellington",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2084 Un milagro para Henry Dir. Mark Pellington"
-    },
-    {
-      "id": "2085",
-      "title_spanish": "Un milagro para Lorenzo",
-      "title_english": "",
-      "director": "George Miller",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2085 Un milagro para Lorenzo Dir. George Miller. "
-    },
-    {
-      "id": "2088",
-      "title_spanish": "Un oscuro secreto",
-      "title_english": "",
-      "director": "Paul Andrew Williams",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2088 Un oscuro secreto Dir.Paul Andrew Williams"
-    },
-    {
-      "id": "2089",
-      "title_spanish": "Un Perro andaluz",
-      "title_english": "",
-      "director": "Luis Buñuel",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2089 Un Perro andaluz Dir. Luis Buñuel"
-    },
-    {
-      "id": "2090",
-      "title_spanish": "Un puente demasiado lejos",
-      "title_english": "",
-      "director": "Richard Attenborough",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2090 Un puente demasiado lejos Dir. Richard Attenborough"
-    },
-    {
       "id": "2091",
       "title_spanish": "Un regalo sangriento",
       "title_english": "",
@@ -9621,85 +6170,6 @@
       ],
       "reason": "no_match",
       "raw_line": "2091 Un regalo sangriento Dir.Won Shin-yeon"
-    },
-    {
-      "id": "2095",
-      "title_spanish": "Una acción civil",
-      "title_english": "",
-      "director": "Steven Zaillian",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2095 Una acción civil Dir. Steven Zaillian "
-    },
-    {
-      "id": "2096",
-      "title_spanish": "Una aventura extraordinaria Life of Pi",
-      "title_english": "",
-      "director": "Ang Lee",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2096 Una aventura extraordinaria Life of Pi Dir. Ang Lee"
-    },
-    {
-      "id": "2099",
-      "title_spanish": "Una chica perturbada",
-      "title_english": "",
-      "director": "Mark Pellington",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2099 Una chica perturbada Dir.Mark Pellington"
-    },
-    {
-      "id": "2100",
-      "title_spanish": "Una Dama sin Pudor",
-      "title_english": "",
-      "director": "Sam Garbarski",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2100 Una Dama sin Pudor Dir. Sam Garbarski"
-    },
-    {
-      "id": "2107",
-      "title_spanish": "Una mente Brillante",
-      "title_english": "",
-      "director": "Ron Howard",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2107 Una mente Brillante Dir. Ron Howard "
-    },
-    {
-      "id": "2108",
-      "title_spanish": "Una muerte Inesperada",
-      "title_english": "",
-      "director": "Grace is gone /escrita y dir",
-      "patterns": [
-        "spanish_only",
-        "joint_director_y"
-      ],
-      "reason": "no_match",
-      "raw_line": "2108Una muerte InesperadaDir. Grace is gone /escrita y dir. James C. Strouse "
-    },
-    {
-      "id": "2113",
-      "title_spanish": "Una sola entrega Dirección y guión, Oxide Pang.",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2113 Una sola entrega Dirección y guión, Oxide Pang."
     },
     {
       "id": "2119",
@@ -9713,94 +6183,6 @@
       "raw_line": "2119 Unas dulces mentiras Dir. Julie Bertuccelli"
     },
     {
-      "id": "2123",
-      "title_spanish": "Usted es muy guapo",
-      "title_english": "",
-      "director": "Isabelle Mergault",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2123 Usted es muy guapo  Dir. Isabelle Mergault "
-    },
-    {
-      "id": "2124",
-      "title_spanish": "V de Venganza",
-      "title_english": "",
-      "director": "James Mc Teigue",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2124 V de Venganza Dir. James Mc Teigue"
-    },
-    {
-      "id": "2126",
-      "title_spanish": "Vacaciones de invierno",
-      "title_english": "",
-      "director": "Jeremiah Chechik",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2126 Vacaciones de invierno Dir. Jeremiah Chechik"
-    },
-    {
-      "id": "2127",
-      "title_spanish": "Vacaciones de Mr. Bean",
-      "title_english": "",
-      "director": "Steve Bendelack",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2127 Vacaciones de Mr. Bean Dir. Steve Bendelack "
-    },
-    {
-      "id": "2131",
-      "title_spanish": "Valor bajo fuego",
-      "title_english": "",
-      "director": "Edward Zwick",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2131 Valor bajo fuego Dir. Edward Zwick"
-    },
-    {
-      "id": "2136",
-      "title_spanish": "Vecinos y enemigos",
-      "title_english": "",
-      "director": "Craig Lucas",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2136 Vecinos y enemigos Dir. Craig Lucas"
-    },
-    {
-      "id": "2140",
-      "title_spanish": "Veinticuatro cuadros de terror",
-      "title_english": "24 cuadros de terror",
-      "director": "Christian González",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "2140Veinticuatro cuadros de terror = 24 cuadros de terrorDir. Christian González"
-    },
-    {
-      "id": "2141",
-      "title_spanish": "Veintisiete bodas",
-      "title_english": "27 Bodas",
-      "director": "Anne Fletcher",
-      "patterns": [
-        "bilingual_equals"
-      ],
-      "reason": "no_match",
-      "raw_line": "2141 Veintisiete bodas =  27 Bodas Dir. Anne Fletcher"
-    },
-    {
       "id": "2142",
       "title_spanish": "Veintiún gramos",
       "title_english": "21 gramos",
@@ -9810,17 +6192,6 @@
       ],
       "reason": "no_match",
       "raw_line": "2142 Veintiún gramos = 21 gramos Dir. Alejandro González"
-    },
-    {
-      "id": "2144",
-      "title_spanish": "Veneno para las hadas",
-      "title_english": "",
-      "director": "Carlos Enrique Taboada",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2144 Veneno para las hadas Dir. Carlos Enrique Taboada."
     },
     {
       "id": "2146",
@@ -9834,29 +6205,6 @@
       "raw_line": "2146 Vengadora/Testigos de un crimen Dir. Fritz Kiersch.."
     },
     {
-      "id": "2149",
-      "title_spanish": "Vengador del futuro Total recall Wiseman, Len, 1973-",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2149 Vengador del futuro Total recall Wiseman, Len, 1973-"
-    },
-    {
-      "id": "2150",
-      "title_spanish": "Venganza despiadada",
-      "title_english": "",
-      "director": "Olivier Megaton",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2150 Venganza despiadada Dir.Olivier Megaton"
-    },
-    {
       "id": "2153",
       "title_spanish": "Venganza yakuza",
       "title_english": "",
@@ -9866,122 +6214,6 @@
       ],
       "reason": "no_match",
       "raw_line": "2153 Venganza yakuza Dir. Douglas Jackson"
-    },
-    {
-      "id": "2154",
-      "title_spanish": "Ventajas de ser invisible Guión y",
-      "title_english": "",
-      "director": "Stephen Chbosky",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2154 Ventajas de ser invisible Guión y dir. Stephen Chbosky "
-    },
-    {
-      "id": "2156",
-      "title_spanish": "Ventana secreta, La",
-      "title_english": "",
-      "director": "David Koepp",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2156 Ventana secreta, La Dir. David Koepp"
-    },
-    {
-      "id": "2161",
-      "title_spanish": "Vertigo/ La sombra  de una duda (Doble DVD)",
-      "title_english": "",
-      "director": "Alfred Hitchcock",
-      "patterns": [
-        "spanish_only",
-        "parenthetical_alt_title"
-      ],
-      "reason": "no_match",
-      "raw_line": "2161Vertigo/ La sombra  de una duda (Doble DVD)Dir. Alfred Hitchcock"
-    },
-    {
-      "id": "2178",
-      "title_spanish": "Vida prometida, La La vie promise = Ghost river Olivier Dahan",
-      "title_english": "",
-      "director": "",
-      "patterns": [
-        "spanish_only",
-        "bilingual_equals",
-        "no_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2178Vida prometida, La La vie promise = Ghost river Olivier Dahan"
-    },
-    {
-      "id": "2182",
-      "title_spanish": "Vidas en Común",
-      "title_english": "",
-      "director": "Rose Troche",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2182 Vidas en Común Dir. Rose Troche"
-    },
-    {
-      "id": "2185",
-      "title_spanish": "Viólame Baise-Moi",
-      "title_english": "",
-      "director": "Virginie Despentes, Coralie Trinh Thi",
-      "patterns": [
-        "spanish_only",
-        "multi_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2185Viólame Baise-Moi Dir. Virginie Despentes, Coralie Trinh Thi "
-    },
-    {
-      "id": "2188",
-      "title_spanish": "Violines en el cielo Departures",
-      "title_english": "",
-      "director": "Yojiro Takita",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2188 Violines en el cielo Departures Dir. Yojiro Takita "
-    },
-    {
-      "id": "2189",
-      "title_spanish": "Virgen a los 40 años",
-      "title_english": "",
-      "director": "Judd Apatow",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2189 Virgen a los 40 años Dir. Judd Apatow"
-    },
-    {
-      "id": "2191",
-      "title_spanish": "Virgen y Culpable a los 41",
-      "title_english": "",
-      "director": "Craig  Moss",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2191 Virgen y Culpable a los 41 Dir. Craig  Moss"
-    },
-    {
-      "id": "2192",
-      "title_spanish": "Virgenes suicidas, Las",
-      "title_english": "",
-      "director": "Sofia Coppola",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2192 Virgenes suicidas, Las Dir. Sofia Coppola"
     },
     {
       "id": "2201",
@@ -9996,39 +6228,6 @@
       "raw_line": "2201 Vizconde de Montecristo, El Dir. Gilberto Martínez Solares."
     },
     {
-      "id": "2204",
-      "title_spanish": "Volando alto Eddie the eagle",
-      "title_english": "",
-      "director": "Dexter Fletcher",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2204 Volando alto Eddie the eagle  Dir. Dexter Fletcher"
-    },
-    {
-      "id": "2207",
-      "title_spanish": "Voraz Raw",
-      "title_english": "",
-      "director": "Julia Ducournau",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2207 Voraz Raw Escrita y dir. Julia Ducournau "
-    },
-    {
-      "id": "2213",
-      "title_spanish": "Vuelven los siete magníficos",
-      "title_english": "",
-      "director": "Paul Wendkos",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2213 Vuelven los siete magníficos Dir. Paul Wendkos"
-    },
-    {
       "id": "2215",
       "title_spanish": "Watchmen : relatos del navío negro",
       "title_english": "Watchmen : tales of the black freighter",
@@ -10038,86 +6237,6 @@
       ],
       "reason": "no_match",
       "raw_line": "2215Watchmen : relatos del navío negro = Watchmen : tales of the black freighterDir. Mike Smith"
-    },
-    {
-      "id": "2216",
-      "title_spanish": "Ward contra ward",
-      "title_english": "",
-      "director": "Michael Apted",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2216 Ward contra ward Dir. Michael Apted"
-    },
-    {
-      "id": "2224",
-      "title_spanish": "Y dónde están las rubias? White chicks",
-      "title_english": "",
-      "director": "Keenen Ivory Wayans",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2224Y dónde están las rubias? White chicks Dir. Keenen Ivory Wayans."
-    },
-    {
-      "id": "2227",
-      "title_spanish": "Yo amo huckabees",
-      "title_english": "",
-      "director": "David O",
-      "patterns": [
-        "spanish_only",
-        "truncated_director"
-      ],
-      "reason": "no_match",
-      "raw_line": "2227 Yo amo huckabees Dir. David O. Russell"
-    },
-    {
-      "id": "2233",
-      "title_spanish": "Zapatillas rojas, Las",
-      "title_english": "",
-      "director": "Michael Powell",
-      "patterns": [
-        "article_swapped",
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2233 Zapatillas rojas, Las Dir. Michael Powell"
-    },
-    {
-      "id": "2234",
-      "title_spanish": "Zathura : una aventura fuera de este mundo",
-      "title_english": "",
-      "director": "Jon Favreau",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2234Zathura : una aventura fuera de este mundo Dir. Jon Favreau"
-    },
-    {
-      "id": "2240",
-      "title_spanish": "Zona de Miedo",
-      "title_english": "",
-      "director": "Kathryn Bigelow",
-      "patterns": [
-        "spanish_only"
-      ],
-      "reason": "no_match",
-      "raw_line": "2240 Zona de Miedo Dir. Kathryn Bigelow"
-    },
-    {
-      "id": "2241",
-      "title_spanish": "Zona Muerta.La",
-      "title_english": "",
-      "director": "David Cronenberg",
-      "patterns": [
-        "spanish_only",
-        "period_joined_words"
-      ],
-      "reason": "no_match",
-      "raw_line": "2241 Zona Muerta.La Dir. David Cronenberg"
     }
   ]
 }

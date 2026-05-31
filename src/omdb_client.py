@@ -1,5 +1,7 @@
 import os
 import re
+import time
+import random
 from typing import Optional, Dict, Any
 from source_of_truth import lookup_movie, update_movie
 
@@ -48,16 +50,28 @@ def spanish_to_english_title(title: str) -> str:
             return re.sub(pattern, replacement, title, count=1)
     return title
 
-def _query_omdb(params):
-    """Helper function to query the OMDb API and handle responses."""
-    try:
-        response = requests.get(BASE_URL, params=params)
-        response.raise_for_status()
-        data = response.json()
-        if data.get('Response') == 'True':
-            return data
-    except requests.exceptions.RequestException as e:
-        print(f"Error querying OMDb: {e}")
+def _query_omdb(params, max_retries: int = 5, base_delay: float = 1.0):
+    """Helper function to query the OMDb API with exponential backoff on rate-limit errors."""
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(BASE_URL, params=params, timeout=10)
+            if response.status_code in (429, 401):
+                delay = base_delay * (2 ** attempt) + random.uniform(0, 0.5)
+                print(f"[omdb] rate-limit ({response.status_code}), retry {attempt+1}/{max_retries} in {delay:.1f}s")
+                time.sleep(delay)
+                continue
+            response.raise_for_status()
+            data = response.json()
+            if data.get('Response') == 'True':
+                return data
+            return None
+        except requests.exceptions.RequestException as e:
+            if attempt < max_retries - 1:
+                delay = base_delay * (2 ** attempt) + random.uniform(0, 0.5)
+                print(f"[omdb] request error: {e}, retry {attempt+1}/{max_retries} in {delay:.1f}s")
+                time.sleep(delay)
+            else:
+                print(f"[omdb] failed after {max_retries} retries: {e}")
     return None
 
 def search_movie_id(title: str, year: Optional[str] = None) -> Optional[str]:
