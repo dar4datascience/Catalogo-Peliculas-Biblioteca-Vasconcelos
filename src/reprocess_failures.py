@@ -13,8 +13,55 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from omdb_client import search_movie_bilingual, get_movie_details, broad_search_movie, find_best_fuzzy_match, search_movie_id, search_director_filmography
 from source_of_truth import lookup_movie, update_movie
+from tmdb_client import get_tmdb_external_ids
 
 PENDING_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'intermediate_results', 'pending_review.json')
+TMDB_HYBRID_MIN_SCORE = 0.72  # hybrid score threshold for TMDB fallback auto-confirm
+_tmdb_db = None  # lazy singleton
+
+
+def _get_tmdb_db():
+    """Lazy-initialise TMDBDuckDB once per process."""
+    global _tmdb_db
+    if _tmdb_db is None:
+        try:
+            from tmdb_duckdb import TMDBDuckDB
+            _tmdb_db = TMDBDuckDB()
+        except Exception as e:
+            print(f"[tmdb_fallback] Could not open TMDBDuckDB: {e}")
+    return _tmdb_db
+
+
+def try_tmdb_hybrid(title_es: str, title_en: str, director: str) -> dict | None:
+    """
+    Use TMDBDuckDB.find_best_match_hybrid to locate the movie by semantic
+    similarity, then resolve the TMDB movie_id to an IMDb ID via the TMDB API.
+
+    Returns a dict with 'imdbID', 'matched_title', 'match_type', 'hybrid_score'
+    or None if no confident match found.
+    """
+    db = _get_tmdb_db()
+    if db is None:
+        return None
+
+    for query in [q for q in [title_es, title_en] if q]:
+        match = db.find_best_match_hybrid(query, director, min_similarity=TMDB_HYBRID_MIN_SCORE)
+        if match:
+            tmdb_id = match.get("movie_id")
+            imdb_id = get_tmdb_external_ids(tmdb_id)
+            time.sleep(0.2)
+            if imdb_id and imdb_id.startswith("tt"):
+                return {
+                    "imdbID": imdb_id,
+                    "matched_title": match.get("title") or match.get("original_title", ""),
+                    "match_type": f"tmdb_hybrid_{match.get('hybrid_score', 0):.2f}",
+                    "hybrid_score": match.get("hybrid_score", 0),
+                    "tmdb_movie_id": tmdb_id,
+                    "query_used": query,
+                }
+    return None
+
+
 PDF_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'pdfs', 'CINE.pdf')
 CATALOGUE_NAME = 'CINE.pdf'
 RATE_LIMIT_DELAY = 0.25
@@ -274,6 +321,45 @@ def main():
                         'director_candidates': dir_candidates[:3]
                     })
                     print(f"? [dir] {best['title']} ({best['imdbID']}) [score={best['score']}, dir={best['director_matched']}]")
+                    continue
+
+            # Final fallback: TMDB hybrid (cosine + Jaro-Winkler on DuckDB)
+            tmdb_result = try_tmdb_hybrid(title_es, title_en, dir_clean)
+            if tmdb_result:
+                imdb_id = tmdb_result["imdbID"]
+                hybrid_score = tmdb_result["hybrid_score"]
+                # Fetch OMDB details to populate SoT (OMDB is our data source)
+                omdb_details = get_movie_details(imdb_id)
+                time.sleep(RATE_LIMIT_DELAY)
+                if omdb_details:
+                    cat_id = int(row_id) if str(row_id).isdigit() else None
+                    page_num = page_index.get(cat_id) if cat_id else None
+                    mt = f"tmdb_hybrid_{hybrid_score:.2f}"
+                    update_movie(
+                        title_es, omdb_details,
+                        match_type=mt,
+                        catalogue=CATALOGUE_NAME,
+                        catalogue_id=cat_id,
+                        page_number=page_num,
+                    )
+                    newly_confirmed.append({
+                        'id': row_id, 'title_spanish': title_es,
+                        'imdb_id': imdb_id,
+                        'matched_title': omdb_details.get('Title') or tmdb_result['matched_title'],
+                        'match_type': mt,
+                        'query_used': tmdb_result.get('query_used'),
+                    })
+                    print(f"✓ [tmdb] {omdb_details.get('Title')} ({imdb_id}) [hybrid={hybrid_score:.2f}]")
+                    continue
+                else:
+                    # TMDB found it but OMDB has no record — still queue fuzzy
+                    still_fuzzy.append({
+                        **entry,
+                        'candidate_imdb_id': imdb_id,
+                        'candidate_title': tmdb_result['matched_title'],
+                        'match_type': tmdb_result['match_type'],
+                    })
+                    print(f"? [tmdb/no-omdb] {tmdb_result['matched_title']} ({imdb_id}) [hybrid={hybrid_score:.2f}]")
                     continue
 
             still_failed.append(entry)

@@ -221,6 +221,19 @@ def get_movie_details(movie_id: int, language: str = "es-ES") -> Optional[dict]:
     return _query_tmdb(f"/movie/{movie_id}", params)
 
 
+def get_tmdb_external_ids(tmdb_movie_id: int) -> Optional[str]:
+    """
+    Fetch the IMDb ID for a given TMDB movie ID via /movie/{id}/external_ids.
+
+    Returns:
+        IMDb ID string (e.g. 'tt0033467') or None if unavailable.
+    """
+    data = _query_tmdb(f"/movie/{tmdb_movie_id}/external_ids", {})
+    if data:
+        return data.get("imdb_id") or None
+    return None
+
+
 def calculate_title_similarity(query_title: str, candidate_title: str, candidate_original_title: str = "") -> dict:
     """
     Calculate similarity scores between query title and candidate titles.
